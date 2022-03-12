@@ -136,7 +136,7 @@
             this.WeeklyViewBut.Name = "WeeklyViewBut";
             this.WeeklyViewBut.Size = new System.Drawing.Size(75, 23);
             this.WeeklyViewBut.TabIndex = 9;
-            this.WeeklyViewBut.Text = "Weekly";
+            this.WeeklyViewBut.Text = "Weeklyt";
             this.WeeklyViewBut.UseVisualStyleBackColor = true;
             // 
             // MonthlyViewBut
