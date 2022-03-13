@@ -50,5 +50,19 @@ namespace SoftwareTwoProject.Forms
             editAppointment.Show();
             this.Close();
         }
+
+        private void MainDashboard_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'client_scheduleDataSet1.appointment' table. You can move, or remove it, as needed.
+            this.appointmentTableAdapter.Fill(this.client_scheduleDataSet1.appointment);
+            // TODO: This line of code loads data into the 'client_scheduleDataSet.customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter.Fill(this.client_scheduleDataSet.customer);
+
+        }
+
+        private void DeleteCustomerBut_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }
