@@ -30,25 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.CustomerRecordsGrid = new System.Windows.Forms.DataGridView();
+            this.customerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.createDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastUpdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastUpdateByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.client_scheduleDataSet = new SoftwareTwoProject.client_scheduleDataSet();
             this.AddCustomerBut = new System.Windows.Forms.Button();
             this.EditCustomerBut = new System.Windows.Forms.Button();
             this.DeleteCustomerBut = new System.Windows.Forms.Button();
             this.AppointmentsListGrid = new System.Windows.Forms.DataGridView();
-            this.AppointmentsAddBut = new System.Windows.Forms.Button();
-            this.EditAppointmentsBut = new System.Windows.Forms.Button();
-            this.DeleteAppointmentsBut = new System.Windows.Forms.Button();
-            this.ExitBut = new System.Windows.Forms.Button();
-            this.WeeklyViewBut = new System.Windows.Forms.Button();
-            this.MonthlyViewBut = new System.Windows.Forms.Button();
-            this.ReportsMenuBut = new System.Windows.Forms.Button();
-            this.CustomerLabel = new System.Windows.Forms.Label();
-            this.AppointementsLabel = new System.Windows.Forms.Label();
-            this.client_scheduleDataSet = new SoftwareTwoProject.client_scheduleDataSet();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerTableAdapter = new SoftwareTwoProject.client_scheduleDataSetTableAdapters.customerTableAdapter();
-            this.client_scheduleDataSet1 = new SoftwareTwoProject.client_scheduleDataSet1();
-            this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appointmentTableAdapter = new SoftwareTwoProject.client_scheduleDataSet1TableAdapters.appointmentTableAdapter();
             this.appointmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,20 +59,25 @@
             this.createdByDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastUpdateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastUpdateByDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.createDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastUpdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastUpdateByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.client_scheduleDataSet1 = new SoftwareTwoProject.client_scheduleDataSet1();
+            this.AppointmentsAddBut = new System.Windows.Forms.Button();
+            this.EditAppointmentsBut = new System.Windows.Forms.Button();
+            this.DeleteAppointmentsBut = new System.Windows.Forms.Button();
+            this.ExitBut = new System.Windows.Forms.Button();
+            this.WeeklyViewBut = new System.Windows.Forms.Button();
+            this.MonthlyViewBut = new System.Windows.Forms.Button();
+            this.ReportsMenuBut = new System.Windows.Forms.Button();
+            this.CustomerLabel = new System.Windows.Forms.Label();
+            this.AppointementsLabel = new System.Windows.Forms.Label();
+            this.customerTableAdapter = new SoftwareTwoProject.client_scheduleDataSetTableAdapters.customerTableAdapter();
+            this.appointmentTableAdapter = new SoftwareTwoProject.client_scheduleDataSet1TableAdapters.appointmentTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerRecordsGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AppointmentsListGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AppointmentsListGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // CustomerRecordsGrid
@@ -99,6 +99,64 @@
             this.CustomerRecordsGrid.Name = "CustomerRecordsGrid";
             this.CustomerRecordsGrid.Size = new System.Drawing.Size(310, 150);
             this.CustomerRecordsGrid.TabIndex = 0;
+            // 
+            // customerIdDataGridViewTextBoxColumn
+            // 
+            this.customerIdDataGridViewTextBoxColumn.DataPropertyName = "customerId";
+            this.customerIdDataGridViewTextBoxColumn.HeaderText = "customerId";
+            this.customerIdDataGridViewTextBoxColumn.Name = "customerIdDataGridViewTextBoxColumn";
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "customerName";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "customerName";
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            // 
+            // addressIdDataGridViewTextBoxColumn
+            // 
+            this.addressIdDataGridViewTextBoxColumn.DataPropertyName = "addressId";
+            this.addressIdDataGridViewTextBoxColumn.HeaderText = "addressId";
+            this.addressIdDataGridViewTextBoxColumn.Name = "addressIdDataGridViewTextBoxColumn";
+            // 
+            // activeDataGridViewCheckBoxColumn
+            // 
+            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "active";
+            this.activeDataGridViewCheckBoxColumn.HeaderText = "active";
+            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
+            // 
+            // createDateDataGridViewTextBoxColumn
+            // 
+            this.createDateDataGridViewTextBoxColumn.DataPropertyName = "createDate";
+            this.createDateDataGridViewTextBoxColumn.HeaderText = "createDate";
+            this.createDateDataGridViewTextBoxColumn.Name = "createDateDataGridViewTextBoxColumn";
+            // 
+            // createdByDataGridViewTextBoxColumn
+            // 
+            this.createdByDataGridViewTextBoxColumn.DataPropertyName = "createdBy";
+            this.createdByDataGridViewTextBoxColumn.HeaderText = "createdBy";
+            this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
+            // 
+            // lastUpdateDataGridViewTextBoxColumn
+            // 
+            this.lastUpdateDataGridViewTextBoxColumn.DataPropertyName = "lastUpdate";
+            this.lastUpdateDataGridViewTextBoxColumn.HeaderText = "lastUpdate";
+            this.lastUpdateDataGridViewTextBoxColumn.Name = "lastUpdateDataGridViewTextBoxColumn";
+            // 
+            // lastUpdateByDataGridViewTextBoxColumn
+            // 
+            this.lastUpdateByDataGridViewTextBoxColumn.DataPropertyName = "lastUpdateBy";
+            this.lastUpdateByDataGridViewTextBoxColumn.HeaderText = "lastUpdateBy";
+            this.lastUpdateByDataGridViewTextBoxColumn.Name = "lastUpdateByDataGridViewTextBoxColumn";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "customer";
+            this.customerBindingSource.DataSource = this.client_scheduleDataSet;
+            // 
+            // client_scheduleDataSet
+            // 
+            this.client_scheduleDataSet.DataSetName = "client_scheduleDataSet";
+            this.client_scheduleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // AddCustomerBut
             // 
@@ -156,118 +214,6 @@
             this.AppointmentsListGrid.Name = "AppointmentsListGrid";
             this.AppointmentsListGrid.Size = new System.Drawing.Size(330, 150);
             this.AppointmentsListGrid.TabIndex = 4;
-            // 
-            // AppointmentsAddBut
-            // 
-            this.AppointmentsAddBut.Location = new System.Drawing.Point(477, 261);
-            this.AppointmentsAddBut.Name = "AppointmentsAddBut";
-            this.AppointmentsAddBut.Size = new System.Drawing.Size(75, 23);
-            this.AppointmentsAddBut.TabIndex = 5;
-            this.AppointmentsAddBut.Text = "Add";
-            this.AppointmentsAddBut.UseVisualStyleBackColor = true;
-            this.AppointmentsAddBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AppointmentsAddBut_MouseClick);
-            // 
-            // EditAppointmentsBut
-            // 
-            this.EditAppointmentsBut.Location = new System.Drawing.Point(477, 302);
-            this.EditAppointmentsBut.Name = "EditAppointmentsBut";
-            this.EditAppointmentsBut.Size = new System.Drawing.Size(75, 23);
-            this.EditAppointmentsBut.TabIndex = 6;
-            this.EditAppointmentsBut.Text = "Edit";
-            this.EditAppointmentsBut.UseVisualStyleBackColor = true;
-            this.EditAppointmentsBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EditAppointmentsBut_MouseClick);
-            // 
-            // DeleteAppointmentsBut
-            // 
-            this.DeleteAppointmentsBut.Location = new System.Drawing.Point(477, 343);
-            this.DeleteAppointmentsBut.Name = "DeleteAppointmentsBut";
-            this.DeleteAppointmentsBut.Size = new System.Drawing.Size(75, 23);
-            this.DeleteAppointmentsBut.TabIndex = 7;
-            this.DeleteAppointmentsBut.Text = "Delete";
-            this.DeleteAppointmentsBut.UseVisualStyleBackColor = true;
-            // 
-            // ExitBut
-            // 
-            this.ExitBut.Location = new System.Drawing.Point(788, 444);
-            this.ExitBut.Name = "ExitBut";
-            this.ExitBut.Size = new System.Drawing.Size(75, 23);
-            this.ExitBut.TabIndex = 8;
-            this.ExitBut.Text = "Exit";
-            this.ExitBut.UseVisualStyleBackColor = true;
-            this.ExitBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ExitBut_MouseClick);
-            // 
-            // WeeklyViewBut
-            // 
-            this.WeeklyViewBut.Location = new System.Drawing.Point(211, 444);
-            this.WeeklyViewBut.Name = "WeeklyViewBut";
-            this.WeeklyViewBut.Size = new System.Drawing.Size(75, 23);
-            this.WeeklyViewBut.TabIndex = 9;
-            this.WeeklyViewBut.Text = "Weeklyt";
-            this.WeeklyViewBut.UseVisualStyleBackColor = true;
-            // 
-            // MonthlyViewBut
-            // 
-            this.MonthlyViewBut.Location = new System.Drawing.Point(307, 444);
-            this.MonthlyViewBut.Name = "MonthlyViewBut";
-            this.MonthlyViewBut.Size = new System.Drawing.Size(75, 23);
-            this.MonthlyViewBut.TabIndex = 10;
-            this.MonthlyViewBut.Text = "Monthly";
-            this.MonthlyViewBut.UseVisualStyleBackColor = true;
-            // 
-            // ReportsMenuBut
-            // 
-            this.ReportsMenuBut.Location = new System.Drawing.Point(477, 444);
-            this.ReportsMenuBut.Name = "ReportsMenuBut";
-            this.ReportsMenuBut.Size = new System.Drawing.Size(75, 23);
-            this.ReportsMenuBut.TabIndex = 11;
-            this.ReportsMenuBut.Text = "Reports";
-            this.ReportsMenuBut.UseVisualStyleBackColor = true;
-            // 
-            // CustomerLabel
-            // 
-            this.CustomerLabel.AutoSize = true;
-            this.CustomerLabel.Location = new System.Drawing.Point(110, 51);
-            this.CustomerLabel.Name = "CustomerLabel";
-            this.CustomerLabel.Size = new System.Drawing.Size(94, 13);
-            this.CustomerLabel.TabIndex = 12;
-            this.CustomerLabel.Text = "Customer Records";
-            // 
-            // AppointementsLabel
-            // 
-            this.AppointementsLabel.AutoSize = true;
-            this.AppointementsLabel.Location = new System.Drawing.Point(607, 51);
-            this.AppointementsLabel.Name = "AppointementsLabel";
-            this.AppointementsLabel.Size = new System.Drawing.Size(71, 13);
-            this.AppointementsLabel.TabIndex = 13;
-            this.AppointementsLabel.Text = "Appointments";
-            // 
-            // client_scheduleDataSet
-            // 
-            this.client_scheduleDataSet.DataSetName = "client_scheduleDataSet";
-            this.client_scheduleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "customer";
-            this.customerBindingSource.DataSource = this.client_scheduleDataSet;
-            // 
-            // customerTableAdapter
-            // 
-            this.customerTableAdapter.ClearBeforeFill = true;
-            // 
-            // client_scheduleDataSet1
-            // 
-            this.client_scheduleDataSet1.DataSetName = "client_scheduleDataSet1";
-            this.client_scheduleDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // appointmentBindingSource
-            // 
-            this.appointmentBindingSource.DataMember = "appointment";
-            this.appointmentBindingSource.DataSource = this.client_scheduleDataSet1;
-            // 
-            // appointmentTableAdapter
-            // 
-            this.appointmentTableAdapter.ClearBeforeFill = true;
             // 
             // appointmentIdDataGridViewTextBoxColumn
             // 
@@ -359,53 +305,107 @@
             this.lastUpdateByDataGridViewTextBoxColumn1.HeaderText = "lastUpdateBy";
             this.lastUpdateByDataGridViewTextBoxColumn1.Name = "lastUpdateByDataGridViewTextBoxColumn1";
             // 
-            // customerIdDataGridViewTextBoxColumn
+            // appointmentBindingSource
             // 
-            this.customerIdDataGridViewTextBoxColumn.DataPropertyName = "customerId";
-            this.customerIdDataGridViewTextBoxColumn.HeaderText = "customerId";
-            this.customerIdDataGridViewTextBoxColumn.Name = "customerIdDataGridViewTextBoxColumn";
+            this.appointmentBindingSource.DataMember = "appointment";
+            this.appointmentBindingSource.DataSource = this.client_scheduleDataSet1;
             // 
-            // customerNameDataGridViewTextBoxColumn
+            // client_scheduleDataSet1
             // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "customerName";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "customerName";
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            this.client_scheduleDataSet1.DataSetName = "client_scheduleDataSet1";
+            this.client_scheduleDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // addressIdDataGridViewTextBoxColumn
+            // AppointmentsAddBut
             // 
-            this.addressIdDataGridViewTextBoxColumn.DataPropertyName = "addressId";
-            this.addressIdDataGridViewTextBoxColumn.HeaderText = "addressId";
-            this.addressIdDataGridViewTextBoxColumn.Name = "addressIdDataGridViewTextBoxColumn";
+            this.AppointmentsAddBut.Location = new System.Drawing.Point(477, 261);
+            this.AppointmentsAddBut.Name = "AppointmentsAddBut";
+            this.AppointmentsAddBut.Size = new System.Drawing.Size(75, 23);
+            this.AppointmentsAddBut.TabIndex = 5;
+            this.AppointmentsAddBut.Text = "Add";
+            this.AppointmentsAddBut.UseVisualStyleBackColor = true;
+            this.AppointmentsAddBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AppointmentsAddBut_MouseClick);
             // 
-            // activeDataGridViewCheckBoxColumn
+            // EditAppointmentsBut
             // 
-            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "active";
-            this.activeDataGridViewCheckBoxColumn.HeaderText = "active";
-            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
+            this.EditAppointmentsBut.Location = new System.Drawing.Point(477, 302);
+            this.EditAppointmentsBut.Name = "EditAppointmentsBut";
+            this.EditAppointmentsBut.Size = new System.Drawing.Size(75, 23);
+            this.EditAppointmentsBut.TabIndex = 6;
+            this.EditAppointmentsBut.Text = "Edit";
+            this.EditAppointmentsBut.UseVisualStyleBackColor = true;
+            this.EditAppointmentsBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EditAppointmentsBut_MouseClick);
             // 
-            // createDateDataGridViewTextBoxColumn
+            // DeleteAppointmentsBut
             // 
-            this.createDateDataGridViewTextBoxColumn.DataPropertyName = "createDate";
-            this.createDateDataGridViewTextBoxColumn.HeaderText = "createDate";
-            this.createDateDataGridViewTextBoxColumn.Name = "createDateDataGridViewTextBoxColumn";
+            this.DeleteAppointmentsBut.Location = new System.Drawing.Point(477, 343);
+            this.DeleteAppointmentsBut.Name = "DeleteAppointmentsBut";
+            this.DeleteAppointmentsBut.Size = new System.Drawing.Size(75, 23);
+            this.DeleteAppointmentsBut.TabIndex = 7;
+            this.DeleteAppointmentsBut.Text = "Delete";
+            this.DeleteAppointmentsBut.UseVisualStyleBackColor = true;
             // 
-            // createdByDataGridViewTextBoxColumn
+            // ExitBut
             // 
-            this.createdByDataGridViewTextBoxColumn.DataPropertyName = "createdBy";
-            this.createdByDataGridViewTextBoxColumn.HeaderText = "createdBy";
-            this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
+            this.ExitBut.Location = new System.Drawing.Point(788, 444);
+            this.ExitBut.Name = "ExitBut";
+            this.ExitBut.Size = new System.Drawing.Size(75, 23);
+            this.ExitBut.TabIndex = 8;
+            this.ExitBut.Text = "Exit";
+            this.ExitBut.UseVisualStyleBackColor = true;
+            this.ExitBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ExitBut_MouseClick);
             // 
-            // lastUpdateDataGridViewTextBoxColumn
+            // WeeklyViewBut
             // 
-            this.lastUpdateDataGridViewTextBoxColumn.DataPropertyName = "lastUpdate";
-            this.lastUpdateDataGridViewTextBoxColumn.HeaderText = "lastUpdate";
-            this.lastUpdateDataGridViewTextBoxColumn.Name = "lastUpdateDataGridViewTextBoxColumn";
+            this.WeeklyViewBut.Location = new System.Drawing.Point(211, 444);
+            this.WeeklyViewBut.Name = "WeeklyViewBut";
+            this.WeeklyViewBut.Size = new System.Drawing.Size(75, 23);
+            this.WeeklyViewBut.TabIndex = 9;
+            this.WeeklyViewBut.Text = "Weeklyt";
+            this.WeeklyViewBut.UseVisualStyleBackColor = true;
             // 
-            // lastUpdateByDataGridViewTextBoxColumn
+            // MonthlyViewBut
             // 
-            this.lastUpdateByDataGridViewTextBoxColumn.DataPropertyName = "lastUpdateBy";
-            this.lastUpdateByDataGridViewTextBoxColumn.HeaderText = "lastUpdateBy";
-            this.lastUpdateByDataGridViewTextBoxColumn.Name = "lastUpdateByDataGridViewTextBoxColumn";
+            this.MonthlyViewBut.Location = new System.Drawing.Point(307, 444);
+            this.MonthlyViewBut.Name = "MonthlyViewBut";
+            this.MonthlyViewBut.Size = new System.Drawing.Size(75, 23);
+            this.MonthlyViewBut.TabIndex = 10;
+            this.MonthlyViewBut.Text = "Monthly";
+            this.MonthlyViewBut.UseVisualStyleBackColor = true;
+            // 
+            // ReportsMenuBut
+            // 
+            this.ReportsMenuBut.Location = new System.Drawing.Point(477, 444);
+            this.ReportsMenuBut.Name = "ReportsMenuBut";
+            this.ReportsMenuBut.Size = new System.Drawing.Size(75, 23);
+            this.ReportsMenuBut.TabIndex = 11;
+            this.ReportsMenuBut.Text = "Reports";
+            this.ReportsMenuBut.UseVisualStyleBackColor = true;
+            // 
+            // CustomerLabel
+            // 
+            this.CustomerLabel.AutoSize = true;
+            this.CustomerLabel.Location = new System.Drawing.Point(110, 51);
+            this.CustomerLabel.Name = "CustomerLabel";
+            this.CustomerLabel.Size = new System.Drawing.Size(94, 13);
+            this.CustomerLabel.TabIndex = 12;
+            this.CustomerLabel.Text = "Customer Records";
+            // 
+            // AppointementsLabel
+            // 
+            this.AppointementsLabel.AutoSize = true;
+            this.AppointementsLabel.Location = new System.Drawing.Point(607, 51);
+            this.AppointementsLabel.Name = "AppointementsLabel";
+            this.AppointementsLabel.Size = new System.Drawing.Size(71, 13);
+            this.AppointementsLabel.TabIndex = 13;
+            this.AppointementsLabel.Text = "Appointments";
+            // 
+            // customerTableAdapter
+            // 
+            this.customerTableAdapter.ClearBeforeFill = true;
+            // 
+            // appointmentTableAdapter
+            // 
+            this.appointmentTableAdapter.ClearBeforeFill = true;
             // 
             // MainDashboard
             // 
@@ -430,11 +430,11 @@
             this.Text = "MainDashboard";
             this.Load += new System.EventHandler(this.MainDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CustomerRecordsGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AppointmentsListGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AppointmentsListGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
