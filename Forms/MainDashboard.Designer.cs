@@ -72,12 +72,14 @@
             this.AppointementsLabel = new System.Windows.Forms.Label();
             this.customerTableAdapter = new SoftwareTwoProject.client_scheduleDataSetTableAdapters.customerTableAdapter();
             this.appointmentTableAdapter = new SoftwareTwoProject.client_scheduleDataSet1TableAdapters.appointmentTableAdapter();
+            this.CustomerInfoGrid = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerRecordsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AppointmentsListGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerInfoGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // CustomerRecordsGrid
@@ -407,11 +409,20 @@
             // 
             this.appointmentTableAdapter.ClearBeforeFill = true;
             // 
+            // CustomerInfoGrid
+            // 
+            this.CustomerInfoGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CustomerInfoGrid.Location = new System.Drawing.Point(197, 248);
+            this.CustomerInfoGrid.Name = "CustomerInfoGrid";
+            this.CustomerInfoGrid.Size = new System.Drawing.Size(240, 150);
+            this.CustomerInfoGrid.TabIndex = 14;
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 479);
+            this.Controls.Add(this.CustomerInfoGrid);
             this.Controls.Add(this.AppointementsLabel);
             this.Controls.Add(this.CustomerLabel);
             this.Controls.Add(this.ReportsMenuBut);
@@ -435,6 +446,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AppointmentsListGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerInfoGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,5 +497,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn createdByDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdateByDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView CustomerInfoGrid;
     }
 }

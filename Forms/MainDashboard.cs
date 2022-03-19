@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SoftwareTwoProject.Forms;
+using SoftwareTwoProject.Class;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace SoftwareTwoProject.Forms
@@ -16,9 +18,20 @@ namespace SoftwareTwoProject.Forms
         public MainDashboard()
         {
             InitializeComponent();
+            string x = Connection.connectstring;
+            MySqlConnection custtable = new MySqlConnection(x);
+            custtable.Open();
+
+            string CustJoinQuery = "select customerName, address, phone from customer t1 inner join address t2 on t1.addressId = t2.addressId " ;
+
+            MySqlCommand runCusjoin = new MySqlCommand(CustJoinQuery, custtable);
+            MySqlDataAdapter Cusprep = new MySqlDataAdapter(runCusjoin);
+            DataTable CusTableInfo = new DataTable();
+            Cusprep.Fill(CusTableInfo);
+            CustomerInfoGrid.DataSource = CusTableInfo;
 
             // NOTE need to change the datagrid view using linq to create a joined table that will show the required columns//
-            
+
         }
 
         private void ExitBut_MouseClick(object sender, MouseEventArgs e)
