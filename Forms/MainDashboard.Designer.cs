@@ -97,7 +97,7 @@
             this.lastUpdateDataGridViewTextBoxColumn,
             this.lastUpdateByDataGridViewTextBoxColumn});
             this.CustomerRecordsGrid.DataSource = this.customerBindingSource;
-            this.CustomerRecordsGrid.Location = new System.Drawing.Point(47, 81);
+            this.CustomerRecordsGrid.Location = new System.Drawing.Point(628, 248);
             this.CustomerRecordsGrid.Name = "CustomerRecordsGrid";
             this.CustomerRecordsGrid.Size = new System.Drawing.Size(310, 150);
             this.CustomerRecordsGrid.TabIndex = 0;
@@ -411,10 +411,11 @@
             // 
             // CustomerInfoGrid
             // 
+            this.CustomerInfoGrid.AllowUserToDeleteRows = false;
             this.CustomerInfoGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CustomerInfoGrid.Location = new System.Drawing.Point(197, 248);
+            this.CustomerInfoGrid.Location = new System.Drawing.Point(70, 81);
             this.CustomerInfoGrid.Name = "CustomerInfoGrid";
-            this.CustomerInfoGrid.Size = new System.Drawing.Size(240, 150);
+            this.CustomerInfoGrid.Size = new System.Drawing.Size(274, 150);
             this.CustomerInfoGrid.TabIndex = 14;
             // 
             // MainDashboard

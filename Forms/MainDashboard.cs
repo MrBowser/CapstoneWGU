@@ -22,7 +22,8 @@ namespace SoftwareTwoProject.Forms
             MySqlConnection custtable = new MySqlConnection(x);
             custtable.Open();
 
-            string CustJoinQuery = "select customerName, address, phone from customer t1 inner join address t2 on t1.addressId = t2.addressId " ;
+            string CustJoinQuery = "select customerName, customerId, address, phone" +
+                " from customer t1 inner join address t2 on t1.addressId = t2.addressId " ;
 
             MySqlCommand runCusjoin = new MySqlCommand(CustJoinQuery, custtable);
             MySqlDataAdapter Cusprep = new MySqlDataAdapter(runCusjoin);

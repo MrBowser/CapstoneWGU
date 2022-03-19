@@ -34,8 +34,10 @@
             this.CustIDBox = new System.Windows.Forms.TextBox();
             this.CustNameLabel = new System.Windows.Forms.Label();
             this.CustNameBox = new System.Windows.Forms.TextBox();
-            this.AddressIdLabel = new System.Windows.Forms.Label();
-            this.AddressIdBox = new System.Windows.Forms.TextBox();
+            this.PhoneLabel = new System.Windows.Forms.Label();
+            this.PhoneBox = new System.Windows.Forms.TextBox();
+            this.AddressLabel = new System.Windows.Forms.Label();
+            this.AddressBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // SubmitBut
@@ -61,7 +63,7 @@
             // CustIDLabel
             // 
             this.CustIDLabel.AutoSize = true;
-            this.CustIDLabel.Location = new System.Drawing.Point(56, 65);
+            this.CustIDLabel.Location = new System.Drawing.Point(51, 48);
             this.CustIDLabel.Name = "CustIDLabel";
             this.CustIDLabel.Size = new System.Drawing.Size(62, 13);
             this.CustIDLabel.TabIndex = 2;
@@ -69,7 +71,7 @@
             // 
             // CustIDBox
             // 
-            this.CustIDBox.Location = new System.Drawing.Point(124, 62);
+            this.CustIDBox.Location = new System.Drawing.Point(124, 45);
             this.CustIDBox.Name = "CustIDBox";
             this.CustIDBox.Size = new System.Drawing.Size(100, 20);
             this.CustIDBox.TabIndex = 3;
@@ -77,7 +79,7 @@
             // CustNameLabel
             // 
             this.CustNameLabel.AutoSize = true;
-            this.CustNameLabel.Location = new System.Drawing.Point(59, 98);
+            this.CustNameLabel.Location = new System.Drawing.Point(56, 85);
             this.CustNameLabel.Name = "CustNameLabel";
             this.CustNameLabel.Size = new System.Drawing.Size(35, 13);
             this.CustNameLabel.TabIndex = 4;
@@ -85,35 +87,52 @@
             // 
             // CustNameBox
             // 
-            this.CustNameBox.Location = new System.Drawing.Point(124, 95);
+            this.CustNameBox.Location = new System.Drawing.Point(124, 82);
             this.CustNameBox.Name = "CustNameBox";
             this.CustNameBox.Size = new System.Drawing.Size(100, 20);
             this.CustNameBox.TabIndex = 5;
             // 
-            // AddressIdLabel
+            // PhoneLabel
             // 
-            this.AddressIdLabel.AutoSize = true;
-            this.AddressIdLabel.Location = new System.Drawing.Point(56, 136);
-            this.AddressIdLabel.Name = "AddressIdLabel";
-            this.AddressIdLabel.Size = new System.Drawing.Size(57, 13);
-            this.AddressIdLabel.TabIndex = 6;
-            this.AddressIdLabel.Text = "Address Id";
-            this.AddressIdLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.PhoneLabel.AutoSize = true;
+            this.PhoneLabel.Location = new System.Drawing.Point(51, 128);
+            this.PhoneLabel.Name = "PhoneLabel";
+            this.PhoneLabel.Size = new System.Drawing.Size(38, 13);
+            this.PhoneLabel.TabIndex = 8;
+            this.PhoneLabel.Text = "Phone";
             // 
-            // AddressIdBox
+            // PhoneBox
             // 
-            this.AddressIdBox.Location = new System.Drawing.Point(124, 133);
-            this.AddressIdBox.Name = "AddressIdBox";
-            this.AddressIdBox.Size = new System.Drawing.Size(100, 20);
-            this.AddressIdBox.TabIndex = 7;
+            this.PhoneBox.Location = new System.Drawing.Point(124, 128);
+            this.PhoneBox.Name = "PhoneBox";
+            this.PhoneBox.Size = new System.Drawing.Size(100, 20);
+            this.PhoneBox.TabIndex = 9;
+            // 
+            // AddressLabel
+            // 
+            this.AddressLabel.AutoSize = true;
+            this.AddressLabel.Location = new System.Drawing.Point(56, 169);
+            this.AddressLabel.Name = "AddressLabel";
+            this.AddressLabel.Size = new System.Drawing.Size(45, 13);
+            this.AddressLabel.TabIndex = 10;
+            this.AddressLabel.Text = "Address";
+            // 
+            // AddressBox
+            // 
+            this.AddressBox.Location = new System.Drawing.Point(124, 166);
+            this.AddressBox.Name = "AddressBox";
+            this.AddressBox.Size = new System.Drawing.Size(100, 20);
+            this.AddressBox.TabIndex = 11;
             // 
             // AddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 459);
-            this.Controls.Add(this.AddressIdBox);
-            this.Controls.Add(this.AddressIdLabel);
+            this.Controls.Add(this.AddressBox);
+            this.Controls.Add(this.AddressLabel);
+            this.Controls.Add(this.PhoneBox);
+            this.Controls.Add(this.PhoneLabel);
             this.Controls.Add(this.CustNameBox);
             this.Controls.Add(this.CustNameLabel);
             this.Controls.Add(this.CustIDBox);
@@ -135,7 +154,9 @@
         private System.Windows.Forms.TextBox CustIDBox;
         private System.Windows.Forms.Label CustNameLabel;
         private System.Windows.Forms.TextBox CustNameBox;
-        private System.Windows.Forms.Label AddressIdLabel;
-        private System.Windows.Forms.TextBox AddressIdBox;
+        private System.Windows.Forms.Label PhoneLabel;
+        private System.Windows.Forms.TextBox PhoneBox;
+        private System.Windows.Forms.Label AddressLabel;
+        private System.Windows.Forms.TextBox AddressBox;
     }
 }

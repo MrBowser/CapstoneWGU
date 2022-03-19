@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Address.cs" />
     <Compile Include="Class\Connection.cs" />
     <Compile Include="Class\Customer.cs" />
     <Compile Include="client_scheduleDataSet.Designer.cs">
