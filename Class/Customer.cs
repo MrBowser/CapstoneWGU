@@ -12,8 +12,8 @@ namespace SoftwareTwoProject.Class
         public int customerID { get; set; }
         public string customerName { get; set; }
         public int addressId { get; set; }
-        public bool cusActive { get; set; }
-        public string createDate
+        public int cusActive { get; set; }
+        public DateTime createDate
         {
             get; set;
         }
@@ -21,7 +21,7 @@ namespace SoftwareTwoProject.Class
         {
             get; set;
         }
-        public string lastUpdate
+        public DateTime lastUpdate
         {
             get; set;
         }
@@ -35,14 +35,15 @@ namespace SoftwareTwoProject.Class
 
         public Customer(int ID,string Name, int adID)
         {
+            //DateTime x = new DateTime(2010,8,15) ;
             this.customerID = ID;
             this.customerName = Name;
             this.addressId = adID;
-            this.cusActive = true;
-            this.createBy = "Null";
-            this.createDate = "Null";
-            this.lastUpBy = "Null";
-            this.lastUpdate = "Null";
+            this.cusActive = 6;
+            this.createBy = "Mitch";
+            this.createDate = DateTime.UtcNow;
+            this.lastUpBy = "Mitch";
+            this.lastUpdate = DateTime.UtcNow;
 
         }
 

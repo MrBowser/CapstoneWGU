@@ -16,6 +16,9 @@ namespace SoftwareTwoProject.Forms
         public MainDashboard()
         {
             InitializeComponent();
+
+            // NOTE need to change the datagrid view using linq to create a joined table that will show the required columns//
+            
         }
 
         private void ExitBut_MouseClick(object sender, MouseEventArgs e)
