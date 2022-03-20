@@ -71,6 +71,7 @@
             // 
             // CustIDBox
             // 
+            this.CustIDBox.Enabled = false;
             this.CustIDBox.Location = new System.Drawing.Point(124, 45);
             this.CustIDBox.Name = "CustIDBox";
             this.CustIDBox.Size = new System.Drawing.Size(100, 20);

@@ -8,11 +8,8 @@ namespace SoftwareTwoProject.Class
 {
     class Address
     {
-        public static int addressIDcounter = 5;
+        public static int addressIDcounter ;
 
-        public void increaseID()
-        {
-            addressIDcounter++;
-        }
+        
     }
 }

@@ -9,6 +9,8 @@ namespace SoftwareTwoProject.Class
     public class Customer
     {
 
+        public static int customerIDNumber;
+
         public int customerID { get; set; }
         public string customerName { get; set; }
         public int addressId { get; set; }

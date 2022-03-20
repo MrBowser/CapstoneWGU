@@ -18,6 +18,19 @@ namespace SoftwareTwoProject.Forms
         public AddCustomer()
         {
             InitializeComponent();
+
+            string x = Connection.connectstring;
+            MySqlConnection custtable = new MySqlConnection(x);
+            string getCustCount = "Select Count(*) from customer";
+            custtable.Open();
+
+            MySqlCommand custCountQuery = new MySqlCommand (getCustCount, custtable);
+            object getCount = custCountQuery.ExecuteScalar();
+            int a = Convert.ToInt32(getCount.ToString());
+            Customer.customerIDNumber = a + 1;
+
+            CustIDBox.Text = $"{Customer.customerIDNumber}";
+            
             
             
         }
@@ -32,10 +45,12 @@ namespace SoftwareTwoProject.Forms
         private void SubmitBut_MouseClick(object sender, MouseEventArgs e)
         {
 
-            int custID = 55;
+            int custID = Customer.customerIDNumber;
+            Customer.customerIDNumber++;
             int adID =-1;
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);
+            
 
 
 
@@ -90,8 +105,18 @@ namespace SoftwareTwoProject.Forms
 
             if(adID ==-1)
             {
+ 
+                custtable.Open();
+                string addressCount = "Select Count(*) from address";
+                MySqlCommand addressCountQuery = new MySqlCommand(addressCount, custtable);
+                object getAdCount = addressCountQuery.ExecuteScalar();
+                int b = Convert.ToInt32(getAdCount.ToString());
+
+                Address.addressIDcounter = b + 1;
+
                 adID = Address.addressIDcounter;
-                Address.addressIDcounter++;
+                custtable.Close();
+
                 custtable.Open();
                 string addAddressQuery = $"Insert Into address VALUES('{adID}','{AddressBox.Text}','test','3','12345','{PhoneBox.Text}','2013-09-09 00:00:00', 'test','2013-09-09 00:00:00','test') ";
                 MySqlCommand addAddress = new MySqlCommand(addAddressQuery, custtable);
@@ -123,5 +148,6 @@ namespace SoftwareTwoProject.Forms
         List<string> phonenumbers = new List<string>();
         List<string> addresses = new List<string>();
         List<string> addressIDlist = new List<string>();
+        
     }
 }
