@@ -30,6 +30,14 @@
         {
             this.SubmitBut = new System.Windows.Forms.Button();
             this.CancelBut = new System.Windows.Forms.Button();
+            this.CustomerIdLabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.PhoneLabel = new System.Windows.Forms.Label();
+            this.AddressLabel = new System.Windows.Forms.Label();
+            this.CustomerBox = new System.Windows.Forms.TextBox();
+            this.NameBox = new System.Windows.Forms.TextBox();
+            this.PhoneBox = new System.Windows.Forms.TextBox();
+            this.AddressBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // SubmitBut
@@ -52,16 +60,89 @@
             this.CancelBut.UseVisualStyleBackColor = true;
             this.CancelBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CancelBut_MouseClick);
             // 
+            // CustomerIdLabel
+            // 
+            this.CustomerIdLabel.AutoSize = true;
+            this.CustomerIdLabel.Location = new System.Drawing.Point(55, 60);
+            this.CustomerIdLabel.Name = "CustomerIdLabel";
+            this.CustomerIdLabel.Size = new System.Drawing.Size(60, 13);
+            this.CustomerIdLabel.TabIndex = 2;
+            this.CustomerIdLabel.Text = "CustomerId";
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(55, 106);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(35, 13);
+            this.NameLabel.TabIndex = 3;
+            this.NameLabel.Text = "Name";
+            // 
+            // PhoneLabel
+            // 
+            this.PhoneLabel.AutoSize = true;
+            this.PhoneLabel.Location = new System.Drawing.Point(55, 148);
+            this.PhoneLabel.Name = "PhoneLabel";
+            this.PhoneLabel.Size = new System.Drawing.Size(38, 13);
+            this.PhoneLabel.TabIndex = 4;
+            this.PhoneLabel.Text = "Phone";
+            // 
+            // AddressLabel
+            // 
+            this.AddressLabel.AutoSize = true;
+            this.AddressLabel.Location = new System.Drawing.Point(58, 191);
+            this.AddressLabel.Name = "AddressLabel";
+            this.AddressLabel.Size = new System.Drawing.Size(45, 13);
+            this.AddressLabel.TabIndex = 5;
+            this.AddressLabel.Text = "Address";
+            // 
+            // CustomerBox
+            // 
+            this.CustomerBox.Location = new System.Drawing.Point(138, 57);
+            this.CustomerBox.Name = "CustomerBox";
+            this.CustomerBox.Size = new System.Drawing.Size(100, 20);
+            this.CustomerBox.TabIndex = 6;
+            // 
+            // NameBox
+            // 
+            this.NameBox.Location = new System.Drawing.Point(138, 106);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(100, 20);
+            this.NameBox.TabIndex = 7;
+            // 
+            // PhoneBox
+            // 
+            this.PhoneBox.Location = new System.Drawing.Point(138, 148);
+            this.PhoneBox.Name = "PhoneBox";
+            this.PhoneBox.Size = new System.Drawing.Size(100, 20);
+            this.PhoneBox.TabIndex = 8;
+            // 
+            // AddressBox
+            // 
+            this.AddressBox.Location = new System.Drawing.Point(138, 188);
+            this.AddressBox.Name = "AddressBox";
+            this.AddressBox.Size = new System.Drawing.Size(100, 20);
+            this.AddressBox.TabIndex = 9;
+            // 
             // EditCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 485);
+            this.Controls.Add(this.AddressBox);
+            this.Controls.Add(this.PhoneBox);
+            this.Controls.Add(this.NameBox);
+            this.Controls.Add(this.CustomerBox);
+            this.Controls.Add(this.AddressLabel);
+            this.Controls.Add(this.PhoneLabel);
+            this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.CustomerIdLabel);
             this.Controls.Add(this.CancelBut);
             this.Controls.Add(this.SubmitBut);
             this.Name = "EditCustomer";
             this.Text = "EditCustomer";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -69,5 +150,13 @@
 
         private System.Windows.Forms.Button SubmitBut;
         private System.Windows.Forms.Button CancelBut;
+        private System.Windows.Forms.Label CustomerIdLabel;
+        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Label PhoneLabel;
+        private System.Windows.Forms.Label AddressLabel;
+        private System.Windows.Forms.TextBox CustomerBox;
+        private System.Windows.Forms.TextBox NameBox;
+        private System.Windows.Forms.TextBox PhoneBox;
+        private System.Windows.Forms.TextBox AddressBox;
     }
 }

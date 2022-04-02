@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.CustomerRecordsGrid = new System.Windows.Forms.DataGridView();
-            this.customerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.createDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastUpdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastUpdateByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.client_scheduleDataSet = new SoftwareTwoProject.client_scheduleDataSet();
             this.AddCustomerBut = new System.Windows.Forms.Button();
@@ -73,7 +64,6 @@
             this.customerTableAdapter = new SoftwareTwoProject.client_scheduleDataSetTableAdapters.customerTableAdapter();
             this.appointmentTableAdapter = new SoftwareTwoProject.client_scheduleDataSet1TableAdapters.appointmentTableAdapter();
             this.CustomerInfoGrid = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerRecordsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AppointmentsListGrid)).BeginInit();
@@ -81,74 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerInfoGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // CustomerRecordsGrid
-            // 
-            this.CustomerRecordsGrid.AllowUserToAddRows = false;
-            this.CustomerRecordsGrid.AutoGenerateColumns = false;
-            this.CustomerRecordsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CustomerRecordsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.customerIdDataGridViewTextBoxColumn,
-            this.customerNameDataGridViewTextBoxColumn,
-            this.addressIdDataGridViewTextBoxColumn,
-            this.activeDataGridViewCheckBoxColumn,
-            this.createDateDataGridViewTextBoxColumn,
-            this.createdByDataGridViewTextBoxColumn,
-            this.lastUpdateDataGridViewTextBoxColumn,
-            this.lastUpdateByDataGridViewTextBoxColumn});
-            this.CustomerRecordsGrid.DataSource = this.customerBindingSource;
-            this.CustomerRecordsGrid.Location = new System.Drawing.Point(628, 248);
-            this.CustomerRecordsGrid.Name = "CustomerRecordsGrid";
-            this.CustomerRecordsGrid.Size = new System.Drawing.Size(310, 150);
-            this.CustomerRecordsGrid.TabIndex = 0;
-            // 
-            // customerIdDataGridViewTextBoxColumn
-            // 
-            this.customerIdDataGridViewTextBoxColumn.DataPropertyName = "customerId";
-            this.customerIdDataGridViewTextBoxColumn.HeaderText = "customerId";
-            this.customerIdDataGridViewTextBoxColumn.Name = "customerIdDataGridViewTextBoxColumn";
-            // 
-            // customerNameDataGridViewTextBoxColumn
-            // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "customerName";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "customerName";
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            // 
-            // addressIdDataGridViewTextBoxColumn
-            // 
-            this.addressIdDataGridViewTextBoxColumn.DataPropertyName = "addressId";
-            this.addressIdDataGridViewTextBoxColumn.HeaderText = "addressId";
-            this.addressIdDataGridViewTextBoxColumn.Name = "addressIdDataGridViewTextBoxColumn";
-            // 
-            // activeDataGridViewCheckBoxColumn
-            // 
-            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "active";
-            this.activeDataGridViewCheckBoxColumn.HeaderText = "active";
-            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
-            // 
-            // createDateDataGridViewTextBoxColumn
-            // 
-            this.createDateDataGridViewTextBoxColumn.DataPropertyName = "createDate";
-            this.createDateDataGridViewTextBoxColumn.HeaderText = "createDate";
-            this.createDateDataGridViewTextBoxColumn.Name = "createDateDataGridViewTextBoxColumn";
-            // 
-            // createdByDataGridViewTextBoxColumn
-            // 
-            this.createdByDataGridViewTextBoxColumn.DataPropertyName = "createdBy";
-            this.createdByDataGridViewTextBoxColumn.HeaderText = "createdBy";
-            this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
-            // 
-            // lastUpdateDataGridViewTextBoxColumn
-            // 
-            this.lastUpdateDataGridViewTextBoxColumn.DataPropertyName = "lastUpdate";
-            this.lastUpdateDataGridViewTextBoxColumn.HeaderText = "lastUpdate";
-            this.lastUpdateDataGridViewTextBoxColumn.Name = "lastUpdateDataGridViewTextBoxColumn";
-            // 
-            // lastUpdateByDataGridViewTextBoxColumn
-            // 
-            this.lastUpdateByDataGridViewTextBoxColumn.DataPropertyName = "lastUpdateBy";
-            this.lastUpdateByDataGridViewTextBoxColumn.HeaderText = "lastUpdateBy";
-            this.lastUpdateByDataGridViewTextBoxColumn.Name = "lastUpdateByDataGridViewTextBoxColumn";
             // 
             // customerBindingSource
             // 
@@ -411,6 +333,7 @@
             // 
             // CustomerInfoGrid
             // 
+            this.CustomerInfoGrid.AllowUserToAddRows = false;
             this.CustomerInfoGrid.AllowUserToDeleteRows = false;
             this.CustomerInfoGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CustomerInfoGrid.Location = new System.Drawing.Point(70, 81);
@@ -437,11 +360,9 @@
             this.Controls.Add(this.DeleteCustomerBut);
             this.Controls.Add(this.EditCustomerBut);
             this.Controls.Add(this.AddCustomerBut);
-            this.Controls.Add(this.CustomerRecordsGrid);
             this.Name = "MainDashboard";
             this.Text = "MainDashboard";
             this.Load += new System.EventHandler(this.MainDashboard_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerRecordsGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AppointmentsListGrid)).EndInit();
@@ -454,8 +375,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView CustomerRecordsGrid;
         private System.Windows.Forms.Button AddCustomerBut;
         private System.Windows.Forms.Button EditCustomerBut;
         private System.Windows.Forms.Button DeleteCustomerBut;
@@ -490,14 +409,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn createdByDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdateDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdateByDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn activeDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdByDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdateByDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView CustomerInfoGrid;
     }
 }

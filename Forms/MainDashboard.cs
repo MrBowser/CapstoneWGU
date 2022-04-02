@@ -49,6 +49,19 @@ namespace SoftwareTwoProject.Forms
 
         private void EditCustomerBut_MouseClick(object sender, MouseEventArgs e)
         {
+
+             int selectedRowIndex = CustomerInfoGrid.CurrentCell.RowIndex;
+
+            
+
+            DataGridViewRow selectedRow = CustomerInfoGrid.Rows[selectedRowIndex];
+
+            string editId = Convert.ToString(selectedRow.Cells[1].Value);
+
+            MessageBox.Show(Convert.ToString(editId));
+
+
+            
             EditCustomer editCustomer = new EditCustomer();
             editCustomer.Show();
             this.Close();
@@ -63,6 +76,8 @@ namespace SoftwareTwoProject.Forms
 
         private void EditAppointmentsBut_MouseClick(object sender, MouseEventArgs e)
         {
+                        
+            
             EditAppointment editAppointment = new EditAppointment();
             editAppointment.Show();
             this.Close();
