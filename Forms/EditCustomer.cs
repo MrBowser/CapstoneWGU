@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SoftwareTwoProject.Class;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace SoftwareTwoProject.Forms
@@ -15,6 +17,11 @@ namespace SoftwareTwoProject.Forms
         public EditCustomer()
         {
             InitializeComponent();
+
+            string x = Connection.connectstring;
+            MySqlConnection custtable = new MySqlConnection(x);
+            string getCustCount = $"Select * from customer where customerId = ${Customer.editcustomerID}";
+            custtable.Open();
         }
 
         private void CancelBut_MouseClick(object sender, MouseEventArgs e)

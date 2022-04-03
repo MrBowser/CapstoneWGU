@@ -11,8 +11,8 @@ namespace SoftwareTwoProject.Class
 
         public static int customerIDNumber;
 
-        //belowis not used
-        public static string editcustomer;
+        //used to capture the customer id to edit
+        public static string editcustomerID;
 
         public int customerID { get; set; }
         public string customerName { get; set; }

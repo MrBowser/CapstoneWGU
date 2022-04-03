@@ -58,7 +58,11 @@ namespace SoftwareTwoProject.Forms
 
             string editId = Convert.ToString(selectedRow.Cells[1].Value);
 
+
+
             MessageBox.Show(Convert.ToString(editId));
+
+            Customer.editcustomerID = editId;
 
 
             
