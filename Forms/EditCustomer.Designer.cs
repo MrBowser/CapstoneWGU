@@ -98,6 +98,7 @@
             // 
             // CustomerBox
             // 
+            this.CustomerBox.Enabled = false;
             this.CustomerBox.Location = new System.Drawing.Point(138, 57);
             this.CustomerBox.Name = "CustomerBox";
             this.CustomerBox.Size = new System.Drawing.Size(100, 20);
