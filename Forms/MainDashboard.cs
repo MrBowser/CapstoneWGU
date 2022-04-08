@@ -99,6 +99,25 @@ namespace SoftwareTwoProject.Forms
         private void DeleteCustomerBut_MouseClick(object sender, MouseEventArgs e)
         {
 
+            int selectedRowIndex = CustomerInfoGrid.CurrentCell.RowIndex;
+
+
+
+            DataGridViewRow selectedRow = CustomerInfoGrid.Rows[selectedRowIndex];
+
+            string editId = Convert.ToString(selectedRow.Cells[1].Value);
+
+            MessageBox.Show(Convert.ToString(editId));
+
+            string x = Connection.connectstring;
+            MySqlConnection custtable = new MySqlConnection(x);
+            custtable.Open();
+
+            //delete from appointments where customerId = editID;
+            // delete from customer where customerID = editID
+
+
+
         }
     }
 }
