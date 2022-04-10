@@ -32,7 +32,7 @@ namespace SoftwareTwoProject.Forms
 
             CustIDBox.Text = $"{Customer.customerIDNumber}";
             
-            //need to refactor so it is the maxcustID +1
+            //need to refactor so it is the maxcustID +1 note refactor done
 
             
             

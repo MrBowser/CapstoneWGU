@@ -18,6 +18,8 @@ namespace SoftwareTwoProject.Forms
         public MainDashboard()
         {
             InitializeComponent();
+
+            // NOTE: This creates and fills the customer table with the needed columns from bother customer and address
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);
             custtable.Open();
@@ -31,7 +33,22 @@ namespace SoftwareTwoProject.Forms
             Cusprep.Fill(CusTableInfo);
             CustomerInfoGrid.DataSource = CusTableInfo;
 
-            // NOTE need to change the datagrid view using linq to create a joined table that will show the required columns//
+            custtable.Close();
+
+            // NOTE: This creates and fills the appointments table with the needed columns from appointments
+
+            custtable.Open();
+            string appointmentsQuery = "select appointmentId, customerId, type" +
+                " from appointment";
+
+            MySqlCommand SQLappointmentcol = new MySqlCommand(appointmentsQuery, custtable);
+            MySqlDataAdapter appointprep = new MySqlDataAdapter(SQLappointmentcol);
+            DataTable AppointmentTableInfo = new DataTable();
+            appointprep.Fill(AppointmentTableInfo);
+            AppointmentInfoGrid.DataSource = AppointmentTableInfo;
+
+
+
 
         }
 
