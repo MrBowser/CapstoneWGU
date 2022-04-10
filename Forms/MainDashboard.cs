@@ -113,6 +113,36 @@ namespace SoftwareTwoProject.Forms
             MySqlConnection custtable = new MySqlConnection(x);
             custtable.Open();
 
+            string appointdel = $"delete from appointment where customerId = {editId} ";
+
+            MySqlCommand sqlappointdel = new MySqlCommand(appointdel, custtable);
+
+            sqlappointdel.ExecuteNonQuery();
+
+            custtable.Close();
+
+            custtable.Open();
+
+            string custdel = $"delete from customer where customerId = {editId}";
+            MySqlCommand sqlcustdel = new MySqlCommand(custdel, custtable);
+            sqlcustdel.ExecuteNonQuery();
+
+            custtable.Close();
+
+            string CustJoinQuery = "select customerName, customerId, address, phone" +
+               " from customer t1 inner join address t2 on t1.addressId = t2.addressId ";
+
+            custtable.Open();
+
+            MySqlCommand runCusjoin = new MySqlCommand(CustJoinQuery, custtable);
+            MySqlDataAdapter Cusprep = new MySqlDataAdapter(runCusjoin);
+            DataTable CusTableInfo = new DataTable();
+            Cusprep.Fill(CusTableInfo);
+            CustomerInfoGrid.DataSource = CusTableInfo;
+
+            custtable.Close();
+
+
             //delete from appointments where customerId = editID;
             // delete from customer where customerID = editID
 
