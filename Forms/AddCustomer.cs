@@ -21,16 +21,19 @@ namespace SoftwareTwoProject.Forms
 
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);
-            string getCustCount = "Select Count(*) from customer";
+            
+            string getCustIDMAX = "Select Max(customerID) from customer";
             custtable.Open();
 
-            MySqlCommand custCountQuery = new MySqlCommand (getCustCount, custtable);
+            MySqlCommand custCountQuery = new MySqlCommand (getCustIDMAX, custtable);
             object getCount = custCountQuery.ExecuteScalar();
             int a = Convert.ToInt32(getCount.ToString());
             Customer.customerIDNumber = a + 1;
 
             CustIDBox.Text = $"{Customer.customerIDNumber}";
             
+            //need to refactor so it is the maxcustID +1
+
             
             
         }
