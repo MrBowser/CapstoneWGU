@@ -34,10 +34,12 @@
             this.CustomerIdLabel = new System.Windows.Forms.Label();
             this.AppointmentTypeLabel = new System.Windows.Forms.Label();
             this.AppointmentDateLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.ApIdBox = new System.Windows.Forms.TextBox();
+            this.CusIdBox = new System.Windows.Forms.TextBox();
+            this.TypeBox = new System.Windows.Forms.TextBox();
+            this.DateBox = new System.Windows.Forms.TextBox();
+            this.UserIdLabel = new System.Windows.Forms.Label();
+            this.UsIdBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // SubmitBut
@@ -63,7 +65,7 @@
             // AppointmentIdLabel
             // 
             this.AppointmentIdLabel.AutoSize = true;
-            this.AppointmentIdLabel.Location = new System.Drawing.Point(48, 71);
+            this.AppointmentIdLabel.Location = new System.Drawing.Point(48, 31);
             this.AppointmentIdLabel.Name = "AppointmentIdLabel";
             this.AppointmentIdLabel.Size = new System.Drawing.Size(75, 13);
             this.AppointmentIdLabel.TabIndex = 2;
@@ -72,7 +74,7 @@
             // CustomerIdLabel
             // 
             this.CustomerIdLabel.AutoSize = true;
-            this.CustomerIdLabel.Location = new System.Drawing.Point(48, 112);
+            this.CustomerIdLabel.Location = new System.Drawing.Point(48, 81);
             this.CustomerIdLabel.Name = "CustomerIdLabel";
             this.CustomerIdLabel.Size = new System.Drawing.Size(60, 13);
             this.CustomerIdLabel.TabIndex = 3;
@@ -81,7 +83,7 @@
             // AppointmentTypeLabel
             // 
             this.AppointmentTypeLabel.AutoSize = true;
-            this.AppointmentTypeLabel.Location = new System.Drawing.Point(48, 159);
+            this.AppointmentTypeLabel.Location = new System.Drawing.Point(58, 229);
             this.AppointmentTypeLabel.Name = "AppointmentTypeLabel";
             this.AppointmentTypeLabel.Size = new System.Drawing.Size(31, 13);
             this.AppointmentTypeLabel.TabIndex = 4;
@@ -90,49 +92,68 @@
             // AppointmentDateLabel
             // 
             this.AppointmentDateLabel.AutoSize = true;
-            this.AppointmentDateLabel.Location = new System.Drawing.Point(51, 219);
+            this.AppointmentDateLabel.Location = new System.Drawing.Point(59, 279);
             this.AppointmentDateLabel.Name = "AppointmentDateLabel";
             this.AppointmentDateLabel.Size = new System.Drawing.Size(30, 13);
             this.AppointmentDateLabel.TabIndex = 5;
             this.AppointmentDateLabel.Text = "Date";
             // 
-            // textBox1
+            // ApIdBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.ApIdBox.Enabled = false;
+            this.ApIdBox.Location = new System.Drawing.Point(144, 31);
+            this.ApIdBox.Name = "ApIdBox";
+            this.ApIdBox.Size = new System.Drawing.Size(100, 20);
+            this.ApIdBox.TabIndex = 6;
             // 
-            // textBox2
+            // CusIdBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(144, 104);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 7;
+            this.CusIdBox.Location = new System.Drawing.Point(144, 81);
+            this.CusIdBox.Name = "CusIdBox";
+            this.CusIdBox.Size = new System.Drawing.Size(100, 20);
+            this.CusIdBox.TabIndex = 7;
             // 
-            // textBox3
+            // TypeBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(144, 159);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 8;
+            this.TypeBox.Location = new System.Drawing.Point(144, 222);
+            this.TypeBox.Name = "TypeBox";
+            this.TypeBox.Size = new System.Drawing.Size(100, 20);
+            this.TypeBox.TabIndex = 8;
             // 
-            // textBox4
+            // DateBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(144, 219);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 9;
+            this.DateBox.Location = new System.Drawing.Point(144, 276);
+            this.DateBox.Name = "DateBox";
+            this.DateBox.Size = new System.Drawing.Size(100, 20);
+            this.DateBox.TabIndex = 9;
+            // 
+            // UserIdLabel
+            // 
+            this.UserIdLabel.AutoSize = true;
+            this.UserIdLabel.Location = new System.Drawing.Point(58, 137);
+            this.UserIdLabel.Name = "UserIdLabel";
+            this.UserIdLabel.Size = new System.Drawing.Size(38, 13);
+            this.UserIdLabel.TabIndex = 10;
+            this.UserIdLabel.Text = "UserId";
+            // 
+            // UsIdBox
+            // 
+            this.UsIdBox.Location = new System.Drawing.Point(144, 134);
+            this.UsIdBox.Name = "UsIdBox";
+            this.UsIdBox.Size = new System.Drawing.Size(100, 20);
+            this.UsIdBox.TabIndex = 11;
             // 
             // AddAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 426);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.UsIdBox);
+            this.Controls.Add(this.UserIdLabel);
+            this.Controls.Add(this.DateBox);
+            this.Controls.Add(this.TypeBox);
+            this.Controls.Add(this.CusIdBox);
+            this.Controls.Add(this.ApIdBox);
             this.Controls.Add(this.AppointmentDateLabel);
             this.Controls.Add(this.AppointmentTypeLabel);
             this.Controls.Add(this.CustomerIdLabel);
@@ -154,9 +175,11 @@
         private System.Windows.Forms.Label CustomerIdLabel;
         private System.Windows.Forms.Label AppointmentTypeLabel;
         private System.Windows.Forms.Label AppointmentDateLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox ApIdBox;
+        private System.Windows.Forms.TextBox CusIdBox;
+        private System.Windows.Forms.TextBox TypeBox;
+        private System.Windows.Forms.TextBox DateBox;
+        private System.Windows.Forms.Label UserIdLabel;
+        private System.Windows.Forms.TextBox UsIdBox;
     }
 }
