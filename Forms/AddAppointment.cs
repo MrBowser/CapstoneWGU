@@ -57,6 +57,21 @@ namespace SoftwareTwoProject.Forms
 
             //note incomplete need to check if text box is in list.
 
+            AppTable.Close();
+
+            for (int i = 0; i < CusIds.Count; i++)
+            {
+                if(CusIdBox.Text == CusIds[i])
+                {
+                    custId = int.Parse(CusIdBox.Text);
+                }
+                else
+                {
+                    //need to have custId = a max custID+1
+                }
+
+            }
+
 
             MainDashboard mainDashboard = new MainDashboard();
             mainDashboard.Show();
