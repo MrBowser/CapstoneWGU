@@ -135,6 +135,7 @@
             this.DeleteAppointmentsBut.TabIndex = 7;
             this.DeleteAppointmentsBut.Text = "Delete";
             this.DeleteAppointmentsBut.UseVisualStyleBackColor = true;
+            this.DeleteAppointmentsBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DeleteAppointmentsBut_MouseClick);
             // 
             // ExitBut
             // 

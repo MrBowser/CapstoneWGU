@@ -182,5 +182,40 @@ namespace SoftwareTwoProject.Forms
 
 
         }
+
+        private void DeleteAppointmentsBut_MouseClick(object sender, MouseEventArgs e)
+        {
+            int selectedRowIndex = AppointmentInfoGrid.CurrentCell.RowIndex;
+
+
+
+            DataGridViewRow selectedRow = AppointmentInfoGrid.Rows[selectedRowIndex];
+
+            string editId = Convert.ToString(selectedRow.Cells[0].Value);
+
+            string x = Connection.connectstring;
+            MySqlConnection custtable = new MySqlConnection(x);
+            custtable.Open();
+
+            string appointdel = $"delete from appointment where appointmentId = {editId} ";
+
+            MySqlCommand sqlappointdel = new MySqlCommand(appointdel, custtable);
+
+            sqlappointdel.ExecuteNonQuery();
+
+            custtable.Close();
+
+            custtable.Open();
+            string appointmentsQuery = "select appointmentId, customerId, type" +
+                " from appointment";
+
+            MySqlCommand SQLappointmentcol = new MySqlCommand(appointmentsQuery, custtable);
+            MySqlDataAdapter appointprep = new MySqlDataAdapter(SQLappointmentcol);
+            DataTable AppointmentTableInfo = new DataTable();
+            appointprep.Fill(AppointmentTableInfo);
+            AppointmentInfoGrid.DataSource = AppointmentTableInfo;
+
+            custtable.Close();
+        }
     }
 }
