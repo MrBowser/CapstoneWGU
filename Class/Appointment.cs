@@ -9,5 +9,7 @@ namespace SoftwareTwoProject.Class
     public class Appointment
     {
         public static int AppointmentIdCounter;
+
+        public static string editAppointmentId;
     }
 }

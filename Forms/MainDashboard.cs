@@ -50,6 +50,8 @@ namespace SoftwareTwoProject.Forms
 
 
 
+
+
         }
 
         private void ExitBut_MouseClick(object sender, MouseEventArgs e)
@@ -97,8 +99,22 @@ namespace SoftwareTwoProject.Forms
 
         private void EditAppointmentsBut_MouseClick(object sender, MouseEventArgs e)
         {
-                        
-            
+
+            int selectedRowIndex = AppointmentInfoGrid.CurrentCell.RowIndex;
+
+
+
+            DataGridViewRow selectedRow = AppointmentInfoGrid.Rows[selectedRowIndex];
+
+            string editId = Convert.ToString(selectedRow.Cells[1].Value);
+
+
+
+            MessageBox.Show(Convert.ToString(editId));
+
+            Appointment.editAppointmentId = editId;
+
+
             EditAppointment editAppointment = new EditAppointment();
             editAppointment.Show();
             this.Close();

@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using SoftwareTwoProject.Class;
 using System.Windows.Forms;
 
 namespace SoftwareTwoProject.Forms
@@ -15,6 +17,27 @@ namespace SoftwareTwoProject.Forms
         public EditAppointment()
         {
             InitializeComponent();
+
+            string x = Connection.connectstring;
+            MySqlConnection custtable = new MySqlConnection(x);
+            string getappIDinfo = $"Select * from address where addressId = {Appointment.editAppointmentId}";
+            custtable.Open();
+
+            MySqlCommand appIdInfo = new MySqlCommand(getappIDinfo, custtable);
+            MySqlDataReader appinfo = appIdInfo.ExecuteReader();
+
+            while (appinfo.Read())
+            {
+                custId = appinfo.GetString("customerId");
+                appId = appinfo.GetString("appointmentId");
+                userId = appinfo.GetString("userId");
+                appType = appinfo.GetString("Type");
+
+
+
+            }
+
+            custtable.Close();
         }
 
         private void SubmitBut_MouseClick(object sender, MouseEventArgs e)
@@ -30,5 +53,11 @@ namespace SoftwareTwoProject.Forms
             mainDashboard.Show();
             this.Close();
         }
+
+        string appId;
+        string custId;
+        string userId;
+        string appType;
+
     }
 }
