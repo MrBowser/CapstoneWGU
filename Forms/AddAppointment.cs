@@ -30,6 +30,23 @@ namespace SoftwareTwoProject.Forms
 
             ApIdBox.Text = $"{Appointment.AppointmentIdCounter}";
 
+            custtable.Close();
+
+           /* string custIdMax = "Select Max(customerId) from customer";
+            custtable.Open();
+
+            MySqlCommand custMaxQuery = new MySqlCommand(custIdMax, custtable);
+            object getCustMax = custMaxQuery.ExecuteScalar();
+            int b = Convert.ToInt32(getCustMax.ToString());
+            custIdDef = b;
+
+            custtable.Close();
+
+            */
+
+
+
+
         }
 
         private void SubmitBut_MouseClick(object sender, MouseEventArgs e)
@@ -38,7 +55,7 @@ namespace SoftwareTwoProject.Forms
 
             int AppId = Appointment.AppointmentIdCounter;
             Appointment.AppointmentIdCounter++;
-            int custId = -1;
+            
             int userId = -1;
             string x = Connection.connectstring;
             MySqlConnection AppTable = new MySqlConnection(x);
@@ -63,14 +80,61 @@ namespace SoftwareTwoProject.Forms
             {
                 if(CusIdBox.Text == CusIds[i])
                 {
-                    custId = int.Parse(CusIdBox.Text);
-                }
-                else
-                {
-                    //need to have custId = a max custID+1
+                    custIdDef = int.Parse(CusIdBox.Text);
+                    break;
                 }
 
+
             }
+
+            AppTable.Open();
+            string userIDquery = "select userId from user";
+            MySqlCommand userIDqueryp2 = new MySqlCommand(userIDquery, AppTable);
+            MySqlDataReader userIDqueryp3 = userIDqueryp2.ExecuteReader();
+
+            while(userIDqueryp3.Read())
+            {
+                UserIds.Add(userIDqueryp3.GetString("userId"));
+
+            }
+
+            AppTable.Close();
+
+            for (int i = 0; i < UserIds.Count;i++)
+            {
+                if(UsIdBox.Text == UserIds[i])
+                {
+                    userId = int.Parse(UsIdBox.Text);
+                    break;
+                }
+            }
+
+
+
+
+
+            try
+            {
+                if (custIdDef == -1)
+                {
+                    throw new Exception("CustomerId Doesn't Exist, Please try a valid CustomerId ");
+                }
+
+                if (userId == -1)
+                {
+                    throw new Exception(" userId doesn't exist, please try a valid userId");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                
+            }
+
+            //note need to remember to push dashboard show and this close up to the try blck or else will continue
+            
+
+
 
 
             MainDashboard mainDashboard = new MainDashboard();
@@ -86,5 +150,7 @@ namespace SoftwareTwoProject.Forms
         }
 
         List<string> CusIds = new List<string>();
+        List<string> UserIds = new List<string>();
+        int custIdDef = -1;
     }
 }
