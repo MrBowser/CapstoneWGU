@@ -106,7 +106,7 @@ namespace SoftwareTwoProject.Forms
 
             DataGridViewRow selectedRow = AppointmentInfoGrid.Rows[selectedRowIndex];
 
-            string editId = Convert.ToString(selectedRow.Cells[1].Value);
+            string editId = Convert.ToString(selectedRow.Cells[0].Value);
 
 
 

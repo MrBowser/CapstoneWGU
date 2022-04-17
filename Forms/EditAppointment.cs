@@ -20,7 +20,7 @@ namespace SoftwareTwoProject.Forms
 
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);
-            string getappIDinfo = $"Select * from address where addressId = {Appointment.editAppointmentId}";
+            string getappIDinfo = $"Select appointmentId, customerId, userId, type from appointment where appointmentId = {Appointment.editAppointmentId}";
             custtable.Open();
 
             MySqlCommand appIdInfo = new MySqlCommand(getappIDinfo, custtable);
@@ -31,13 +31,19 @@ namespace SoftwareTwoProject.Forms
                 custId = appinfo.GetString("customerId");
                 appId = appinfo.GetString("appointmentId");
                 userId = appinfo.GetString("userId");
-                appType = appinfo.GetString("Type");
+                appType = appinfo.GetString("type");
 
 
 
             }
 
             custtable.Close();
+
+            AppIDBox.Text = appId;
+            CustomerIdBox.Text = custId;
+            UserIdBox.Text = userId;
+            TypeBox.Text = appType;
+
         }
 
         private void SubmitBut_MouseClick(object sender, MouseEventArgs e)
