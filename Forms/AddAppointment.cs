@@ -124,6 +124,17 @@ namespace SoftwareTwoProject.Forms
                 {
                     throw new Exception(" userId doesn't exist, please try a valid userId");
                 }
+
+                string addAppointmentQuery = $"insert into appointment VALUES ('{ApIdBox.Text}','{CusIdBox.Text}','{UsIdBox.Text}','not needed','not needed','not needed','not needed','{TypeBox.Text}','not needed','2019-01-01 00:00:00','2019-01-01 00:00:00','2019-01-01 00:00:00','test','2019-01-01 00:00:00','test')";
+                AppTable.Open();
+                MySqlCommand addAppointmentCom = new MySqlCommand(addAppointmentQuery, AppTable);
+                addAppointmentCom.ExecuteNonQuery();
+
+                MainDashboard mainDashboard = new MainDashboard();
+                mainDashboard.Show();
+                this.Close();
+
+
             }
             catch (Exception ex)
             {
@@ -131,15 +142,15 @@ namespace SoftwareTwoProject.Forms
                 
             }
 
-            //note need to remember to push dashboard show and this close up to the try blck or else will continue
+            //note need to remember to potential do something with scheduling
+
+            
             
 
 
 
 
-            MainDashboard mainDashboard = new MainDashboard();
-            mainDashboard.Show();
-            this.Close();
+            
         }
 
         private void CancelBut_MouseClick(object sender, MouseEventArgs e)
