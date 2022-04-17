@@ -48,6 +48,19 @@ namespace SoftwareTwoProject.Forms
 
         private void SubmitBut_MouseClick(object sender, MouseEventArgs e)
         {
+            string x = Connection.connectstring;
+            MySqlConnection custtable = new MySqlConnection(x);
+            string updateApp = $"Update appointment SET customerId='{CustomerIdBox.Text}', userId='{UserIdBox.Text}', type= '{TypeBox.Text}' Where appointmentId ={AppIDBox.Text}";
+            custtable.Open();
+
+            //MB NOTE HAVEN"T PUT IN EXCEPTION HANDLING or added tables for custid and userid
+
+            MySqlCommand updateApptName = new MySqlCommand(updateApp, custtable);
+
+            updateApptName.ExecuteNonQuery();
+
+            custtable.Close();
+
             MainDashboard mainDashboard = new MainDashboard();
             mainDashboard.Show();
             this.Close();

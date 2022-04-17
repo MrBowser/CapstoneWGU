@@ -72,6 +72,7 @@
             // 
             // AppIDBox
             // 
+            this.AppIDBox.Enabled = false;
             this.AppIDBox.Location = new System.Drawing.Point(145, 54);
             this.AppIDBox.Name = "AppIDBox";
             this.AppIDBox.Size = new System.Drawing.Size(100, 20);
