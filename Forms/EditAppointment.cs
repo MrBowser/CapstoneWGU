@@ -20,7 +20,7 @@ namespace SoftwareTwoProject.Forms
 
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);
-            string getappIDinfo = $"Select appointmentId, customerId, userId, type from appointment where appointmentId = {Appointment.editAppointmentId}";
+            string getappIDinfo = $"Select appointmentId, customerId, userId, type, start from appointment where appointmentId = {Appointment.editAppointmentId}";
             custtable.Open();
 
             MySqlCommand appIdInfo = new MySqlCommand(getappIDinfo, custtable);

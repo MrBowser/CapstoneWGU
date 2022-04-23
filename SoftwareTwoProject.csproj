@@ -73,6 +73,12 @@
     <Compile Include="Forms\AddCustomer.Designer.cs">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CalendarView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CalendarView.Designer.cs">
+      <DependentUpon>CalendarView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CalendarView.resx">
+      <DependentUpon>CalendarView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditAppointment.resx">
       <DependentUpon>EditAppointment.cs</DependentUpon>

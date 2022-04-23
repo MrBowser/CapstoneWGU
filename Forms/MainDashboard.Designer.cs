@@ -40,8 +40,7 @@
             this.EditAppointmentsBut = new System.Windows.Forms.Button();
             this.DeleteAppointmentsBut = new System.Windows.Forms.Button();
             this.ExitBut = new System.Windows.Forms.Button();
-            this.WeeklyViewBut = new System.Windows.Forms.Button();
-            this.MonthlyViewBut = new System.Windows.Forms.Button();
+            this.CalendarViewBut = new System.Windows.Forms.Button();
             this.ReportsMenuBut = new System.Windows.Forms.Button();
             this.CustomerLabel = new System.Windows.Forms.Label();
             this.AppointementsLabel = new System.Windows.Forms.Label();
@@ -147,23 +146,15 @@
             this.ExitBut.UseVisualStyleBackColor = true;
             this.ExitBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ExitBut_MouseClick);
             // 
-            // WeeklyViewBut
+            // CalendarViewBut
             // 
-            this.WeeklyViewBut.Location = new System.Drawing.Point(211, 444);
-            this.WeeklyViewBut.Name = "WeeklyViewBut";
-            this.WeeklyViewBut.Size = new System.Drawing.Size(75, 23);
-            this.WeeklyViewBut.TabIndex = 9;
-            this.WeeklyViewBut.Text = "Weeklyt";
-            this.WeeklyViewBut.UseVisualStyleBackColor = true;
-            // 
-            // MonthlyViewBut
-            // 
-            this.MonthlyViewBut.Location = new System.Drawing.Point(307, 444);
-            this.MonthlyViewBut.Name = "MonthlyViewBut";
-            this.MonthlyViewBut.Size = new System.Drawing.Size(75, 23);
-            this.MonthlyViewBut.TabIndex = 10;
-            this.MonthlyViewBut.Text = "Monthly";
-            this.MonthlyViewBut.UseVisualStyleBackColor = true;
+            this.CalendarViewBut.Location = new System.Drawing.Point(211, 444);
+            this.CalendarViewBut.Name = "CalendarViewBut";
+            this.CalendarViewBut.Size = new System.Drawing.Size(75, 23);
+            this.CalendarViewBut.TabIndex = 9;
+            this.CalendarViewBut.Text = "Calendar";
+            this.CalendarViewBut.UseVisualStyleBackColor = true;
+            this.CalendarViewBut.Click += new System.EventHandler(this.CalendarViewBut_Click);
             // 
             // ReportsMenuBut
             // 
@@ -230,8 +221,7 @@
             this.Controls.Add(this.AppointementsLabel);
             this.Controls.Add(this.CustomerLabel);
             this.Controls.Add(this.ReportsMenuBut);
-            this.Controls.Add(this.MonthlyViewBut);
-            this.Controls.Add(this.WeeklyViewBut);
+            this.Controls.Add(this.CalendarViewBut);
             this.Controls.Add(this.ExitBut);
             this.Controls.Add(this.DeleteAppointmentsBut);
             this.Controls.Add(this.EditAppointmentsBut);
@@ -261,8 +251,7 @@
         private System.Windows.Forms.Button EditAppointmentsBut;
         private System.Windows.Forms.Button DeleteAppointmentsBut;
         private System.Windows.Forms.Button ExitBut;
-        private System.Windows.Forms.Button WeeklyViewBut;
-        private System.Windows.Forms.Button MonthlyViewBut;
+        private System.Windows.Forms.Button CalendarViewBut;
         private System.Windows.Forms.Button ReportsMenuBut;
         private System.Windows.Forms.Label CustomerLabel;
         private System.Windows.Forms.Label AppointementsLabel;

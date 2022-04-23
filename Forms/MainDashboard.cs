@@ -38,7 +38,7 @@ namespace SoftwareTwoProject.Forms
             // NOTE: This creates and fills the appointments table with the needed columns from appointments
 
             custtable.Open();
-            string appointmentsQuery = "select appointmentId, customerId, type" +
+            string appointmentsQuery = "select appointmentId, customerId, type, start" +
                 " from appointment";
 
             MySqlCommand SQLappointmentcol = new MySqlCommand(appointmentsQuery, custtable);
@@ -206,7 +206,7 @@ namespace SoftwareTwoProject.Forms
             custtable.Close();
 
             custtable.Open();
-            string appointmentsQuery = "select appointmentId, customerId, type" +
+            string appointmentsQuery = "select appointmentId, customerId, type, start" +
                 " from appointment";
 
             MySqlCommand SQLappointmentcol = new MySqlCommand(appointmentsQuery, custtable);
@@ -216,6 +216,14 @@ namespace SoftwareTwoProject.Forms
             AppointmentInfoGrid.DataSource = AppointmentTableInfo;
 
             custtable.Close();
+        }
+
+        private void CalendarViewBut_Click(object sender, EventArgs e)
+        {
+            CalendarView calview = new CalendarView();
+            calview.Show();
+            this.Close();
+
         }
     }
 }

@@ -40,6 +40,10 @@
             this.DateBox = new System.Windows.Forms.TextBox();
             this.UserIdLabel = new System.Windows.Forms.Label();
             this.UsIdBox = new System.Windows.Forms.TextBox();
+            this.HourBox = new System.Windows.Forms.TextBox();
+            this.DayTimeLabel = new System.Windows.Forms.Label();
+            this.Colon = new System.Windows.Forms.Label();
+            this.MinutesBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // SubmitBut
@@ -143,11 +147,49 @@
             this.UsIdBox.Size = new System.Drawing.Size(100, 20);
             this.UsIdBox.TabIndex = 11;
             // 
+            // HourBox
+            // 
+            this.HourBox.Location = new System.Drawing.Point(144, 321);
+            this.HourBox.Name = "HourBox";
+            this.HourBox.Size = new System.Drawing.Size(34, 20);
+            this.HourBox.TabIndex = 12;
+            this.HourBox.Text = "00";
+            // 
+            // DayTimeLabel
+            // 
+            this.DayTimeLabel.AutoSize = true;
+            this.DayTimeLabel.Location = new System.Drawing.Point(48, 324);
+            this.DayTimeLabel.Name = "DayTimeLabel";
+            this.DayTimeLabel.Size = new System.Drawing.Size(64, 13);
+            this.DayTimeLabel.TabIndex = 13;
+            this.DayTimeLabel.Text = "Time of Day";
+            // 
+            // Colon
+            // 
+            this.Colon.AutoSize = true;
+            this.Colon.Location = new System.Drawing.Point(185, 324);
+            this.Colon.Name = "Colon";
+            this.Colon.Size = new System.Drawing.Size(10, 13);
+            this.Colon.TabIndex = 14;
+            this.Colon.Text = ":";
+            // 
+            // MinutesBox
+            // 
+            this.MinutesBox.Location = new System.Drawing.Point(201, 321);
+            this.MinutesBox.Name = "MinutesBox";
+            this.MinutesBox.Size = new System.Drawing.Size(31, 20);
+            this.MinutesBox.TabIndex = 15;
+            this.MinutesBox.Text = "00";
+            // 
             // AddAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 426);
+            this.Controls.Add(this.MinutesBox);
+            this.Controls.Add(this.Colon);
+            this.Controls.Add(this.DayTimeLabel);
+            this.Controls.Add(this.HourBox);
             this.Controls.Add(this.UsIdBox);
             this.Controls.Add(this.UserIdLabel);
             this.Controls.Add(this.DateBox);
@@ -181,5 +223,9 @@
         private System.Windows.Forms.TextBox DateBox;
         private System.Windows.Forms.Label UserIdLabel;
         private System.Windows.Forms.TextBox UsIdBox;
+        private System.Windows.Forms.TextBox HourBox;
+        private System.Windows.Forms.Label DayTimeLabel;
+        private System.Windows.Forms.Label Colon;
+        private System.Windows.Forms.TextBox MinutesBox;
     }
 }

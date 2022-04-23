@@ -125,7 +125,7 @@ namespace SoftwareTwoProject.Forms
                     throw new Exception(" userId doesn't exist, please try a valid userId");
                 }
 
-                string addAppointmentQuery = $"insert into appointment VALUES ('{ApIdBox.Text}','{CusIdBox.Text}','{UsIdBox.Text}','not needed','not needed','not needed','not needed','{TypeBox.Text}','not needed','2019-01-01 00:00:00','2019-01-01 00:00:00','2019-01-01 00:00:00','test','2019-01-01 00:00:00','test')";
+                string addAppointmentQuery = $"insert into appointment VALUES ('{ApIdBox.Text}','{CusIdBox.Text}','{UsIdBox.Text}','not needed','not needed','not needed','not needed','{TypeBox.Text}','not needed','{DateBox.Text} {HourBox.Text}:{MinutesBox.Text}:00','2019-01-01 00:00:00','2019-01-01 00:00:00','test','2019-01-01 00:00:00','test')";
                 AppTable.Open();
                 MySqlCommand addAppointmentCom = new MySqlCommand(addAppointmentQuery, AppTable);
                 addAppointmentCom.ExecuteNonQuery();
@@ -142,7 +142,7 @@ namespace SoftwareTwoProject.Forms
                 
             }
 
-            //note need to remember to potential do something with scheduling
+            //note need to remember to potential do something with scheduling and need to put error handing in for time
 
             
             
