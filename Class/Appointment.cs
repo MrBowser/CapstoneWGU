@@ -11,5 +11,7 @@ namespace SoftwareTwoProject.Class
         public static int AppointmentIdCounter;
 
         public static string editAppointmentId;
+
+        public static bool AppAlertShown = false;
     }
 }

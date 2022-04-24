@@ -37,6 +37,10 @@ namespace SoftwareTwoProject.Forms
             appointprep.Fill(AppointmentTableInfo);
             AppCalGrid.DataSource = AppointmentTableInfo;
 
+            
+
+
+
             custtable.Close();
         }
 
@@ -100,6 +104,18 @@ namespace SoftwareTwoProject.Forms
                 DataTable AppointmentTableInfo = new DataTable();
                 appointprep.Fill(AppointmentTableInfo);
                 AppCalGrid.DataSource = AppointmentTableInfo;
+                
+                
+                if(AppCalGrid.Rows.Count>0)
+                {
+                    for (int i = 0; i < AppCalGrid.Rows.Count; i++)
+                    {
+                        AppCalGrid.Rows[i].Cells[3].Value = TimeZoneInfo.ConvertTimeFromUtc((DateTime)AppCalGrid.Rows[i].Cells[3].Value, TimeZoneInfo.Local).ToString(); ;
+
+                    }
+
+                }
+                
 
                 custtable.Close();
 

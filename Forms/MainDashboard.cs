@@ -35,10 +35,13 @@ namespace SoftwareTwoProject.Forms
 
             custtable.Close();
 
+
+
+
             // NOTE: This creates and fills the appointments table with the needed columns from appointments
 
             custtable.Open();
-            string appointmentsQuery = "select appointmentId, customerId, type, start" +
+            string appointmentsQuery = "select appointmentId, customerId, type, start, userId" +
                 " from appointment";
 
             MySqlCommand SQLappointmentcol = new MySqlCommand(appointmentsQuery, custtable);
@@ -48,8 +51,50 @@ namespace SoftwareTwoProject.Forms
             AppointmentInfoGrid.DataSource = AppointmentTableInfo;
 
 
+            // note below should work for localization
+            for (int i = 0; i < AppointmentInfoGrid.Rows.Count; i++)
+            {
+                AppointmentInfoGrid.Rows[i].Cells[3].Value = TimeZoneInfo.ConvertTimeFromUtc((DateTime)AppointmentInfoGrid.Rows[i].Cells[3].Value, TimeZoneInfo.Local).ToString(); ;
+
+            }
 
 
+
+            //note below need to figure out alerts and notifications based on time
+            //run a for loop to get list of userID appointments ... substract? 
+
+            if(Appointment.AppAlertShown ==false)
+            {
+                for (int i = 0; i < AppointmentInfoGrid.Rows.Count; i++)
+                {
+                    if (AppointmentInfoGrid.Rows[i].Cells[4].Value.ToString() == User.UserId)
+                    {
+
+                        DateTime getcellval = (DateTime)AppointmentInfoGrid.Rows[i].Cells[3].Value;
+                        DateTime gettimenow = DateTime.Now;
+
+                        TimeSpan alert = getcellval.Subtract(gettimenow);
+
+
+                        Double numMinutestillApp = alert.TotalMinutes;
+
+                        if (numMinutestillApp < 15 && numMinutestillApp > 0)
+                        {
+                            MessageBox.Show($"You have an appointment in " + numMinutestillApp.ToString() + " minutes!");
+                            Appointment.AppAlertShown = true;
+                            break;
+
+                        }
+
+
+
+
+                    }
+
+                }
+
+            }
+            
 
 
         }
