@@ -41,13 +41,14 @@
             this.DeleteAppointmentsBut = new System.Windows.Forms.Button();
             this.ExitBut = new System.Windows.Forms.Button();
             this.CalendarViewBut = new System.Windows.Forms.Button();
-            this.ReportsMenuBut = new System.Windows.Forms.Button();
+            this.AppRepBut = new System.Windows.Forms.Button();
             this.CustomerLabel = new System.Windows.Forms.Label();
             this.AppointementsLabel = new System.Windows.Forms.Label();
             this.customerTableAdapter = new SoftwareTwoProject.client_scheduleDataSetTableAdapters.customerTableAdapter();
             this.appointmentTableAdapter = new SoftwareTwoProject.client_scheduleDataSet1TableAdapters.appointmentTableAdapter();
             this.CustomerInfoGrid = new System.Windows.Forms.DataGridView();
             this.AppointmentInfoGrid = new System.Windows.Forms.DataGridView();
+            this.ReportsLab = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
@@ -148,7 +149,7 @@
             // 
             // CalendarViewBut
             // 
-            this.CalendarViewBut.Location = new System.Drawing.Point(211, 444);
+            this.CalendarViewBut.Location = new System.Drawing.Point(70, 444);
             this.CalendarViewBut.Name = "CalendarViewBut";
             this.CalendarViewBut.Size = new System.Drawing.Size(75, 23);
             this.CalendarViewBut.TabIndex = 9;
@@ -156,14 +157,15 @@
             this.CalendarViewBut.UseVisualStyleBackColor = true;
             this.CalendarViewBut.Click += new System.EventHandler(this.CalendarViewBut_Click);
             // 
-            // ReportsMenuBut
+            // AppRepBut
             // 
-            this.ReportsMenuBut.Location = new System.Drawing.Point(477, 444);
-            this.ReportsMenuBut.Name = "ReportsMenuBut";
-            this.ReportsMenuBut.Size = new System.Drawing.Size(75, 23);
-            this.ReportsMenuBut.TabIndex = 11;
-            this.ReportsMenuBut.Text = "Reports";
-            this.ReportsMenuBut.UseVisualStyleBackColor = true;
+            this.AppRepBut.Location = new System.Drawing.Point(335, 444);
+            this.AppRepBut.Name = "AppRepBut";
+            this.AppRepBut.Size = new System.Drawing.Size(118, 23);
+            this.AppRepBut.TabIndex = 11;
+            this.AppRepBut.Text = "Appointment Type";
+            this.AppRepBut.UseVisualStyleBackColor = true;
+            this.AppRepBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AppRepBut_MouseClick);
             // 
             // CustomerLabel
             // 
@@ -211,16 +213,26 @@
             this.AppointmentInfoGrid.Size = new System.Drawing.Size(240, 150);
             this.AppointmentInfoGrid.TabIndex = 15;
             // 
+            // ReportsLab
+            // 
+            this.ReportsLab.AutoSize = true;
+            this.ReportsLab.Location = new System.Drawing.Point(459, 410);
+            this.ReportsLab.Name = "ReportsLab";
+            this.ReportsLab.Size = new System.Drawing.Size(44, 13);
+            this.ReportsLab.TabIndex = 16;
+            this.ReportsLab.Text = "Reports";
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 479);
+            this.Controls.Add(this.ReportsLab);
             this.Controls.Add(this.AppointmentInfoGrid);
             this.Controls.Add(this.CustomerInfoGrid);
             this.Controls.Add(this.AppointementsLabel);
             this.Controls.Add(this.CustomerLabel);
-            this.Controls.Add(this.ReportsMenuBut);
+            this.Controls.Add(this.AppRepBut);
             this.Controls.Add(this.CalendarViewBut);
             this.Controls.Add(this.ExitBut);
             this.Controls.Add(this.DeleteAppointmentsBut);
@@ -252,7 +264,7 @@
         private System.Windows.Forms.Button DeleteAppointmentsBut;
         private System.Windows.Forms.Button ExitBut;
         private System.Windows.Forms.Button CalendarViewBut;
-        private System.Windows.Forms.Button ReportsMenuBut;
+        private System.Windows.Forms.Button AppRepBut;
         private System.Windows.Forms.Label CustomerLabel;
         private System.Windows.Forms.Label AppointementsLabel;
         private client_scheduleDataSet client_scheduleDataSet;
@@ -263,5 +275,6 @@
         private client_scheduleDataSet1TableAdapters.appointmentTableAdapter appointmentTableAdapter;
         private System.Windows.Forms.DataGridView CustomerInfoGrid;
         private System.Windows.Forms.DataGridView AppointmentInfoGrid;
+        private System.Windows.Forms.Label ReportsLab;
     }
 }

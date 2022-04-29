@@ -70,6 +70,8 @@ namespace SoftwareTwoProject.Forms
             // 
             // AppCalGrid
             // 
+            this.AppCalGrid.AllowUserToAddRows = false;
+            this.AppCalGrid.AllowUserToDeleteRows = false;
             this.AppCalGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AppCalGrid.Location = new System.Drawing.Point(303, 72);
             this.AppCalGrid.Name = "AppCalGrid";

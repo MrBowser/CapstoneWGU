@@ -71,7 +71,7 @@ namespace SoftwareTwoProject.Forms
 
 
                 string weeksQuery = "select appointmentId, customerId, type, start" +
-                    $" from appointment where WEEK(DATE(start)) = WEEK('{WeekSQL2}')";
+                    $" from appointment where WEEK(DATE(start)) = WEEK('{WeekSQL2}') AND YEAR(DATE(start)) = YEAR('{WeekSQL2}')";
 
                 MySqlCommand SQLappointmentcol = new MySqlCommand(weeksQuery, custtable);
                 MySqlDataAdapter appointprep = new MySqlDataAdapter(SQLappointmentcol);
@@ -97,7 +97,7 @@ namespace SoftwareTwoProject.Forms
 
 
                 string weeksQuery = "select appointmentId, customerId, type, start" +
-                    $" from appointment where MONTH(DATE(start)) = MONTH('{MonthSQL2}')";
+                    $" from appointment where MONTH(DATE(start)) = MONTH('{MonthSQL2}') AND YEAR(DATE(start)) = YEAR('{MonthSQL2}')";
 
                 MySqlCommand SQLappointmentcol = new MySqlCommand(weeksQuery, custtable);
                 MySqlDataAdapter appointprep = new MySqlDataAdapter(SQLappointmentcol);
@@ -115,6 +115,8 @@ namespace SoftwareTwoProject.Forms
                     }
 
                 }
+                
+                
                 
 
                 custtable.Close();

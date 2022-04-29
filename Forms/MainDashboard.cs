@@ -270,5 +270,12 @@ namespace SoftwareTwoProject.Forms
             this.Close();
 
         }
+
+        private void AppRepBut_MouseClick(object sender, MouseEventArgs e)
+        {
+            AppointmentReport Appview = new AppointmentReport();
+            Appview.Show();
+            this.Close();
+        }
     }
 }
