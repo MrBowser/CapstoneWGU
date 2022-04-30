@@ -89,7 +89,7 @@ namespace SoftwareTwoProject.Forms
 
         private void ReportBut_MouseClick(object sender, MouseEventArgs e)
         {
-
+            //note: whoopsied what this report needs to be it needs to the appointment types and the count per month
 
             DateTime WeekCal = dateTimePicker1.Value;
             string MonthSQL = WeekCal.ToString("yyyy'-'MM'-'dd HH:mm:ss");

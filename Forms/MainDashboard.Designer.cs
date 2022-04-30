@@ -49,6 +49,8 @@
             this.CustomerInfoGrid = new System.Windows.Forms.DataGridView();
             this.AppointmentInfoGrid = new System.Windows.Forms.DataGridView();
             this.ReportsLab = new System.Windows.Forms.Label();
+            this.extraReplabel = new System.Windows.Forms.Label();
+            this.AppTypeBut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
@@ -159,11 +161,11 @@
             // 
             // AppRepBut
             // 
-            this.AppRepBut.Location = new System.Drawing.Point(335, 444);
+            this.AppRepBut.Location = new System.Drawing.Point(273, 431);
             this.AppRepBut.Name = "AppRepBut";
-            this.AppRepBut.Size = new System.Drawing.Size(118, 23);
+            this.AppRepBut.Size = new System.Drawing.Size(152, 23);
             this.AppRepBut.TabIndex = 11;
-            this.AppRepBut.Text = "Appointment Type";
+            this.AppRepBut.Text = "Appointments By Type";
             this.AppRepBut.UseVisualStyleBackColor = true;
             this.AppRepBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AppRepBut_MouseClick);
             // 
@@ -216,17 +218,38 @@
             // ReportsLab
             // 
             this.ReportsLab.AutoSize = true;
-            this.ReportsLab.Location = new System.Drawing.Point(459, 410);
+            this.ReportsLab.Location = new System.Drawing.Point(457, 406);
             this.ReportsLab.Name = "ReportsLab";
             this.ReportsLab.Size = new System.Drawing.Size(44, 13);
             this.ReportsLab.TabIndex = 16;
             this.ReportsLab.Text = "Reports";
+            // 
+            // extraReplabel
+            // 
+            this.extraReplabel.AutoSize = true;
+            this.extraReplabel.Location = new System.Drawing.Point(302, 457);
+            this.extraReplabel.Name = "extraReplabel";
+            this.extraReplabel.Size = new System.Drawing.Size(104, 13);
+            this.extraReplabel.TabIndex = 17;
+            this.extraReplabel.Text = "(extra choose report)";
+            // 
+            // AppTypeBut
+            // 
+            this.AppTypeBut.Location = new System.Drawing.Point(460, 431);
+            this.AppTypeBut.Name = "AppTypeBut";
+            this.AppTypeBut.Size = new System.Drawing.Size(133, 23);
+            this.AppTypeBut.TabIndex = 18;
+            this.AppTypeBut.Text = "Appointment Count Type";
+            this.AppTypeBut.UseVisualStyleBackColor = true;
+            this.AppTypeBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AppTypeBut_MouseClick);
             // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 479);
+            this.Controls.Add(this.AppTypeBut);
+            this.Controls.Add(this.extraReplabel);
             this.Controls.Add(this.ReportsLab);
             this.Controls.Add(this.AppointmentInfoGrid);
             this.Controls.Add(this.CustomerInfoGrid);
@@ -276,5 +299,7 @@
         private System.Windows.Forms.DataGridView CustomerInfoGrid;
         private System.Windows.Forms.DataGridView AppointmentInfoGrid;
         private System.Windows.Forms.Label ReportsLab;
+        private System.Windows.Forms.Label extraReplabel;
+        private System.Windows.Forms.Button AppTypeBut;
     }
 }

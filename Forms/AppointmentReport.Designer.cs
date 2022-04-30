@@ -34,6 +34,7 @@ namespace SoftwareTwoProject.Forms
             this.ReportBut = new System.Windows.Forms.Button();
             this.ReportView = new System.Windows.Forms.DataGridView();
             this.MainDashBut = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AppTypeGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReportView)).BeginInit();
             this.SuspendLayout();
@@ -85,11 +86,21 @@ namespace SoftwareTwoProject.Forms
             this.MainDashBut.UseVisualStyleBackColor = true;
             this.MainDashBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MainDashBut_MouseClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(301, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Extra Report: A list of appointments of a specific type by month";
+            // 
             // AppointmentReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.MainDashBut);
             this.Controls.Add(this.ReportView);
             this.Controls.Add(this.ReportBut);
@@ -100,6 +111,7 @@ namespace SoftwareTwoProject.Forms
             ((System.ComponentModel.ISupportInitialize)(this.AppTypeGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReportView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -110,5 +122,6 @@ namespace SoftwareTwoProject.Forms
         private System.Windows.Forms.Button ReportBut;
         private System.Windows.Forms.DataGridView ReportView;
         private System.Windows.Forms.Button MainDashBut;
+        private System.Windows.Forms.Label label1;
     }
 }

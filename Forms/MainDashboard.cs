@@ -277,5 +277,12 @@ namespace SoftwareTwoProject.Forms
             Appview.Show();
             this.Close();
         }
+
+        private void AppTypeBut_MouseClick(object sender, MouseEventArgs e)
+        {
+            AppCountReport Appcountview = new AppCountReport();
+            Appcountview.Show();
+            this.Close();
+        }
     }
 }
