@@ -32,18 +32,20 @@ namespace SoftwareTwoProject.Forms
             this.AppTypeGrid = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.ReportBut = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ReportView = new System.Windows.Forms.DataGridView();
             this.MainDashBut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AppTypeGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportView)).BeginInit();
             this.SuspendLayout();
             // 
             // AppTypeGrid
             // 
+            this.AppTypeGrid.AllowUserToAddRows = false;
+            this.AppTypeGrid.AllowUserToDeleteRows = false;
             this.AppTypeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AppTypeGrid.Location = new System.Drawing.Point(396, 36);
             this.AppTypeGrid.Name = "AppTypeGrid";
-            this.AppTypeGrid.Size = new System.Drawing.Size(240, 150);
+            this.AppTypeGrid.Size = new System.Drawing.Size(215, 150);
             this.AppTypeGrid.TabIndex = 0;
             // 
             // dateTimePicker1
@@ -61,14 +63,17 @@ namespace SoftwareTwoProject.Forms
             this.ReportBut.TabIndex = 2;
             this.ReportBut.Text = "Run Report";
             this.ReportBut.UseVisualStyleBackColor = true;
+            this.ReportBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ReportBut_MouseClick);
             // 
-            // dataGridView1
+            // ReportView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(57, 252);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(554, 150);
-            this.dataGridView1.TabIndex = 3;
+            this.ReportView.AllowUserToAddRows = false;
+            this.ReportView.AllowUserToDeleteRows = false;
+            this.ReportView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ReportView.Location = new System.Drawing.Point(57, 252);
+            this.ReportView.Name = "ReportView";
+            this.ReportView.Size = new System.Drawing.Size(554, 150);
+            this.ReportView.TabIndex = 3;
             // 
             // MainDashBut
             // 
@@ -86,14 +91,14 @@ namespace SoftwareTwoProject.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.MainDashBut);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ReportView);
             this.Controls.Add(this.ReportBut);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.AppTypeGrid);
             this.Name = "AppointmentReport";
             this.Text = "AppointmentReport";
             ((System.ComponentModel.ISupportInitialize)(this.AppTypeGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -103,7 +108,7 @@ namespace SoftwareTwoProject.Forms
         private System.Windows.Forms.DataGridView AppTypeGrid;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button ReportBut;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ReportView;
         private System.Windows.Forms.Button MainDashBut;
     }
 }

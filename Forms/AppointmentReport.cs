@@ -28,12 +28,43 @@ namespace SoftwareTwoProject.Forms
             custtable.Open();
 
 
+            //this and the below 2 for loops will create the app Types to be selected from
 
-            string appointmentsQuery = "select appointmentId, customerId, type, start" +
+            string appointmentsQuery = "select type" +
                 " from appointment";
 
-            //MySqlCommand SQLappointmentcol = new MySqlCommand(appointmentsQuery, custtable);
-            //MySqlDataReader phoneRead = phonePull.ExecuteReader();
+            MySqlCommand SQLappointmentcol = new MySqlCommand(appointmentsQuery, custtable);
+            MySqlDataReader appointpull = SQLappointmentcol.ExecuteReader();
+
+            while(appointpull.Read())
+            {
+                Appointmentlist.Add(appointpull.GetString("type"));
+            }
+
+            custtable.Close();
+
+            for (int i = 0; i < Appointmentlist.Count; i++)
+            {
+                if(AppTypes.Contains(Appointmentlist[i]) == false)
+                {
+                    AppTypes.Add(Appointmentlist[i]);
+                }
+
+            }
+
+
+            AppTypeGrid.ColumnCount = 1;
+            AppTypeGrid.Columns[0].Name = "Appointment Type";
+
+            for (int i = 0; i < AppTypes.Count; i++)
+            {
+                var row = new DataGridViewRow();
+                AppTypeGrid.Rows.Add(row);
+                AppTypeGrid.Rows[i].Cells[0].Value = AppTypes[i];
+
+            }
+            
+          
            
 
 
@@ -53,7 +84,44 @@ namespace SoftwareTwoProject.Forms
             this.Close();
 
         }
-
+        List<string> Appointmentlist = new List<string>();
         List<string> AppTypes = new List<string>();
+
+        private void ReportBut_MouseClick(object sender, MouseEventArgs e)
+        {
+
+
+            DateTime WeekCal = dateTimePicker1.Value;
+            string MonthSQL = WeekCal.ToString("yyyy'-'MM'-'dd HH:mm:ss");
+            string MonthSQL2 = WeekCal.ToString("yyyy'-'MM'-'dd");
+
+            MessageBox.Show(MonthSQL);
+
+            string x = Connection.connectstring;
+            MySqlConnection custtable = new MySqlConnection(x);
+            custtable.Open();
+
+
+
+            string weeksQuery = "select appointmentId, customerId, type, start" +
+                $" from appointment where MONTH(DATE(start)) = MONTH('{MonthSQL2}') AND YEAR(DATE(start)) = YEAR('{MonthSQL2}')";
+
+            MySqlCommand SQLappointmentcol = new MySqlCommand(weeksQuery, custtable);
+            MySqlDataAdapter appointprep = new MySqlDataAdapter(SQLappointmentcol);
+            DataTable AppointmentTableInfo = new DataTable();
+            appointprep.Fill(AppointmentTableInfo);
+            ReportView.DataSource = AppointmentTableInfo;
+
+            for (int i = ReportView.Rows.Count-1; i > 0; i--)
+            {
+                if(ReportView.Rows[i].Cells[2].Value !=AppTypeGrid.SelectedRows[0].Cells[0].Value)
+                {
+                    ReportView.Rows.RemoveAt(i);
+                }
+
+            }
+
+
+        }
     }
 }
