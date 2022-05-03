@@ -45,16 +45,7 @@ namespace SoftwareTwoProject.Forms
 
             custtable.Close();
 
-            /* note may delete this as not needed
-            for (int i = 0; i < Appointmentlist.Count; i++)
-            {
-                if (AppTypes.Contains(Appointmentlist[i]) == false)
-                {
-                    AppTypes.Add(Appointmentlist[i]);
-                }
-
-            }
-            */
+          
 
 
             UserListGrid.ColumnCount = 2;
@@ -82,10 +73,27 @@ namespace SoftwareTwoProject.Forms
         private void GenBut_MouseClick(object sender, MouseEventArgs e)
         {
 
+            string x = Connection.connectstring;
+            MySqlConnection custtable = new MySqlConnection(x);
+            custtable.Open();
+
+
+
+            string UserQuery = "select appointmentId, customerId, type, start" +
+                $" from appointment where userID = '{UserListGrid.SelectedRows[0].Cells[0].Value}'";
+
+            MySqlCommand SQLappointmentcol = new MySqlCommand(UserQuery, custtable);
+            MySqlDataAdapter appointprep = new MySqlDataAdapter(SQLappointmentcol);
+            DataTable AppointmentTableInfo = new DataTable();
+            appointprep.Fill(AppointmentTableInfo);
+            UserSchedRepView.DataSource = AppointmentTableInfo;
+
+            custtable.Close();
+
         }
 
         List<string> IDlist = new List<string>();
         List<string> NameList = new List<string>();
-        //List<string> AppTypes = new List<string>();
+        
     }
 }

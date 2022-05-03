@@ -32,7 +32,9 @@ namespace SoftwareTwoProject.Forms
             this.DashBut = new System.Windows.Forms.Button();
             this.UserListGrid = new System.Windows.Forms.DataGridView();
             this.GenBut = new System.Windows.Forms.Button();
+            this.UserSchedRepView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.UserListGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserSchedRepView)).BeginInit();
             this.SuspendLayout();
             // 
             // DashBut
@@ -65,17 +67,29 @@ namespace SoftwareTwoProject.Forms
             this.GenBut.UseVisualStyleBackColor = true;
             this.GenBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GenBut_MouseClick);
             // 
+            // UserSchedRepView
+            // 
+            this.UserSchedRepView.AllowUserToAddRows = false;
+            this.UserSchedRepView.AllowUserToDeleteRows = false;
+            this.UserSchedRepView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UserSchedRepView.Location = new System.Drawing.Point(234, 269);
+            this.UserSchedRepView.Name = "UserSchedRepView";
+            this.UserSchedRepView.Size = new System.Drawing.Size(240, 150);
+            this.UserSchedRepView.TabIndex = 3;
+            // 
             // UserScheduleReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.UserSchedRepView);
             this.Controls.Add(this.GenBut);
             this.Controls.Add(this.UserListGrid);
             this.Controls.Add(this.DashBut);
             this.Name = "UserScheduleReport";
             this.Text = "UserScheduleReport";
             ((System.ComponentModel.ISupportInitialize)(this.UserListGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserSchedRepView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,5 +99,6 @@ namespace SoftwareTwoProject.Forms
         private System.Windows.Forms.Button DashBut;
         private System.Windows.Forms.DataGridView UserListGrid;
         private System.Windows.Forms.Button GenBut;
+        private System.Windows.Forms.DataGridView UserSchedRepView;
     }
 }
