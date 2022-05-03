@@ -284,5 +284,12 @@ namespace SoftwareTwoProject.Forms
             Appcountview.Show();
             this.Close();
         }
+
+        private void UserRepBut_MouseClick(object sender, MouseEventArgs e)
+        {
+            UserScheduleReport userSchedule = new UserScheduleReport();
+            userSchedule.Show();
+            this.Close();
+        }
     }
 }

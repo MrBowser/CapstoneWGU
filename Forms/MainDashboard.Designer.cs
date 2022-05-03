@@ -51,6 +51,8 @@
             this.ReportsLab = new System.Windows.Forms.Label();
             this.extraReplabel = new System.Windows.Forms.Label();
             this.AppTypeBut = new System.Windows.Forms.Button();
+            this.AppTypeCount = new System.Windows.Forms.Label();
+            this.UserRepBut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
@@ -243,11 +245,32 @@
             this.AppTypeBut.UseVisualStyleBackColor = true;
             this.AppTypeBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AppTypeBut_MouseClick);
             // 
+            // AppTypeCount
+            // 
+            this.AppTypeCount.AutoSize = true;
+            this.AppTypeCount.Location = new System.Drawing.Point(433, 457);
+            this.AppTypeCount.Name = "AppTypeCount";
+            this.AppTypeCount.Size = new System.Drawing.Size(204, 13);
+            this.AppTypeCount.TabIndex = 19;
+            this.AppTypeCount.Text = "(required report: app type count by month)";
+            // 
+            // UserRepBut
+            // 
+            this.UserRepBut.Location = new System.Drawing.Point(652, 431);
+            this.UserRepBut.Name = "UserRepBut";
+            this.UserRepBut.Size = new System.Drawing.Size(94, 23);
+            this.UserRepBut.TabIndex = 20;
+            this.UserRepBut.Text = "User Schedule";
+            this.UserRepBut.UseVisualStyleBackColor = true;
+            this.UserRepBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UserRepBut_MouseClick);
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 479);
+            this.Controls.Add(this.UserRepBut);
+            this.Controls.Add(this.AppTypeCount);
             this.Controls.Add(this.AppTypeBut);
             this.Controls.Add(this.extraReplabel);
             this.Controls.Add(this.ReportsLab);
@@ -301,5 +324,7 @@
         private System.Windows.Forms.Label ReportsLab;
         private System.Windows.Forms.Label extraReplabel;
         private System.Windows.Forms.Button AppTypeBut;
+        private System.Windows.Forms.Label AppTypeCount;
+        private System.Windows.Forms.Button UserRepBut;
     }
 }
