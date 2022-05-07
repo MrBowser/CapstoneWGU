@@ -11,6 +11,7 @@ using System.Threading;
 using SoftwareTwoProject.Forms;
 using SoftwareTwoProject.Class;
 using MySql.Data.MySqlClient;
+using System.IO;
 using System.Windows.Forms;
 
 
@@ -84,6 +85,26 @@ namespace SoftwareTwoProject
                         User.UserId = getUSIDp3.GetString("userId");
                     }
 
+                    if(File.Exists(filename)!= true)
+                    {
+                        File.Create(filename).Close();
+                        using (StreamWriter logtime = File.AppendText(filename))
+                        { 
+                            logtime.WriteLine($"{DateTime.UtcNow}");
+                        }
+
+                    }
+                    else
+                    {
+                        using (StreamWriter logtime = File.AppendText(filename))
+                        {
+                            logtime.WriteLine($"{DateTime.UtcNow}");
+                        }
+
+                    }
+
+                    
+
                     break;
                 }
                 else
@@ -107,6 +128,8 @@ namespace SoftwareTwoProject
         public static string logPWQuery = "select password from user";
         List<string> usernamelist = new List<string>();
         List<string> PWlist = new List<string>();
+
+        string filename = "LoginTimeStamp.txt";
         
         
     }
