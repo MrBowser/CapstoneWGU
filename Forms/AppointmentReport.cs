@@ -17,7 +17,7 @@ namespace SoftwareTwoProject.Forms
         public AppointmentReport()
         {
             InitializeComponent();
-
+            //note this code doesn't currently work
             //so what we should do is datagrid view appointment types as well as have a date picker...
             //create an if where if month and if whatever cell type string name of app, fill new table with the selected dates
 
@@ -112,7 +112,7 @@ namespace SoftwareTwoProject.Forms
             appointprep.Fill(AppointmentTableInfo);
             ReportView.DataSource = AppointmentTableInfo;
 
-            for (int i = ReportView.Rows.Count-1; i > 0; i--)
+            for (int i = ReportView.Rows.Count; i >= 0; i--)
             {
                 if(ReportView.Rows[i].Cells[2].Value !=AppTypeGrid.SelectedRows[0].Cells[0].Value)
                 {

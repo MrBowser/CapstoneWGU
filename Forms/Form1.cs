@@ -66,6 +66,9 @@ namespace SoftwareTwoProject
         private void LoginBut_MouseClick(object sender, MouseEventArgs e)
         {
             int y;
+
+            
+
             for (int i = 0; i < usernamelist.Count; i++)
             {
                 if(NameBox.Text == usernamelist[i] && PWBox.Text == PWlist[i])
