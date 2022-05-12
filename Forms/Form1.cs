@@ -22,8 +22,8 @@ namespace SoftwareTwoProject
         
         public Form1()
         {
-            //note below confirms if not english then french as culture
-            //note need to add in french message boxes... should just be a simple if statement regarding what the current culture == as a string
+            //note below confirms if not USA english then french as culture and language will be in french
+            
             
            
             if(CultureInfo.CurrentCulture.ToString()=="en-US")
@@ -65,16 +65,16 @@ namespace SoftwareTwoProject
 
         private void LoginBut_MouseClick(object sender, MouseEventArgs e)
         {
-            int y;
-
             
 
+
+         
             for (int i = 0; i < usernamelist.Count; i++)
             {
                 if(NameBox.Text == usernamelist[i] && PWBox.Text == PWlist[i])
                 {
-                    MessageBox.Show("success!!");
-                    y = 1;
+                    //MessageBox.Show("success!!");
+                    
 
                     string x = Connection.connectstring;
                     MySqlConnection custtable = new MySqlConnection(x);
@@ -87,6 +87,8 @@ namespace SoftwareTwoProject
                     {
                         User.UserId = getUSIDp3.GetString("userId");
                     }
+
+                    //the below code creates the file to store a login time or utilizes an existing file set to var filename
 
                     if(File.Exists(filename)!= true)
                     {
@@ -106,25 +108,44 @@ namespace SoftwareTwoProject
 
                     }
 
-                    
+                    MainDashboard mainDashboard = new MainDashboard();
+                    mainDashboard.Show();
+                    this.Hide();
 
                     break;
                 }
-                else
+                
+                // if the PW and username don't match the data base than an error will show
+                try
                 {
-                    y = 0;
-                    MessageBox.Show("Login not detected");
+
+                    throw new Exception("noMatch");
+
                 }
+                catch
+                {
+                    if(Thread.CurrentThread.CurrentCulture.Name =="fr")
+                    {
+                        MessageBox.Show("Le now d utilisateur et le mot de passe ne correspondent pas.");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("The username and password do not match");
+
+                    }
+                    
+
+                }
+
 
 
             }
 
 
-            //MessageBox.Show(usernamelist[0]);
+            
 
-            MainDashboard mainDashboard = new MainDashboard();
-            mainDashboard.Show();
-            this.Hide();
+            
         }
         
         public static string logNameQuery = "select userName from user";

@@ -51,7 +51,7 @@ namespace SoftwareTwoProject.Forms
             AppointmentInfoGrid.DataSource = AppointmentTableInfo;
 
 
-            // note below should work for localization
+            // note below should work for localization and fill the table with the appropriate time information
             for (int i = 0; i < AppointmentInfoGrid.Rows.Count; i++)
             {
                 AppointmentInfoGrid.Rows[i].Cells[3].Value = TimeZoneInfo.ConvertTimeFromUtc((DateTime)AppointmentInfoGrid.Rows[i].Cells[3].Value, TimeZoneInfo.Local).ToString(); ;

@@ -60,82 +60,108 @@ namespace SoftwareTwoProject.Forms
 
         private void SubmitBut_MouseClick(object sender, MouseEventArgs e)
         {
-            int adID = -1;
 
-            string x = Connection.connectstring;
-            MySqlConnection custtable = new MySqlConnection(x);
-            
-
-
-            //trying to figure out address
-
-
-            custtable.Open();
-            string addIdQuery = "select addressId, phone, address from address";
-            MySqlCommand addIdPull = new MySqlCommand(addIdQuery, custtable);
-            MySqlDataReader addIdRead = addIdPull.ExecuteReader();
-            while (addIdRead.Read())
+            try
             {
-                addressIDlist.Add(addIdRead.GetString("addressId"));
-                phonenumbers.Add(addIdRead.GetString("phone"));
-                addresses.Add(addIdRead.GetString("address"));
 
-            }
-
-
-            custtable.Close();
-            
-                        
-            for (int i = 0; i < phonenumbers.Count; i++)
-            {
-                if (PhoneBox.Text == phonenumbers[i] && AddressBox.Text == addresses[i])
+                //verifies phone correct format means num first 3 and last 4 digits and should be 8 total with a -
+                if (PhoneBox.Text.Length != 8)
                 {
-
-                    adID = Int32.Parse(addressIDlist[i]);
-                    break;
+                    throw new Exception("Phone not correct format please use nnn-nnnn");
                 }
 
-            }
+                string phonetest = PhoneBox.Text.Remove(3, 1);
 
-            if (adID == -1)
+                if (int.TryParse(phonetest, out int tt) != true)
+                {
+                    throw new Exception("Phone not correct format please use nnn-nnnn");
+
+                }
+
+                int adID = -1;
+
+                string x = Connection.connectstring;
+                MySqlConnection custtable = new MySqlConnection(x);
+
+
+
+                //below checks and modifies existing address
+
+
+                custtable.Open();
+                string addIdQuery = "select addressId, phone, address from address";
+                MySqlCommand addIdPull = new MySqlCommand(addIdQuery, custtable);
+                MySqlDataReader addIdRead = addIdPull.ExecuteReader();
+                while (addIdRead.Read())
+                {
+                    addressIDlist.Add(addIdRead.GetString("addressId"));
+                    phonenumbers.Add(addIdRead.GetString("phone"));
+                    addresses.Add(addIdRead.GetString("address"));
+
+                }
+
+
+                custtable.Close();
+
+
+                for (int i = 0; i < phonenumbers.Count; i++)
+                {
+                    if (PhoneBox.Text == phonenumbers[i] && AddressBox.Text == addresses[i])
+                    {
+
+                        adID = Int32.Parse(addressIDlist[i]);
+                        break;
+                    }
+
+                }
+
+                if (adID == -1)
+                {
+
+                    custtable.Open();
+                    string addressCount = "Select Count(*) from address";
+                    MySqlCommand addressCountQuery = new MySqlCommand(addressCount, custtable);
+                    object getAdCount = addressCountQuery.ExecuteScalar();
+                    int b = Convert.ToInt32(getAdCount.ToString());
+
+
+                    Address.addressIDcounter = b + 1;
+
+                    adID = Address.addressIDcounter;
+                    custtable.Close();
+
+                    custtable.Open();
+                    string addAddressQuery = $"Insert Into address VALUES('{adID}','{AddressBox.Text}','test','3','12345','{PhoneBox.Text}','2013-09-09 00:00:00', 'test','2013-09-09 00:00:00','test') ";
+                    MySqlCommand addAddress = new MySqlCommand(addAddressQuery, custtable);
+                    addAddress.ExecuteNonQuery();
+                    custtable.Close();
+
+                }
+
+                string updateCust = $"Update customer SET customerName='{NameBox.Text}', addressID='{adID}' Where customerId ={CustomerBox.Text}";
+                custtable.Open();
+
+                MySqlCommand updateCustName = new MySqlCommand(updateCust, custtable);
+
+                updateCustName.ExecuteNonQuery();
+
+                custtable.Close();
+
+
+
+
+
+                MainDashboard mainDashboard = new MainDashboard();
+                mainDashboard.Show();
+                this.Close();
+
+            }
+            catch (Exception ex)
             {
 
-                custtable.Open();
-                string addressCount = "Select Count(*) from address";
-                MySqlCommand addressCountQuery = new MySqlCommand(addressCount, custtable);
-                object getAdCount = addressCountQuery.ExecuteScalar();
-                int b = Convert.ToInt32(getAdCount.ToString());
-                                               
-
-                Address.addressIDcounter = b + 1;
-
-                adID = Address.addressIDcounter;
-                custtable.Close();
-
-                custtable.Open();
-                string addAddressQuery = $"Insert Into address VALUES('{adID}','{AddressBox.Text}','test','3','12345','{PhoneBox.Text}','2013-09-09 00:00:00', 'test','2013-09-09 00:00:00','test') ";
-                MySqlCommand addAddress = new MySqlCommand(addAddressQuery, custtable);
-                addAddress.ExecuteNonQuery();
-                custtable.Close();
-
+                MessageBox.Show(ex.Message);
             }
-
-            string updateCust = $"Update customer SET customerName='{NameBox.Text}', addressID='{adID}' Where customerId ={CustomerBox.Text}";
-            custtable.Open();
-
-            MySqlCommand updateCustName = new MySqlCommand(updateCust, custtable);
-
-            updateCustName.ExecuteNonQuery();
-
-            custtable.Close();
-
-
-
-
-
-            MainDashboard mainDashboard = new MainDashboard();
-            mainDashboard.Show();
-            this.Close();
+            
 
 
 
