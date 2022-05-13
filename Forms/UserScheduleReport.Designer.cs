@@ -72,9 +72,9 @@ namespace SoftwareTwoProject.Forms
             this.UserSchedRepView.AllowUserToAddRows = false;
             this.UserSchedRepView.AllowUserToDeleteRows = false;
             this.UserSchedRepView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UserSchedRepView.Location = new System.Drawing.Point(234, 269);
+            this.UserSchedRepView.Location = new System.Drawing.Point(121, 268);
             this.UserSchedRepView.Name = "UserSchedRepView";
-            this.UserSchedRepView.Size = new System.Drawing.Size(240, 150);
+            this.UserSchedRepView.Size = new System.Drawing.Size(487, 150);
             this.UserSchedRepView.TabIndex = 3;
             // 
             // UserScheduleReport

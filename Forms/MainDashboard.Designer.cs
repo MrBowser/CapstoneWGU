@@ -53,6 +53,7 @@
             this.AppTypeBut = new System.Windows.Forms.Button();
             this.AppTypeCount = new System.Windows.Forms.Label();
             this.UserRepBut = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client_scheduleDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
@@ -248,11 +249,11 @@
             // AppTypeCount
             // 
             this.AppTypeCount.AutoSize = true;
-            this.AppTypeCount.Location = new System.Drawing.Point(433, 457);
+            this.AppTypeCount.Location = new System.Drawing.Point(443, 457);
             this.AppTypeCount.Name = "AppTypeCount";
-            this.AppTypeCount.Size = new System.Drawing.Size(204, 13);
+            this.AppTypeCount.Size = new System.Drawing.Size(168, 13);
             this.AppTypeCount.TabIndex = 19;
-            this.AppTypeCount.Text = "(required report: app type count by month)";
+            this.AppTypeCount.Text = "required: app type count by month";
             // 
             // UserRepBut
             // 
@@ -264,11 +265,21 @@
             this.UserRepBut.UseVisualStyleBackColor = true;
             this.UserRepBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UserRepBut_MouseClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(636, 454);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "required: consultant schedule";
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 479);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.UserRepBut);
             this.Controls.Add(this.AppTypeCount);
             this.Controls.Add(this.AppTypeBut);
@@ -326,5 +337,6 @@
         private System.Windows.Forms.Button AppTypeBut;
         private System.Windows.Forms.Label AppTypeCount;
         private System.Windows.Forms.Button UserRepBut;
+        private System.Windows.Forms.Label label1;
     }
 }
