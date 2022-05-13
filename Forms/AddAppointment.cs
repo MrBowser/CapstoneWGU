@@ -55,7 +55,7 @@ namespace SoftwareTwoProject.Forms
 
             int AppId = Appointment.AppointmentIdCounter;
             Appointment.AppointmentIdCounter++;
-            
+            int custIdDef = -1;
             int userId = -1;
             string x = Connection.connectstring;
             MySqlConnection AppTable = new MySqlConnection(x);
@@ -72,7 +72,7 @@ namespace SoftwareTwoProject.Forms
                 CusIds.Add(cusIdqueryp3.GetString("customerId"));
             }
 
-            //note incomplete need to check if text box is in list.
+            
 
             AppTable.Close();
 
@@ -115,6 +115,7 @@ namespace SoftwareTwoProject.Forms
 
             try
             {
+                //checks cust id existing, userid existing, and correct date format and business hours appointments
                 if (custIdDef == -1)
                 {
                     throw new Exception("CustomerId Doesn't Exist, Please try a valid CustomerId ");
@@ -124,6 +125,15 @@ namespace SoftwareTwoProject.Forms
                 {
                     throw new Exception(" userId doesn't exist, please try a valid userId");
                 }
+
+                DateTime test = DateTime.Parse(DateBox.Text);
+
+                if(int.Parse(HourBox.Text) <9 || int.Parse(HourBox.Text)>=17 )
+                {
+                    throw new Exception("Please submit during business hours (9-17)");
+                }
+
+                
 
                 string addAppointmentQuery = $"insert into appointment VALUES ('{ApIdBox.Text}','{CusIdBox.Text}','{UsIdBox.Text}','not needed','not needed','not needed','not needed','{TypeBox.Text}','not needed','{DateBox.Text} {HourBox.Text}:{MinutesBox.Text}:00','2019-01-01 00:00:00','2019-01-01 00:00:00','test','2019-01-01 00:00:00','test')";
                 AppTable.Open();

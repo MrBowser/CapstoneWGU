@@ -39,6 +39,11 @@
             this.TypeLabel = new System.Windows.Forms.Label();
             this.TypeBox = new System.Windows.Forms.TextBox();
             this.TimeLabel = new System.Windows.Forms.Label();
+            this.TimeBox = new System.Windows.Forms.TextBox();
+            this.DateLabel = new System.Windows.Forms.Label();
+            this.DateBox = new System.Windows.Forms.TextBox();
+            this.DateFormatLabel = new System.Windows.Forms.Label();
+            this.TimeFormatLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SubmitBut
@@ -129,17 +134,63 @@
             // TimeLabel
             // 
             this.TimeLabel.AutoSize = true;
-            this.TimeLabel.Location = new System.Drawing.Point(61, 248);
+            this.TimeLabel.Location = new System.Drawing.Point(66, 311);
             this.TimeLabel.Name = "TimeLabel";
             this.TimeLabel.Size = new System.Drawing.Size(30, 13);
             this.TimeLabel.TabIndex = 10;
             this.TimeLabel.Text = "Time";
+            // 
+            // TimeBox
+            // 
+            this.TimeBox.Location = new System.Drawing.Point(145, 308);
+            this.TimeBox.Name = "TimeBox";
+            this.TimeBox.Size = new System.Drawing.Size(100, 20);
+            this.TimeBox.TabIndex = 11;
+            // 
+            // DateLabel
+            // 
+            this.DateLabel.AutoSize = true;
+            this.DateLabel.Location = new System.Drawing.Point(61, 253);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(30, 13);
+            this.DateLabel.TabIndex = 12;
+            this.DateLabel.Text = "Date";
+            // 
+            // DateBox
+            // 
+            this.DateBox.Location = new System.Drawing.Point(145, 250);
+            this.DateBox.Name = "DateBox";
+            this.DateBox.Size = new System.Drawing.Size(100, 20);
+            this.DateBox.TabIndex = 13;
+            // 
+            // DateFormatLabel
+            // 
+            this.DateFormatLabel.AutoSize = true;
+            this.DateFormatLabel.Location = new System.Drawing.Point(128, 282);
+            this.DateFormatLabel.Name = "DateFormatLabel";
+            this.DateFormatLabel.Size = new System.Drawing.Size(139, 13);
+            this.DateFormatLabel.TabIndex = 14;
+            this.DateFormatLabel.Text = "Date Format: YYYY-MM-DD";
+            // 
+            // TimeFormatLabel
+            // 
+            this.TimeFormatLabel.AutoSize = true;
+            this.TimeFormatLabel.Location = new System.Drawing.Point(128, 346);
+            this.TimeFormatLabel.Name = "TimeFormatLabel";
+            this.TimeFormatLabel.Size = new System.Drawing.Size(146, 13);
+            this.TimeFormatLabel.TabIndex = 15;
+            this.TimeFormatLabel.Text = "Time Format: HH:mm (military)";
             // 
             // EditAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 515);
+            this.Controls.Add(this.TimeFormatLabel);
+            this.Controls.Add(this.DateFormatLabel);
+            this.Controls.Add(this.DateBox);
+            this.Controls.Add(this.DateLabel);
+            this.Controls.Add(this.TimeBox);
             this.Controls.Add(this.TimeLabel);
             this.Controls.Add(this.TypeBox);
             this.Controls.Add(this.TypeLabel);
@@ -171,5 +222,10 @@
         private System.Windows.Forms.Label TypeLabel;
         private System.Windows.Forms.TextBox TypeBox;
         private System.Windows.Forms.Label TimeLabel;
+        private System.Windows.Forms.TextBox TimeBox;
+        private System.Windows.Forms.Label DateLabel;
+        private System.Windows.Forms.TextBox DateBox;
+        private System.Windows.Forms.Label DateFormatLabel;
+        private System.Windows.Forms.Label TimeFormatLabel;
     }
 }

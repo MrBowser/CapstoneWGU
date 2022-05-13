@@ -44,6 +44,8 @@
             this.DayTimeLabel = new System.Windows.Forms.Label();
             this.Colon = new System.Windows.Forms.Label();
             this.MinutesBox = new System.Windows.Forms.TextBox();
+            this.DateLabelDirect = new System.Windows.Forms.Label();
+            this.TimeLabelFormat = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SubmitBut
@@ -181,11 +183,31 @@
             this.MinutesBox.TabIndex = 15;
             this.MinutesBox.Text = "00";
             // 
+            // DateLabelDirect
+            // 
+            this.DateLabelDirect.AutoSize = true;
+            this.DateLabelDirect.Location = new System.Drawing.Point(124, 299);
+            this.DateLabelDirect.Name = "DateLabelDirect";
+            this.DateLabelDirect.Size = new System.Drawing.Size(139, 13);
+            this.DateLabelDirect.TabIndex = 16;
+            this.DateLabelDirect.Text = "Date Format: YYYY-MM-DD";
+            // 
+            // TimeLabelFormat
+            // 
+            this.TimeLabelFormat.AutoSize = true;
+            this.TimeLabelFormat.Location = new System.Drawing.Point(124, 354);
+            this.TimeLabelFormat.Name = "TimeLabelFormat";
+            this.TimeLabelFormat.Size = new System.Drawing.Size(154, 13);
+            this.TimeLabelFormat.TabIndex = 17;
+            this.TimeLabelFormat.Text = "Time Format: HH : MM (military)";
+            // 
             // AddAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 426);
+            this.Controls.Add(this.TimeLabelFormat);
+            this.Controls.Add(this.DateLabelDirect);
             this.Controls.Add(this.MinutesBox);
             this.Controls.Add(this.Colon);
             this.Controls.Add(this.DayTimeLabel);
@@ -227,5 +249,7 @@
         private System.Windows.Forms.Label DayTimeLabel;
         private System.Windows.Forms.Label Colon;
         private System.Windows.Forms.TextBox MinutesBox;
+        private System.Windows.Forms.Label DateLabelDirect;
+        private System.Windows.Forms.Label TimeLabelFormat;
     }
 }
