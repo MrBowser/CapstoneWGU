@@ -164,11 +164,11 @@
             // 
             // AppRepBut
             // 
-            this.AppRepBut.Location = new System.Drawing.Point(273, 431);
+            this.AppRepBut.Location = new System.Drawing.Point(245, 431);
             this.AppRepBut.Name = "AppRepBut";
-            this.AppRepBut.Size = new System.Drawing.Size(152, 23);
+            this.AppRepBut.Size = new System.Drawing.Size(180, 23);
             this.AppRepBut.TabIndex = 11;
-            this.AppRepBut.Text = "Appointments By Type";
+            this.AppRepBut.Text = "Appointments By Month/Type";
             this.AppRepBut.UseVisualStyleBackColor = true;
             this.AppRepBut.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AppRepBut_MouseClick);
             // 
@@ -230,7 +230,7 @@
             // extraReplabel
             // 
             this.extraReplabel.AutoSize = true;
-            this.extraReplabel.Location = new System.Drawing.Point(302, 457);
+            this.extraReplabel.Location = new System.Drawing.Point(285, 457);
             this.extraReplabel.Name = "extraReplabel";
             this.extraReplabel.Size = new System.Drawing.Size(104, 13);
             this.extraReplabel.TabIndex = 17;

@@ -111,15 +111,23 @@ namespace SoftwareTwoProject.Forms
             DataTable AppointmentTableInfo = new DataTable();
             appointprep.Fill(AppointmentTableInfo);
             ReportView.DataSource = AppointmentTableInfo;
-
-            for (int i = ReportView.Rows.Count; i >= 0; i--)
+            
+            if(ReportView.Rows.Count>0)
             {
-                if(ReportView.Rows[i].Cells[2].Value !=AppTypeGrid.SelectedRows[0].Cells[0].Value)
+                string type1 = AppTypeGrid.SelectedRows[0].Cells[0].Value.ToString();
+                
+                for (int i = ReportView.Rows.Count; i > 0; i--)
                 {
-                    ReportView.Rows.RemoveAt(i);
+                    if (ReportView.Rows[i-1].Cells[2].Value.ToString() != type1)
+                    {
+                        ReportView.Rows.RemoveAt(i-1);
+                    }
+
                 }
 
             }
+            
+            
 
 
         }

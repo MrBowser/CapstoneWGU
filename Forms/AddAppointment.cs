@@ -32,17 +32,7 @@ namespace SoftwareTwoProject.Forms
 
             custtable.Close();
 
-           /* string custIdMax = "Select Max(customerId) from customer";
-            custtable.Open();
-
-            MySqlCommand custMaxQuery = new MySqlCommand(custIdMax, custtable);
-            object getCustMax = custMaxQuery.ExecuteScalar();
-            int b = Convert.ToInt32(getCustMax.ToString());
-            custIdDef = b;
-
-            custtable.Close();
-
-            */
+          
 
 
 
@@ -133,6 +123,33 @@ namespace SoftwareTwoProject.Forms
                     throw new Exception("Please submit during business hours (9-17)");
                 }
 
+                //checks scheduling overlap
+                //create a list of all the times of the existing appointments and then substract the times between the submitted time and the list if >60 and <-60 then overlap
+                string getappointmenttimes = $"select start from appointment where userId = {UsIdBox.Text}";
+                AppTable.Open();
+                MySqlCommand getappointmenttimesp2 = new MySqlCommand(getappointmenttimes, AppTable);
+                MySqlDataReader getappointmenttimesp3 = getappointmenttimesp2.ExecuteReader();
+                while(getappointmenttimesp3.Read())
+                {
+                    scheduletimes.Add(getappointmenttimesp3.GetString("start"));
+                }
+                AppTable.Close();
+
+                for (int i = 0; i < scheduletimes.Count; i++)
+                {
+                    DateTime scheditem = DateTime.Parse(scheduletimes[i]);
+                    string schedconv = $"{DateBox.Text} {HourBox.Text}:{MinutesBox.Text}:00";
+                    DateTime apptimeadd = DateTime.Parse(schedconv);
+
+                    TimeSpan overlap = scheditem.Subtract(apptimeadd);
+                    double numMinutes = overlap.TotalMinutes;
+
+                    if(numMinutes<60 && numMinutes>-60)
+                    {
+                        throw new Exception("This conflicts with another appointment please select a different time");
+                    }
+                       
+                }
                 
 
                 string addAppointmentQuery = $"insert into appointment VALUES ('{ApIdBox.Text}','{CusIdBox.Text}','{UsIdBox.Text}','not needed','not needed','not needed','not needed','{TypeBox.Text}','not needed','{DateBox.Text} {HourBox.Text}:{MinutesBox.Text}:00','2019-01-01 00:00:00','2019-01-01 00:00:00','test','2019-01-01 00:00:00','test')";
@@ -172,6 +189,7 @@ namespace SoftwareTwoProject.Forms
 
         List<string> CusIds = new List<string>();
         List<string> UserIds = new List<string>();
+        List<string> scheduletimes = new List<string>();
         int custIdDef = -1;
     }
 }

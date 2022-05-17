@@ -133,12 +133,40 @@ namespace SoftwareTwoProject.Forms
                     throw new Exception("Please submit during business hours (9-17)");
                 }
 
+                //checks scheduling overlap
+                //create a list of all the times of the existing appointments and then substract the times between the submitted time and the list if >60 and <-60 then overlap
+                string getappointmenttimes = $"select start from appointment where userId = {UserIdBox.Text}";
+                AppTable.Open();
+                MySqlCommand getappointmenttimesp2 = new MySqlCommand(getappointmenttimes, AppTable);
+                MySqlDataReader getappointmenttimesp3 = getappointmenttimesp2.ExecuteReader();
+                while (getappointmenttimesp3.Read())
+                {
+                    scheduletimes.Add(getappointmenttimesp3.GetString("start"));
+                }
+                AppTable.Close();
+
+                for (int i = 0; i < scheduletimes.Count; i++)
+                {
+                    DateTime scheditem = DateTime.Parse(scheduletimes[i]);
+                    string schedconv = $"{DateBox.Text} {TimeBox.Text}:00";
+                    DateTime apptimeadd = DateTime.Parse(schedconv);
+
+                    TimeSpan overlap = scheditem.Subtract(apptimeadd);
+                    double numMinutes = overlap.TotalMinutes;
+
+                    if (numMinutes < 60 && numMinutes > -60)
+                    {
+                        throw new Exception("This conflicts with another appointment please select a different time");
+                    }
+
+                }
+
 
                 MySqlConnection custtable = new MySqlConnection(x);
                 string updateApp = $"Update appointment SET customerId='{CustomerIdBox.Text}', userId='{UserIdBox.Text}', type= '{TypeBox.Text}', start ='{DateBox.Text} {TimeBox.Text}:00' Where appointmentId ={AppIDBox.Text}";
                 custtable.Open();
 
-                //MB NOTE HAVEN"T PUT IN EXCEPTION HANDLING or added tables for custid and userid
+                
 
                 MySqlCommand updateApptName = new MySqlCommand(updateApp, custtable);
 
@@ -170,6 +198,7 @@ namespace SoftwareTwoProject.Forms
 
         List<string> CusIds = new List<string>();
         List<string> UserIds = new List<string>();
+        List<string> scheduletimes = new List<string>();
 
         string appId;
         string custId;

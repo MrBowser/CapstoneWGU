@@ -60,8 +60,7 @@ namespace SoftwareTwoProject.Forms
 
 
 
-            //note below need to figure out alerts and notifications based on time
-            //run a for loop to get list of userID appointments ... substract? 
+            //note below is the code required to setup 15 minute login alert.
 
             if(Appointment.AppAlertShown ==false)
             {
