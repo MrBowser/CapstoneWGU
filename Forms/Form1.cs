@@ -89,7 +89,7 @@ namespace SoftwareTwoProject
                     }
 
                     //the below code creates the file to store a login time or utilizes an existing file set to var filename
-
+                    //the if else statement is the first type of exception handling that prevents/corrects logic flow if a file is already created
                     if(File.Exists(filename)!= true)
                     {
                         File.Create(filename).Close();
@@ -115,7 +115,7 @@ namespace SoftwareTwoProject
                     break;
                 }
                 
-                // if the PW and username don't match the data base than an error will show
+                // if the PW and username don't match the data base than an error will show second type of exception handling
                 try
                 {
 
