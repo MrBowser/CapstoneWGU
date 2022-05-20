@@ -52,13 +52,7 @@ namespace SoftwareTwoProject.Forms
             try
             {
 
-                //verifies phone correct format means num first 3 and last 4 digits and should be 8 total with a -
-                /*
-                if (PhoneBox.Text.Length != 8)
-                {
-                    throw new Exception("Phone not correct format please use nnn-nnnn");
-                }
-                */
+                
 
                 //lambda expression number 2 (other is used in the addappointment form) primary reason again is to reduce lines of code and improve readability
                 string phonelengthcheck = PhoneBox.Text.Length == 8 ? "is correct" : throw new Exception("Phone not correct format please use nnn-nnnn, it is currently not eight characters");
@@ -71,6 +65,10 @@ namespace SoftwareTwoProject.Forms
 
                 }
 
+                if (CustNameBox.Text.Length < 1 || AddressBox.Text.Length < 1 || cityBox.Text.Length < 1 || countryBox.Text.Length < 1)
+                {
+                    throw new Exception("Nothing can be left blank");
+                }
 
                 int custID = Customer.customerIDNumber;
                 Customer.customerIDNumber++;
@@ -213,7 +211,7 @@ namespace SoftwareTwoProject.Forms
 
                 }
 
-                //checks to see if we need to create a new address record noteeeee need to add city id into the new address
+                //checks to see if we need to create a new address record
 
                 for (int i = 0; i < phonenumbers.Count; i++)
                 {
