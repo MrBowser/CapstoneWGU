@@ -134,6 +134,20 @@ namespace SoftwareTwoProject.Forms
                 }
 
                 custtable.Close();
+
+                custtable.Open();
+
+                string cityQuery = "select cityId, city from city";
+                MySqlCommand cityPull = new MySqlCommand(cityQuery, custtable);
+                MySqlDataReader cityRead = cityPull.ExecuteReader();
+                while (cityRead.Read())
+                {
+                    cityList.Add(cityRead.GetString("city"));
+                    cityIdList.Add(cityRead.GetString("cityId"));
+
+                }
+
+                custtable.Close();
                 //checks to see if new country
 
                 for (int i=0; i <countrylist.Count; i++)
@@ -160,7 +174,7 @@ namespace SoftwareTwoProject.Forms
                     custtable.Close();
 
                     custtable.Open();
-                    string newCountry = $"Insert Into country VALUES('{countryID}','{countryBox.Text}','2013-09-09 00:00:00,'test','2013-09-09 00:00:00','test')";
+                    string newCountry = $"Insert Into country VALUES('{countryID}','{countryBox.Text}','2013-09-09 00:00:00','test','2013-09-09 00:00:00','test')";
                     MySqlCommand addCountry = new MySqlCommand(newCountry, custtable);
                     addCountry.ExecuteNonQuery();
                     custtable.Close();
@@ -168,8 +182,36 @@ namespace SoftwareTwoProject.Forms
 
                 //checks to see if we need to create a new city record
 
+                for (int i = 0; i < cityList.Count; i++)
+                {
+                    if (cityBox.Text == cityList[i])
+                    {
+                        cityID = Int32.Parse(cityIdList[i]);
+                    }
+
+                }
+
                 //creates new city if not found
 
+                if(cityID ==-1)
+                {
+
+                    custtable.Open();
+                    string cityCount = "Select Count(*) from city";
+                    MySqlCommand citycountQuery = new MySqlCommand(cityCount, custtable);
+                    object getcityCount = citycountQuery.ExecuteScalar();
+                    int m = Convert.ToInt32(getcityCount.ToString());
+
+                    cityID = m + 1;
+                    custtable.Close();
+
+                    custtable.Open();
+                    string newCity = $"Insert Into city VALUES('{cityID}','{cityBox.Text}','{countryID}','2013-09-09 00:00:00','test','2013-09-09 00:00:00','test')";
+                    MySqlCommand addCity = new MySqlCommand(newCity, custtable);
+                    addCity.ExecuteNonQuery();
+                    custtable.Close();
+
+                }
 
                 //checks to see if we need to create a new address record noteeeee need to add city id into the new address
 
@@ -202,7 +244,7 @@ namespace SoftwareTwoProject.Forms
                     custtable.Close();
 
                     custtable.Open();
-                    string addAddressQuery = $"Insert Into address VALUES('{adID}','{AddressBox.Text}','test','3','12345','{PhoneBox.Text}','2013-09-09 00:00:00', 'test','2013-09-09 00:00:00','test') ";
+                    string addAddressQuery = $"Insert Into address VALUES('{adID}','{AddressBox.Text}','test','{cityID}','12345','{PhoneBox.Text}','2013-09-09 00:00:00','test','2013-09-09 00:00:00','test') ";
                     MySqlCommand addAddress = new MySqlCommand(addAddressQuery, custtable);
                     addAddress.ExecuteNonQuery();
                     custtable.Close();
