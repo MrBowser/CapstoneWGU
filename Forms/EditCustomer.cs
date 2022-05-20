@@ -18,9 +18,10 @@ namespace SoftwareTwoProject.Forms
         {
             InitializeComponent();
 
+            //populates the basic customer record info
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);
-            string getCustIDinfo = $"Select customerName, customerId, address, phone from customer t1 inner join address t2 on t1.addressId = t2.addressId where customerId = {Customer.editcustomerID}";
+            string getCustIDinfo = $"Select customerName, customerId, address, phone, cityId from customer t1 inner join address t2 on t1.addressId = t2.addressId where customerId = {Customer.editcustomerID}";
             custtable.Open();
 
             MySqlCommand custIdInfo = new MySqlCommand(getCustIDinfo, custtable);
@@ -32,9 +33,8 @@ namespace SoftwareTwoProject.Forms
                 custName = custinfo.GetString("customerName");
                 Phone = custinfo.GetString("phone");
                 AddressE = custinfo.GetString("address");
-
-               
-
+                cityId = custinfo.GetString("cityId");
+                              
             }
 
             custtable.Close();
@@ -44,8 +44,34 @@ namespace SoftwareTwoProject.Forms
             AddressBox.Text = AddressE;
             PhoneBox.Text = Phone;
 
-            //string CustJoinQuery = "select customerName, customerId, address, phone" +
-            //    " from customer t1 inner join address t2 on t1.addressId = t2.addressId ";
+            // gets the city and country info
+
+            string getCityInfo = $"select city, countryId from city where cityId = {cityId}";
+            custtable.Open();
+
+            MySqlCommand cityIdinfo = new MySqlCommand(getCityInfo, custtable);
+            MySqlDataReader cityinfor = cityIdinfo.ExecuteReader();
+
+            while (cityinfor.Read())
+            {
+                cityBox.Text = cityinfor.GetString("city");
+                countryId = cityinfor.GetString("countryId");
+            }
+
+            custtable.Close();
+
+            string getCountryInfo = $"select country from country where countryId = {countryId}";
+            custtable.Open();
+
+            MySqlCommand countryidinfo = new MySqlCommand(getCountryInfo, custtable);
+            MySqlDataReader countryinfo = countryidinfo.ExecuteReader();
+
+            while (countryinfo.Read())
+            {
+                countryBox.Text = countryinfo.GetString("country");
+            }
+            custtable.Close();
+
 
 
 
@@ -175,9 +201,17 @@ namespace SoftwareTwoProject.Forms
 
         string AddressE;
 
+        string cityId;
+
+        string countryId;
+
         List<string> phonenumbers = new List<string>();
         List<string> addresses = new List<string>();
         List<string> addressIDlist = new List<string>();
+        List<string> cityIdList = new List<string>();
+        List<string> cityList = new List<string>();
+        List<string> countrylist = new List<string>();
+        List<string> countryIDlist = new List<string>();
 
 
 
