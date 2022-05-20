@@ -38,6 +38,10 @@
             this.PhoneBox = new System.Windows.Forms.TextBox();
             this.AddressLabel = new System.Windows.Forms.Label();
             this.AddressBox = new System.Windows.Forms.TextBox();
+            this.cityLabel = new System.Windows.Forms.Label();
+            this.cityBox = new System.Windows.Forms.TextBox();
+            this.countryLabel = new System.Windows.Forms.Label();
+            this.countryBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // SubmitBut
@@ -125,11 +129,47 @@
             this.AddressBox.Size = new System.Drawing.Size(100, 20);
             this.AddressBox.TabIndex = 11;
             // 
+            // cityLabel
+            // 
+            this.cityLabel.AutoSize = true;
+            this.cityLabel.Location = new System.Drawing.Point(59, 214);
+            this.cityLabel.Name = "cityLabel";
+            this.cityLabel.Size = new System.Drawing.Size(24, 13);
+            this.cityLabel.TabIndex = 12;
+            this.cityLabel.Text = "City";
+            // 
+            // cityBox
+            // 
+            this.cityBox.Location = new System.Drawing.Point(124, 211);
+            this.cityBox.Name = "cityBox";
+            this.cityBox.Size = new System.Drawing.Size(100, 20);
+            this.cityBox.TabIndex = 13;
+            // 
+            // countryLabel
+            // 
+            this.countryLabel.AutoSize = true;
+            this.countryLabel.Location = new System.Drawing.Point(62, 265);
+            this.countryLabel.Name = "countryLabel";
+            this.countryLabel.Size = new System.Drawing.Size(43, 13);
+            this.countryLabel.TabIndex = 14;
+            this.countryLabel.Text = "Country";
+            // 
+            // countryBox
+            // 
+            this.countryBox.Location = new System.Drawing.Point(124, 262);
+            this.countryBox.Name = "countryBox";
+            this.countryBox.Size = new System.Drawing.Size(100, 20);
+            this.countryBox.TabIndex = 15;
+            // 
             // AddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 459);
+            this.Controls.Add(this.countryBox);
+            this.Controls.Add(this.countryLabel);
+            this.Controls.Add(this.cityBox);
+            this.Controls.Add(this.cityLabel);
             this.Controls.Add(this.AddressBox);
             this.Controls.Add(this.AddressLabel);
             this.Controls.Add(this.PhoneBox);
@@ -159,5 +199,9 @@
         private System.Windows.Forms.TextBox PhoneBox;
         private System.Windows.Forms.Label AddressLabel;
         private System.Windows.Forms.TextBox AddressBox;
+        private System.Windows.Forms.Label cityLabel;
+        private System.Windows.Forms.TextBox cityBox;
+        private System.Windows.Forms.Label countryLabel;
+        private System.Windows.Forms.TextBox countryBox;
     }
 }

@@ -75,6 +75,8 @@ namespace SoftwareTwoProject.Forms
                 int custID = Customer.customerIDNumber;
                 Customer.customerIDNumber++;
                 int adID = -1;
+                int cityID = -1;
+                int countryID = -1;
                 string x = Connection.connectstring;
                 MySqlConnection custtable = new MySqlConnection(x);
 
@@ -119,10 +121,57 @@ namespace SoftwareTwoProject.Forms
 
                 custtable.Close();
 
-                
-                
+                custtable.Open();
 
-                //checks to see if we need to create a new address record
+                string countryQuery = "select countryId, country from country";
+                MySqlCommand countryPull = new MySqlCommand(countryQuery, custtable);
+                MySqlDataReader countryRead = countryPull.ExecuteReader();
+                while (countryRead.Read())
+                {
+                    countrylist.Add(countryRead.GetString("country"));
+                    countryIDlist.Add(countryRead.GetString("countryId"));
+
+                }
+
+                custtable.Close();
+                //checks to see if new country
+
+                for (int i=0; i <countrylist.Count; i++)
+                {
+                    if(countryBox.Text == countrylist[i])
+                    {
+                        countryID = Int32.Parse(countryIDlist[i]);
+                    }
+
+                }
+
+
+                //creates new country if not found
+
+                if(countryID ==-1)
+                {
+                    custtable.Open();
+                    string countryCount = "Select Count(*) from country";
+                    MySqlCommand countrycountQuery = new MySqlCommand(countryCount, custtable);
+                    object getcountryCount = countrycountQuery.ExecuteScalar();
+                    int z = Convert.ToInt32(getcountryCount.ToString());
+
+                    countryID = z + 1;
+                    custtable.Close();
+
+                    custtable.Open();
+                    string newCountry = $"Insert Into country VALUES('{countryID}','{countryBox.Text}','2013-09-09 00:00:00,'test','2013-09-09 00:00:00','test')";
+                    MySqlCommand addCountry = new MySqlCommand(newCountry, custtable);
+                    addCountry.ExecuteNonQuery();
+                    custtable.Close();
+                }
+
+                //checks to see if we need to create a new city record
+
+                //creates new city if not found
+
+
+                //checks to see if we need to create a new address record noteeeee need to add city id into the new address
 
                 for (int i = 0; i < phonenumbers.Count; i++)
                 {
@@ -135,10 +184,7 @@ namespace SoftwareTwoProject.Forms
 
                 }
 
-
-
-
-
+                
                 //creates new address record if not found
 
                 if (adID == -1)
@@ -195,6 +241,10 @@ namespace SoftwareTwoProject.Forms
         List<string> phonenumbers = new List<string>();
         List<string> addresses = new List<string>();
         List<string> addressIDlist = new List<string>();
+        List<string> cityIdList = new List<string>();
+        List<string> cityList = new List<string>();
+        List<string> countrylist = new List<string>();
+        List<string> countryIDlist = new List<string>();
         
     }
 }
