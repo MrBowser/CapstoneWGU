@@ -24,8 +24,10 @@ namespace SoftwareTwoProject.Forms
             MySqlConnection custtable = new MySqlConnection(x);
             custtable.Open();
 
-            string CustJoinQuery = "select customerName, customerId, address, phone" +
-                " from customer t1 inner join address t2 on t1.addressId = t2.addressId " ;
+            string CustJoinQuery = "select customerName, customerId, address, phone, city, country" +
+                " from customer t1 inner join address t2 on t1.addressId = t2.addressId" +
+                " inner join city t3 on t3.cityId = t2.cityId" +
+                " inner join country t4 on t4.countryId = t3.countryId";
 
             MySqlCommand runCusjoin = new MySqlCommand(CustJoinQuery, custtable);
             MySqlDataAdapter Cusprep = new MySqlDataAdapter(runCusjoin);
@@ -41,8 +43,8 @@ namespace SoftwareTwoProject.Forms
             // NOTE: This creates and fills the appointments table with the needed columns from appointments
 
             custtable.Open();
-            string appointmentsQuery = "select appointmentId, customerId, type, start, userId" +
-                " from appointment";
+            string appointmentsQuery = "select appointmentId, t2.customerId, type, start, userId, customerName" +
+                " from customer t1 inner join appointment t2 on t1.customerId = t2.customerId";
 
             MySqlCommand SQLappointmentcol = new MySqlCommand(appointmentsQuery, custtable);
             MySqlDataAdapter appointprep = new MySqlDataAdapter(SQLappointmentcol);

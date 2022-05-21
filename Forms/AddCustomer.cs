@@ -55,7 +55,9 @@ namespace SoftwareTwoProject.Forms
                 
 
                 //lambda expression number 2 (other is used in the addappointment form) primary reason again is to reduce lines of code and improve readability
-                string phonelengthcheck = PhoneBox.Text.Length == 8 ? "is correct" : throw new Exception("Phone not correct format please use nnn-nnnn, it is currently not eight characters");
+                Phonecheck phonecheck = () => PhoneBox.Text.Length == 8 ? true : throw new Exception("Phone not correct format please use nnn-nnnn, it is currently not eight characters");
+
+                phonecheck();
 
                 string phonetest = PhoneBox.Text.Remove(3, 1);
 
@@ -285,6 +287,8 @@ namespace SoftwareTwoProject.Forms
         List<string> cityList = new List<string>();
         List<string> countrylist = new List<string>();
         List<string> countryIDlist = new List<string>();
-        
+
+        delegate bool Phonecheck();
+
     }
 }

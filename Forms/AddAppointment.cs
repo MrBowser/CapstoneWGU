@@ -144,13 +144,14 @@ namespace SoftwareTwoProject.Forms
 
                     TimeSpan overlap = scheditem.Subtract(apptimeadd);
                     double numMinutes = overlap.TotalMinutes;
+                    
 
 
 
                     //below is lambda #1 here the primary reason was to reduce lines of code from the if statement and increase readability.
 
-                    double timecheck = numMinutes < 60 && numMinutes > -60 ? numMinutes : throw new Exception("This conflicts with another appointment please select a different time");
-                 
+                    AppOverlap appOverlap = () => numMinutes >= 60 || numMinutes <= -60 ? true : throw new Exception("This conflicts with another appointment please select a different time");
+                    appOverlap();
                        
                 }
                 
@@ -195,6 +196,6 @@ namespace SoftwareTwoProject.Forms
         List<string> scheduletimes = new List<string>();
         int custIdDef = -1;
 
-        delegate bool AppOverlap(double numMinutes);
+        delegate bool AppOverlap();
     }
 }
