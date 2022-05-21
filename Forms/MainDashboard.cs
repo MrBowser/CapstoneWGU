@@ -114,7 +114,7 @@ namespace SoftwareTwoProject.Forms
 
         private void EditCustomerBut_MouseClick(object sender, MouseEventArgs e)
         {
-
+            
              int selectedRowIndex = CustomerInfoGrid.CurrentCell.RowIndex;
 
             
@@ -125,7 +125,7 @@ namespace SoftwareTwoProject.Forms
 
 
 
-            MessageBox.Show(Convert.ToString(editId));
+            //MessageBox.Show(Convert.ToString(editId));
 
             Customer.editcustomerID = editId;
 
@@ -168,16 +168,16 @@ namespace SoftwareTwoProject.Forms
 
         private void MainDashboard_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'client_scheduleDataSet1.appointment' table. You can move, or remove it, as needed.
+            
             this.appointmentTableAdapter.Fill(this.client_scheduleDataSet1.appointment);
-            // TODO: This line of code loads data into the 'client_scheduleDataSet.customer' table. You can move, or remove it, as needed.
+            
             this.customerTableAdapter.Fill(this.client_scheduleDataSet.customer);
 
         }
 
         private void DeleteCustomerBut_MouseClick(object sender, MouseEventArgs e)
         {
-
+            // this deletes the customer
             int selectedRowIndex = CustomerInfoGrid.CurrentCell.RowIndex;
 
 
@@ -222,8 +222,7 @@ namespace SoftwareTwoProject.Forms
             custtable.Close();
 
 
-            //delete from appointments where customerId = editID;
-            // delete from customer where customerID = editID
+            
 
 
 
@@ -231,6 +230,7 @@ namespace SoftwareTwoProject.Forms
 
         private void DeleteAppointmentsBut_MouseClick(object sender, MouseEventArgs e)
         {
+            //this deletes appointments
             int selectedRowIndex = AppointmentInfoGrid.CurrentCell.RowIndex;
 
 

@@ -123,6 +123,11 @@ namespace SoftwareTwoProject.Forms
                     throw new Exception(" userId doesn't exist, please try a valid userId");
                 }
 
+                if (TypeBox.Text.Length < 1)
+                {
+                    throw new Exception("Type can't left blank");
+                }
+
                 DateTime test1 = DateTime.Parse(DateBox.Text);
                 DateTime test2 = DateTime.Parse(TimeBox.Text);
 

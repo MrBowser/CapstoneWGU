@@ -72,22 +72,34 @@ namespace SoftwareTwoProject.Forms
 
             //this generates the consultant's schedule
 
-            string x = Connection.connectstring;
-            MySqlConnection custtable = new MySqlConnection(x);
-            custtable.Open();
+            
+            try
+            {
+                string x = Connection.connectstring;
+                MySqlConnection custtable = new MySqlConnection(x);
+                custtable.Open();
+                string userId = UserListGrid.SelectedRows[0].Cells[0].Value.ToString();
 
-
-
-            string UserQuery = "select appointmentId, customerId, type, start" +
+                string UserQuery = "select appointmentId, customerId, type, start" +
                 $" from appointment where userID = '{UserListGrid.SelectedRows[0].Cells[0].Value}'";
 
-            MySqlCommand SQLappointmentcol = new MySqlCommand(UserQuery, custtable);
-            MySqlDataAdapter appointprep = new MySqlDataAdapter(SQLappointmentcol);
-            DataTable AppointmentTableInfo = new DataTable();
-            appointprep.Fill(AppointmentTableInfo);
-            UserSchedRepView.DataSource = AppointmentTableInfo;
+                MySqlCommand SQLappointmentcol = new MySqlCommand(UserQuery, custtable);
+                MySqlDataAdapter appointprep = new MySqlDataAdapter(SQLappointmentcol);
+                DataTable AppointmentTableInfo = new DataTable();
+                appointprep.Fill(AppointmentTableInfo);
+                UserSchedRepView.DataSource = AppointmentTableInfo;
 
-            custtable.Close();
+                custtable.Close();
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Please select a user before running the report");
+            }
+
+
+            
 
         }
 
