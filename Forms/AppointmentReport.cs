@@ -17,18 +17,14 @@ namespace SoftwareTwoProject.Forms
         public AppointmentReport()
         {
             InitializeComponent();
-            //note this code doesn't currently work
-            //so what we should do is datagrid view appointment types as well as have a date picker...
-            //create an if where if month and if whatever cell type string name of app, fill new table with the selected dates
-
-            // DateTime.Now.ToString("yyyy'-'MM'-'dd HH:mm:ss") should be conversion to database
+            
 
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);
             custtable.Open();
 
 
-            //this and the below 2 for loops will create the app Types to be selected from
+            //this gets a types list and populates the first selection datagrid
 
             string appointmentsQuery = "select type" +
                 " from appointment";
@@ -89,7 +85,7 @@ namespace SoftwareTwoProject.Forms
 
         private void ReportBut_MouseClick(object sender, MouseEventArgs e)
         {
-            //note: whoopsied what this report needs to be it needs to the appointment types and the count per month
+            //populates the report based on selected date and row from the first datagrid
 
             DateTime WeekCal = dateTimePicker1.Value;
             string MonthSQL = WeekCal.ToString("yyyy'-'MM'-'dd HH:mm:ss");

@@ -19,7 +19,7 @@ namespace SoftwareTwoProject.Forms
         {
             InitializeComponent();
 
-            // NOTE: This creates and fills the customer table with the needed columns from bother customer and address
+            // NOTE: This creates and fills the customer table with the needed columns
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);
             custtable.Open();
@@ -53,7 +53,7 @@ namespace SoftwareTwoProject.Forms
             AppointmentInfoGrid.DataSource = AppointmentTableInfo;
 
 
-            // note below should work for localization and fill the table with the appropriate time information
+            // NOTE: this is the code for localization that fills the table with updated times for appointments based on timezone
             for (int i = 0; i < AppointmentInfoGrid.Rows.Count; i++)
             {
                 AppointmentInfoGrid.Rows[i].Cells[3].Value = TimeZoneInfo.ConvertTimeFromUtc((DateTime)AppointmentInfoGrid.Rows[i].Cells[3].Value, TimeZoneInfo.Local).ToString(); ;
@@ -62,7 +62,7 @@ namespace SoftwareTwoProject.Forms
 
 
 
-            //note below is the code required to setup 15 minute login alert.
+            //NOTE: this is the code required to setup 15 minute login alert.
 
             if(Appointment.AppAlertShown ==false)
             {

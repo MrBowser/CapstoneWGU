@@ -17,6 +17,7 @@ namespace SoftwareTwoProject.Forms
         public AddAppointment()
         {
             InitializeComponent();
+            //gets appointment ID
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);
 
@@ -41,7 +42,7 @@ namespace SoftwareTwoProject.Forms
 
         private void SubmitBut_MouseClick(object sender, MouseEventArgs e)
         {
-            //
+            
 
             int AppId = Appointment.AppointmentIdCounter;
             Appointment.AppointmentIdCounter++;
@@ -50,7 +51,7 @@ namespace SoftwareTwoProject.Forms
             string x = Connection.connectstring;
             MySqlConnection AppTable = new MySqlConnection(x);
 
-            //checks to see if the customer id exists otherwise error
+            //checks to see if the customer id and user id exists 
 
             AppTable.Open();
             string cusIDquery = "select customerId from customer";
@@ -105,7 +106,7 @@ namespace SoftwareTwoProject.Forms
 
             try
             {
-                //checks cust id existing, userid existing, and correct date format and business hours appointments
+                //checks that the customer id exists, userid exists, and that the correct date format, business hours and overlap criteria are met
                 if (custIdDef == -1)
                 {
                     throw new Exception("CustomerId Doesn't Exist, Please try a valid CustomerId ");
@@ -124,7 +125,7 @@ namespace SoftwareTwoProject.Forms
                 }
 
                 //checks scheduling overlap
-                //create a list of all the times of the existing appointments and then substract the times between the submitted time and the list if >60 and <-60 then overlap
+                
                 string getappointmenttimes = $"select start from appointment where userId = {UsIdBox.Text}";
                 AppTable.Open();
                 MySqlCommand getappointmenttimesp2 = new MySqlCommand(getappointmenttimes, AppTable);
@@ -155,7 +156,7 @@ namespace SoftwareTwoProject.Forms
                        
                 }
                 
-
+                //creates the appointment in the database
                 string addAppointmentQuery = $"insert into appointment VALUES ('{ApIdBox.Text}','{CusIdBox.Text}','{UsIdBox.Text}','not needed','not needed','not needed','not needed','{TypeBox.Text}','not needed','{DateBox.Text} {HourBox.Text}:{MinutesBox.Text}:00','2019-01-01 00:00:00','2019-01-01 00:00:00','test','2019-01-01 00:00:00','test')";
                 AppTable.Open();
                 MySqlCommand addAppointmentCom = new MySqlCommand(addAppointmentQuery, AppTable);
@@ -173,7 +174,7 @@ namespace SoftwareTwoProject.Forms
                 
             }
 
-            //note need to remember to potential do something with scheduling and need to put error handing in for time
+            
 
             
             

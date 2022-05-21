@@ -19,6 +19,7 @@ namespace SoftwareTwoProject.Forms
         {
             InitializeComponent();
 
+            //creates and sets the customerID
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);
             
@@ -52,7 +53,7 @@ namespace SoftwareTwoProject.Forms
             try
             {
 
-                
+                //below is a variety of error handling messages including validating the phone format, making sure nothing is blank, etc.
 
                 //lambda expression number 2 (other is used in the addappointment form) primary reason again is to reduce lines of code and improve readability
                 Phonecheck phonecheck = () => PhoneBox.Text.Length == 8 ? true : throw new Exception("Phone not correct format please use nnn-nnnn, it is currently not eight characters");
@@ -148,7 +149,7 @@ namespace SoftwareTwoProject.Forms
                 }
 
                 custtable.Close();
-                //checks to see if new country
+                //checks to see if  a new country is needed
 
                 for (int i=0; i <countrylist.Count; i++)
                 {

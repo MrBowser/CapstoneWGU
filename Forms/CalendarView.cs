@@ -21,7 +21,7 @@ namespace SoftwareTwoProject.Forms
             
 
             // DateTime.Now.ToString("yyyy'-'MM'-'dd HH:mm:ss") should be conversion to database
-
+            //this fills the first table with the current list of appointments
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);
             custtable.Open();
@@ -55,7 +55,7 @@ namespace SoftwareTwoProject.Forms
 
         private void UpdateBut_MouseClick(object sender, MouseEventArgs e)
         { 
-            //need to clear data base and update selectrange that will give us the select for import than repopulate database
+            //this selects the date range and if you desire monthly or weekly views
              if (WeeklyBut.Checked == true)
             {
                 DateTime WeekCal = dateTimePicker.Value;

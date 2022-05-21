@@ -18,9 +18,7 @@ namespace SoftwareTwoProject.Forms
         {
             InitializeComponent();
 
-            // needs to create a month value query based off of a date time picker
-            // is what I need to do create a sql query?
-            // type count where month value? select type, Count type and then a group by type after the where clause
+            
         }
 
         private void DashBut_MouseClick(object sender, MouseEventArgs e)
@@ -34,7 +32,7 @@ namespace SoftwareTwoProject.Forms
 
         private void ReportBut_MouseClick(object sender, MouseEventArgs e)
         {
-
+            //this creates the report based on the datetime picker value and will give the associated appointment counts
             DateTime WeekCal = dateTimePicker1.Value;
             string MonthSQL = WeekCal.ToString("yyyy'-'MM'-'dd HH:mm:ss");
             string MonthSQL2 = WeekCal.ToString("yyyy'-'MM'-'dd");

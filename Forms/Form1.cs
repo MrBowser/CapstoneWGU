@@ -22,7 +22,7 @@ namespace SoftwareTwoProject
         
         public Form1()
         {
-            //note below confirms if not USA english then french as culture and language will be in french
+            //note the below code confirms if the location is not USA english then the form will default to french as culture and language
             
             
            
@@ -41,7 +41,7 @@ namespace SoftwareTwoProject
             string userid = NameBox.Text;
             MySqlConnection user = new MySqlConnection("server=127.0.0.1;user id=sqlUser;database=client_schedule;port=3306;password=Passw0rd!");
             
-            MessageBox.Show(CultureInfo.CurrentCulture.ToString());
+            //MessageBox.Show(CultureInfo.CurrentCulture.ToString());
             
             user.Open();
             MySqlCommand namecommand = new MySqlCommand(logNameQuery,user);
@@ -60,7 +60,7 @@ namespace SoftwareTwoProject
                 PWlist.Add(readPW.GetString("password"));
             }
 
-            //MySqlConnection user = new MySqlConnection("server=127.0.0.1;user id=sqlUser;persistsecurityinfo=True;database=client_schedule");
+            
         }
 
         private void LoginBut_MouseClick(object sender, MouseEventArgs e)
@@ -115,7 +115,7 @@ namespace SoftwareTwoProject
                     break;
                 }
                 
-                // if the PW and username don't match the data base than an error will show second type of exception handling
+                // if the PW and username don't match the database than an error will show, this is the second type of exception handling
                 try
                 {
 

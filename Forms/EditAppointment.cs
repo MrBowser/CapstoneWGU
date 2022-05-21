@@ -17,7 +17,7 @@ namespace SoftwareTwoProject.Forms
         public EditAppointment()
         {
             InitializeComponent();
-
+            //prepopulates the appointment data
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);
             string getappIDinfo = $"Select appointmentId, customerId, userId, type, start from appointment where appointmentId = {Appointment.editAppointmentId}";
@@ -60,7 +60,7 @@ namespace SoftwareTwoProject.Forms
             string x = Connection.connectstring;
             MySqlConnection AppTable = new MySqlConnection(x);
 
-            //checks to see if the customer id exists otherwise error
+            //checks to see if the customer and user id exists and that it is within business hours
 
             AppTable.Open();
             string cusIDquery = "select customerId from customer";
@@ -134,7 +134,7 @@ namespace SoftwareTwoProject.Forms
                 }
 
                 //checks scheduling overlap
-                //create a list of all the times of the existing appointments and then substract the times between the submitted time and the list if >60 and <-60 then overlap
+                
                 string getappointmenttimes = $"select start from appointment where userId = {UserIdBox.Text}";
                 AppTable.Open();
                 MySqlCommand getappointmenttimesp2 = new MySqlCommand(getappointmenttimes, AppTable);
@@ -161,6 +161,7 @@ namespace SoftwareTwoProject.Forms
 
                 }
 
+                //submits the updated appointment data
 
                 MySqlConnection custtable = new MySqlConnection(x);
                 string updateApp = $"Update appointment SET customerId='{CustomerIdBox.Text}', userId='{UserIdBox.Text}', type= '{TypeBox.Text}', start ='{DateBox.Text} {TimeBox.Text}:00' Where appointmentId ={AppIDBox.Text}";

@@ -35,6 +35,7 @@ namespace SoftwareTwoProject.Forms
             this.AppCalGrid = new System.Windows.Forms.DataGridView();
             this.UpdateBut = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.allviewNoteLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AppCalGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,11 +96,21 @@ namespace SoftwareTwoProject.Forms
             this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker.TabIndex = 6;
             // 
+            // allviewNoteLabel
+            // 
+            this.allviewNoteLabel.AutoSize = true;
+            this.allviewNoteLabel.Location = new System.Drawing.Point(362, 38);
+            this.allviewNoteLabel.Name = "allviewNoteLabel";
+            this.allviewNoteLabel.Size = new System.Drawing.Size(287, 13);
+            this.allviewNoteLabel.TabIndex = 7;
+            this.allviewNoteLabel.Text = "Note: Before the table is updated all appointments will show";
+            // 
             // CalendarView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.allviewNoteLabel);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.UpdateBut);
             this.Controls.Add(this.AppCalGrid);
@@ -122,5 +133,6 @@ namespace SoftwareTwoProject.Forms
         private System.Windows.Forms.DataGridView AppCalGrid;
         private System.Windows.Forms.Button UpdateBut;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Label allviewNoteLabel;
     }
 }

@@ -18,17 +18,14 @@ namespace SoftwareTwoProject.Forms
         {
             InitializeComponent();
 
-            // need to setup a database grid that lists the users to select
-            //then when selected run report, it should be a Where userid the above to get the list
-
-            // DateTime.Now.ToString("yyyy'-'MM'-'dd HH:mm:ss") should be conversion to database
+            
 
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);
             custtable.Open();
 
 
-            //this and the below 2 for loops will create the app Types to be selected from
+            //this will create the list of users to select
 
             
 
@@ -72,6 +69,8 @@ namespace SoftwareTwoProject.Forms
 
         private void GenBut_MouseClick(object sender, MouseEventArgs e)
         {
+
+            //this generates the consultant's schedule
 
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);

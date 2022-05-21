@@ -90,7 +90,7 @@ namespace SoftwareTwoProject.Forms
             try
             {
 
-                //verifies phone correct format means num first 3 and last 4 digits and should be 8 total with a -
+                //verifies phone correct format 
                 if (PhoneBox.Text.Length != 8)
                 {
                     throw new Exception("Phone not correct format please use nnn-nnnn");
@@ -229,7 +229,7 @@ namespace SoftwareTwoProject.Forms
 
                 }
 
-
+                //checks if existing address
                 for (int i = 0; i < phonenumbers.Count; i++)
                 {
                     if (PhoneBox.Text == phonenumbers[i] && AddressBox.Text == addresses[i])
@@ -241,6 +241,7 @@ namespace SoftwareTwoProject.Forms
 
                 }
 
+                //creates new address if not found
                 if (adID == -1)
                 {
 
@@ -264,6 +265,7 @@ namespace SoftwareTwoProject.Forms
 
                 }
 
+                //updates customer record
                 string updateCust = $"Update customer SET customerName='{NameBox.Text}', addressID='{adID}' Where customerId ={CustomerBox.Text}";
                 custtable.Open();
 
