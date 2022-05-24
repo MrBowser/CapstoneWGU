@@ -106,6 +106,13 @@ namespace SoftwareTwoProject.Forms
 
             try
             {
+
+                DateTime ConvertUtcTime = TimeZoneInfo.ConvertTimeToUtc((DateTime)DateTime.Parse($"{HourBox.Text}:{MinutesBox.Text}"), TimeZoneInfo.Local);
+                DateTime ConvertUtcBox = TimeZoneInfo.ConvertTimeToUtc((DateTime)DateTime.Parse(DateBox.Text), TimeZoneInfo.Local);
+
+                DateTime CombineUTCConv = TimeZoneInfo.ConvertTimeToUtc(DateTime.Parse($"{DateBox.Text} {HourBox.Text}: {MinutesBox.Text} :00"), TimeZoneInfo.Local);
+
+
                 //checks that the customer id exists, userid exists, and that the correct date format, business hours and overlap criteria are met
                 if (custIdDef == -1)
                 {
@@ -123,12 +130,23 @@ namespace SoftwareTwoProject.Forms
                 }
 
 
+                DateTime test2 = ConvertUtcTime;
+
+                int hours = test2.Hour;
+
+                if (hours < 9 || hours >= 17)
+                {
+                    throw new Exception("Please submit during business hours (9-17 UTC)");
+                }
+
                 DateTime test = DateTime.Parse(DateBox.Text);
 
+                /* This is legacy code, keeping for reference
                 if(int.Parse(HourBox.Text) <9 || int.Parse(HourBox.Text)>=17 )
                 {
                     throw new Exception("Please submit during business hours (9-17)");
                 }
+                */
 
                 //checks scheduling overlap
                 
@@ -146,10 +164,12 @@ namespace SoftwareTwoProject.Forms
                 {
                     
                     DateTime scheditem = DateTime.Parse(scheduletimes[i]);
+                    /* Legacy code, keeping for reference
                     string schedconv = $"{DateBox.Text} {HourBox.Text}:{MinutesBox.Text}:00";
                     DateTime apptimeadd = DateTime.Parse(schedconv);
+                    */
 
-                    TimeSpan overlap = scheditem.Subtract(apptimeadd);
+                    TimeSpan overlap = scheditem.Subtract(CombineUTCConv);
                     double numMinutes = overlap.TotalMinutes;
                     
 
@@ -161,9 +181,11 @@ namespace SoftwareTwoProject.Forms
                     appOverlap();
                        
                 }
-                
+
                 //creates the appointment in the database
-                string addAppointmentQuery = $"insert into appointment VALUES ('{ApIdBox.Text}','{CusIdBox.Text}','{UsIdBox.Text}','not needed','not needed','not needed','not needed','{TypeBox.Text}','not needed','{DateBox.Text} {HourBox.Text}:{MinutesBox.Text}:00','2019-01-01 00:00:00','2019-01-01 00:00:00','test','2019-01-01 00:00:00','test')";
+                string StringUTCConvert = CombineUTCConv.ToString("yyyy'-'MM'-'dd' 'HH:mm:ss ");
+
+                string addAppointmentQuery = $"insert into appointment VALUES ('{ApIdBox.Text}','{CusIdBox.Text}','{UsIdBox.Text}','not needed','not needed','not needed','not needed','{TypeBox.Text}','not needed','{StringUTCConvert}','2019-01-01 00:00:00','2019-01-01 00:00:00','test','2019-01-01 00:00:00','test')";
                 AppTable.Open();
                 MySqlCommand addAppointmentCom = new MySqlCommand(addAppointmentQuery, AppTable);
                 addAppointmentCom.ExecuteNonQuery();
