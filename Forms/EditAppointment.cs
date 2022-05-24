@@ -45,9 +45,10 @@ namespace SoftwareTwoProject.Forms
             UserIdBox.Text = userId;
             TypeBox.Text = appType;
 
-            //DateTime.Now.ToString("yyyy'-'MM'-'dd")
-
+            //Note: changes the time pulled in to local time // Code reference DateTime.Now.ToString("yyyy'-'MM'-'dd")
+            appointmentTime = TimeZoneInfo.ConvertTimeFromUtc((DateTime)appointmentTime, TimeZoneInfo.Local);
             DateBox.Text = appointmentTime.ToString("yyyy'-'MM'-'dd");
+            
             TimeBox.Text = appointmentTime.ToString("HH:mm");
 
         }
@@ -113,6 +114,11 @@ namespace SoftwareTwoProject.Forms
             try
             {
 
+                DateTime ConvertUtcTime = TimeZoneInfo.ConvertTimeToUtc((DateTime)DateTime.Parse(TimeBox.Text), TimeZoneInfo.Local);
+                DateTime ConvertUtcBox = TimeZoneInfo.ConvertTimeToUtc((DateTime)DateTime.Parse(DateBox.Text), TimeZoneInfo.Local);
+
+
+
                 if (custIdDef == -1)
                 {
                     throw new Exception("CustomerId Doesn't Exist, Please try a valid CustomerId ");
@@ -129,13 +135,13 @@ namespace SoftwareTwoProject.Forms
                 }
 
                 DateTime test1 = DateTime.Parse(DateBox.Text);
-                DateTime test2 = DateTime.Parse(TimeBox.Text);
+                DateTime test2 = ConvertUtcTime;
 
                 int hours = test2.Hour;
 
                 if (hours < 9 || hours >= 17)
                 {
-                    throw new Exception("Please submit during business hours (9-17)");
+                    throw new Exception("Please submit during business hours (9-17 UTC)");
                 }
 
                 //checks scheduling overlap

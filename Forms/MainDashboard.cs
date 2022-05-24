@@ -56,7 +56,8 @@ namespace SoftwareTwoProject.Forms
             // NOTE: this is the code for localization that fills the table with updated times for appointments based on timezone
             for (int i = 0; i < AppointmentInfoGrid.Rows.Count; i++)
             {
-                AppointmentInfoGrid.Rows[i].Cells[3].Value = TimeZoneInfo.ConvertTimeFromUtc((DateTime)AppointmentInfoGrid.Rows[i].Cells[3].Value, TimeZoneInfo.Local).ToString(); ;
+                AppointmentInfoGrid.Rows[i].Cells[3].Value = TimeZoneInfo.ConvertTimeFromUtc((DateTime)AppointmentInfoGrid.Rows[i].Cells[3].Value, TimeZoneInfo.Local).ToString();
+                
 
             }
 
