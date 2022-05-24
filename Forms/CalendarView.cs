@@ -37,7 +37,15 @@ namespace SoftwareTwoProject.Forms
             appointprep.Fill(AppointmentTableInfo);
             AppCalGrid.DataSource = AppointmentTableInfo;
 
-            
+            // NOTE: this is the code for localization that fills the table with updated times for appointments based on timezone
+            for (int i = 0; i < AppCalGrid.Rows.Count; i++)
+            {
+                AppCalGrid.Rows[i].Cells[3].Value = TimeZoneInfo.ConvertTimeFromUtc((DateTime)AppCalGrid.Rows[i].Cells[3].Value, TimeZoneInfo.Local).ToString();
+
+
+            }
+
+
 
 
 

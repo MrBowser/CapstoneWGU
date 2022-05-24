@@ -33,6 +33,7 @@ namespace SoftwareTwoProject.Forms
             this.UserListGrid = new System.Windows.Forms.DataGridView();
             this.GenBut = new System.Windows.Forms.Button();
             this.UserSchedRepView = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.UserListGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserSchedRepView)).BeginInit();
             this.SuspendLayout();
@@ -77,11 +78,21 @@ namespace SoftwareTwoProject.Forms
             this.UserSchedRepView.Size = new System.Drawing.Size(487, 150);
             this.UserSchedRepView.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(279, 245);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "(note: times are displayed in UTC)";
+            // 
             // UserScheduleReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.UserSchedRepView);
             this.Controls.Add(this.GenBut);
             this.Controls.Add(this.UserListGrid);
@@ -91,6 +102,7 @@ namespace SoftwareTwoProject.Forms
             ((System.ComponentModel.ISupportInitialize)(this.UserListGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserSchedRepView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -100,5 +112,6 @@ namespace SoftwareTwoProject.Forms
         private System.Windows.Forms.DataGridView UserListGrid;
         private System.Windows.Forms.Button GenBut;
         private System.Windows.Forms.DataGridView UserSchedRepView;
+        private System.Windows.Forms.Label label1;
     }
 }
