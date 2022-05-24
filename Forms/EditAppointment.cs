@@ -117,6 +117,8 @@ namespace SoftwareTwoProject.Forms
                 DateTime ConvertUtcTime = TimeZoneInfo.ConvertTimeToUtc((DateTime)DateTime.Parse(TimeBox.Text), TimeZoneInfo.Local);
                 DateTime ConvertUtcBox = TimeZoneInfo.ConvertTimeToUtc((DateTime)DateTime.Parse(DateBox.Text), TimeZoneInfo.Local);
 
+                DateTime CombineUTCConv = TimeZoneInfo.ConvertTimeToUtc(DateTime.Parse($"{DateBox.Text} {TimeBox.Text} :00"),TimeZoneInfo.Local);
+
 
 
                 if (custIdDef == -1)
@@ -159,11 +161,21 @@ namespace SoftwareTwoProject.Forms
                 for (int i = 0; i < scheduletimes.Count; i++)
                 {
                     DateTime scheditem = DateTime.Parse(scheduletimes[i]);
+                    
+                    /* Note: Legacy code, keeping for reference only
                     string schedconv = $"{DateBox.Text} {TimeBox.Text}:00";
-                    DateTime apptimeadd = DateTime.Parse(schedconv);
 
-                    TimeSpan overlap = scheditem.Subtract(apptimeadd);
+                    DateTime apptimeadd = DateTime.Parse(schedconv);
+                    */
+
+                    TimeSpan overlap = scheditem.Subtract(CombineUTCConv);      
+                    
                     double numMinutes = overlap.TotalMinutes;
+                    
+
+
+
+
 
                     if (numMinutes < 60 && numMinutes > -60)
                     {
@@ -172,10 +184,17 @@ namespace SoftwareTwoProject.Forms
 
                 }
 
+
+                /*
+                DateBox.Text = appointmentTime.ToString("yyyy'-'MM'-'dd");
+
+                TimeBox.Text = appointmentTime.ToString("HH:mm");
+                */
+                string StringUTCConvert = CombineUTCConv.ToString("yyyy'-'MM'-'dd' 'HH:mm:ss ");
                 //submits the updated appointment data
 
                 MySqlConnection custtable = new MySqlConnection(x);
-                string updateApp = $"Update appointment SET customerId='{CustomerIdBox.Text}', userId='{UserIdBox.Text}', type= '{TypeBox.Text}', start ='{DateBox.Text} {TimeBox.Text}:00' Where appointmentId ={AppIDBox.Text}";
+                string updateApp = $"Update appointment SET customerId='{CustomerIdBox.Text}', userId='{UserIdBox.Text}', type= '{TypeBox.Text}', start ='{StringUTCConvert}' Where appointmentId ={AppIDBox.Text}";
                 custtable.Open();
 
                 
