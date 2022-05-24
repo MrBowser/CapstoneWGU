@@ -62,14 +62,14 @@ namespace SoftwareTwoProject.Forms
 
 
 
-            //NOTE: this is the code required to setup 15 minute login alert.
+            //NOTE: this is the code required to setup 15 minute login alert. This has been changed to no longer be UserId specific.
 
             if(Appointment.AppAlertShown ==false)
             {
                 for (int i = 0; i < AppointmentInfoGrid.Rows.Count; i++)
                 {
-                    if (AppointmentInfoGrid.Rows[i].Cells[4].Value.ToString() == User.UserId)
-                    {
+                    //if (AppointmentInfoGrid.Rows[i].Cells[4].Value.ToString() == User.UserId)
+                    //{
 
                         DateTime getcellval = (DateTime)AppointmentInfoGrid.Rows[i].Cells[3].Value;
                         DateTime gettimenow = DateTime.Now;
@@ -79,25 +79,18 @@ namespace SoftwareTwoProject.Forms
 
                         Double numMinutestillApp = alert.TotalMinutes;
 
-                        if (numMinutestillApp < 15 && numMinutestillApp > 0)
+                        if (numMinutestillApp <= 15 && numMinutestillApp >= 0)
                         {
                             MessageBox.Show($"You have an appointment in " + numMinutestillApp.ToString() + " minutes!");
                             Appointment.AppAlertShown = true;
                             break;
-
                         }
 
-
-
-
-                    }
+                    //}
 
                 }
 
             }
-            
-
-
         }
 
         private void ExitBut_MouseClick(object sender, MouseEventArgs e)
