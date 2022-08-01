@@ -286,5 +286,39 @@ namespace SoftwareTwoProject.Forms
             userSchedule.Show();
             this.Close();
         }
+
+        private void Customer_Search_But_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            //in progress need to do a query that is a select all that matches the searchbox text. with that we then populate the table if not found table resets/
+            int y = 1;
+            if(y==0)
+            {
+
+            }
+            else
+            {
+                string x = Connection.connectstring;
+                MySqlConnection custtable = new MySqlConnection(x);
+                custtable.Open();
+
+                string CustJoinQuery = "select customerName, customerId, address, phone, city, country" +
+                    " from customer t1 inner join address t2 on t1.addressId = t2.addressId" +
+                    " inner join city t3 on t3.cityId = t2.cityId" +
+                    " inner join country t4 on t4.countryId = t3.countryId";
+
+                MySqlCommand runCusjoin = new MySqlCommand(CustJoinQuery, custtable);
+                MySqlDataAdapter Cusprep = new MySqlDataAdapter(runCusjoin);
+                DataTable CusTableInfo = new DataTable();
+                Cusprep.Fill(CusTableInfo);
+                CustomerInfoGrid.DataSource = CusTableInfo;
+
+                custtable.Close();
+
+                MessageBox.Show("Customer Not Found, Showing Full Table");
+
+            }
+
+        }
     }
 }
