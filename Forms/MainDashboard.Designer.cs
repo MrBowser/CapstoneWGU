@@ -278,17 +278,17 @@
             // 
             // Customer_Search_But
             // 
-            this.Customer_Search_But.Location = new System.Drawing.Point(446, 22);
+            this.Customer_Search_But.Location = new System.Drawing.Point(196, 20);
             this.Customer_Search_But.Name = "Customer_Search_But";
             this.Customer_Search_But.Size = new System.Drawing.Size(135, 23);
             this.Customer_Search_But.TabIndex = 22;
-            this.Customer_Search_But.Text = "Customer Name Search";
+            this.Customer_Search_But.Text = "Customer Record Search";
             this.Customer_Search_But.UseVisualStyleBackColor = true;
             this.Customer_Search_But.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Customer_Search_But_MouseClick);
             // 
             // Customer_Search
             // 
-            this.Customer_Search.Location = new System.Drawing.Point(325, 25);
+            this.Customer_Search.Location = new System.Drawing.Point(70, 22);
             this.Customer_Search.Name = "Customer_Search";
             this.Customer_Search.Size = new System.Drawing.Size(100, 20);
             this.Customer_Search.TabIndex = 23;

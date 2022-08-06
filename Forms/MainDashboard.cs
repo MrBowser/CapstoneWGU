@@ -290,32 +290,54 @@ namespace SoftwareTwoProject.Forms
         private void Customer_Search_But_MouseClick(object sender, MouseEventArgs e)
         {
 
+            string x = Connection.connectstring;
+            MySqlConnection custtable = new MySqlConnection(x);
+            custtable.Open();
+
+            string CustJoinQuery = "select customerName, customerId, address, phone, city, country" +
+                   " from customer t1 inner join address t2 on t1.addressId = t2.addressId" +
+                   " inner join city t3 on t3.cityId = t2.cityId" +
+                   " inner join country t4 on t4.countryId = t3.countryId" +
+                   $" where customerName = '{Customer_Search.Text}' or customerId = '{Customer_Search.Text}' or " +
+                   $" address = '{Customer_Search.Text}' or phone = '{Customer_Search.Text}' or " +
+                   $" city = '{Customer_Search.Text}' or country = '{Customer_Search.Text}'";
+
+            MySqlCommand runCusjoin = new MySqlCommand(CustJoinQuery, custtable);
+            MySqlDataAdapter Cusprep = new MySqlDataAdapter(runCusjoin);
+            DataTable CusTableInfo = new DataTable();
+            Cusprep.Fill(CusTableInfo);
+            CustomerInfoGrid.DataSource = CusTableInfo;
+
+            custtable.Close();
+
             //in progress need to do a query that is a select all that matches the searchbox text. with that we then populate the table if not found table resets/
-            int y = 1;
+            int y = CustomerInfoGrid.Rows.Count;
+            
             if(y==0)
             {
 
-            }
-            else
-            {
-                string x = Connection.connectstring;
-                MySqlConnection custtable = new MySqlConnection(x);
                 custtable.Open();
 
-                string CustJoinQuery = "select customerName, customerId, address, phone, city, country" +
+                string CustJoinQuery1 = "select customerName, customerId, address, phone, city, country" +
                     " from customer t1 inner join address t2 on t1.addressId = t2.addressId" +
                     " inner join city t3 on t3.cityId = t2.cityId" +
                     " inner join country t4 on t4.countryId = t3.countryId";
 
-                MySqlCommand runCusjoin = new MySqlCommand(CustJoinQuery, custtable);
-                MySqlDataAdapter Cusprep = new MySqlDataAdapter(runCusjoin);
-                DataTable CusTableInfo = new DataTable();
-                Cusprep.Fill(CusTableInfo);
-                CustomerInfoGrid.DataSource = CusTableInfo;
+                MySqlCommand runCusjoin1 = new MySqlCommand(CustJoinQuery1, custtable);
+                MySqlDataAdapter Cusprep1 = new MySqlDataAdapter(runCusjoin1);
+                DataTable CusTableInfo1 = new DataTable();
+                Cusprep1.Fill(CusTableInfo1);
+                CustomerInfoGrid.DataSource = CusTableInfo1;
 
                 custtable.Close();
 
                 MessageBox.Show("Customer Not Found, Showing Full Table");
+
+            }
+            else
+            {
+
+                
 
             }
 
