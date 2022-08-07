@@ -42,6 +42,10 @@
             this.cityBox = new System.Windows.Forms.TextBox();
             this.countryLabel = new System.Windows.Forms.Label();
             this.countryBox = new System.Windows.Forms.TextBox();
+            this.Company_But = new System.Windows.Forms.RadioButton();
+            this.Family_But = new System.Windows.Forms.RadioButton();
+            this.CustSize = new System.Windows.Forms.Label();
+            this.Size_Box = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // SubmitBut
@@ -161,11 +165,55 @@
             this.countryBox.Size = new System.Drawing.Size(100, 20);
             this.countryBox.TabIndex = 15;
             // 
+            // Company_But
+            // 
+            this.Company_But.AutoSize = true;
+            this.Company_But.Checked = true;
+            this.Company_But.Location = new System.Drawing.Point(59, 319);
+            this.Company_But.Name = "Company_But";
+            this.Company_But.Size = new System.Drawing.Size(69, 17);
+            this.Company_But.TabIndex = 16;
+            this.Company_But.TabStop = true;
+            this.Company_But.Text = "Company";
+            this.Company_But.UseVisualStyleBackColor = true;
+            this.Company_But.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Company_But_MouseClick);
+            // 
+            // Family_But
+            // 
+            this.Family_But.AutoSize = true;
+            this.Family_But.Location = new System.Drawing.Point(190, 319);
+            this.Family_But.Name = "Family_But";
+            this.Family_But.Size = new System.Drawing.Size(54, 17);
+            this.Family_But.TabIndex = 17;
+            this.Family_But.Text = "Family";
+            this.Family_But.UseVisualStyleBackColor = true;
+            this.Family_But.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Family_But_MouseClick);
+            // 
+            // CustSize
+            // 
+            this.CustSize.AutoSize = true;
+            this.CustSize.Location = new System.Drawing.Point(44, 360);
+            this.CustSize.Name = "CustSize";
+            this.CustSize.Size = new System.Drawing.Size(74, 13);
+            this.CustSize.TabIndex = 18;
+            this.CustSize.Text = "Company Size";
+            // 
+            // Size_Box
+            // 
+            this.Size_Box.Location = new System.Drawing.Point(124, 357);
+            this.Size_Box.Name = "Size_Box";
+            this.Size_Box.Size = new System.Drawing.Size(100, 20);
+            this.Size_Box.TabIndex = 19;
+            // 
             // AddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 459);
+            this.Controls.Add(this.Size_Box);
+            this.Controls.Add(this.CustSize);
+            this.Controls.Add(this.Family_But);
+            this.Controls.Add(this.Company_But);
             this.Controls.Add(this.countryBox);
             this.Controls.Add(this.countryLabel);
             this.Controls.Add(this.cityBox);
@@ -203,5 +251,9 @@
         private System.Windows.Forms.TextBox cityBox;
         private System.Windows.Forms.Label countryLabel;
         private System.Windows.Forms.TextBox countryBox;
+        private System.Windows.Forms.RadioButton Company_But;
+        private System.Windows.Forms.RadioButton Family_But;
+        private System.Windows.Forms.Label CustSize;
+        private System.Windows.Forms.TextBox Size_Box;
     }
 }

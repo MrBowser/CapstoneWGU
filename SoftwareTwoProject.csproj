@@ -91,8 +91,10 @@
   <ItemGroup>
     <Compile Include="Class\Address.cs" />
     <Compile Include="Class\Appointment.cs" />
+    <Compile Include="Class\Business.cs" />
     <Compile Include="Class\Connection.cs" />
     <Compile Include="Class\Customer.cs" />
+    <Compile Include="Class\Family.cs" />
     <Compile Include="Class\User.cs" />
     <Compile Include="client_scheduleDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

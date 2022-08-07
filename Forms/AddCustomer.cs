@@ -257,8 +257,42 @@ namespace SoftwareTwoProject.Forms
 
                 //adds a new customer to the database
 
-                Customer customer = new Customer(custID, CustNameBox.Text, adID);
+                //Customer customer = new Customer(custID, CustNameBox.Text, adID);
 
+                if(CustomerType==true)
+                {
+                    Business customer1 = new Business(custID, CustNameBox.Text, adID);
+
+                    custtable.Open();
+                    string addCusQuery = $"Insert Into customer VALUES('{customer1.customerID}','{customer1.customerName}','{customer1.addressId}','{customer1.cusActive}','2013-09-09 00:00:00','{customer1.createBy}','2013-09-09 00:00:00','{customer1.lastUpBy}') ";
+                    MySqlCommand addCus = new MySqlCommand(addCusQuery, custtable);
+
+                    addCus.ExecuteNonQuery();
+                    custtable.Close();
+
+                    MainDashboard mainDashboard = new MainDashboard();
+                    mainDashboard.Show();
+                    this.Close();
+                }
+                else
+                {
+                    Family customer1 = new Family(custID, CustNameBox.Text, adID);
+
+                    custtable.Open();
+                    string addCusQuery = $"Insert Into customer VALUES('{customer1.customerID}','{customer1.customerName}','{customer1.addressId}','{customer1.cusActive}','2013-09-09 00:00:00','{customer1.createBy}','2013-09-09 00:00:00','{customer1.lastUpBy}') ";
+                    MySqlCommand addCus = new MySqlCommand(addCusQuery, custtable);
+
+                    addCus.ExecuteNonQuery();
+                    custtable.Close();
+
+                    MainDashboard mainDashboard = new MainDashboard();
+                    mainDashboard.Show();
+                    this.Close();
+
+                }
+
+
+                /*
                 custtable.Open();
                 string addCusQuery = $"Insert Into customer VALUES('{customer.customerID}','{customer.customerName}','{customer.addressId}','{customer.cusActive}','2013-09-09 00:00:00','{customer.createBy}','2013-09-09 00:00:00','{customer.lastUpBy}') ";
                 MySqlCommand addCus = new MySqlCommand(addCusQuery, custtable);
@@ -269,6 +303,9 @@ namespace SoftwareTwoProject.Forms
                 MainDashboard mainDashboard = new MainDashboard();
                 mainDashboard.Show();
                 this.Close();
+                */
+
+
 
             }
             catch (Exception ex)
@@ -291,5 +328,19 @@ namespace SoftwareTwoProject.Forms
 
         delegate bool Phonecheck();
 
+        bool CustomerType = true;
+
+        private void Company_But_MouseClick(object sender, MouseEventArgs e)
+        {
+            CustomerType = true;
+            CustSize.Text = "Company Size";
+        }
+
+        private void Family_But_MouseClick(object sender, MouseEventArgs e)
+        {
+            CustomerType = false;
+
+            CustSize.Text = "Lot Size";
+        }
     }
 }

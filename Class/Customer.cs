@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SoftwareTwoProject.Class
 {
-    public class Customer
+    abstract public class Customer
     {
 
         public static int customerIDNumber;
@@ -49,6 +49,11 @@ namespace SoftwareTwoProject.Class
             this.createDate = DateTime.UtcNow;
             this.lastUpBy = "Mitch";
             this.lastUpdate = DateTime.UtcNow;
+
+        }
+
+        public Customer()
+        {
 
         }
 
