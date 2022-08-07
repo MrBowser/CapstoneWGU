@@ -8,7 +8,7 @@ namespace SoftwareTwoProject.Class
 {
     internal class Family : Customer
     {
-        int LotSize { get; set; }
+        public int LotSize { get; set; }
 
         public Family(int ID, string Name, int adID)
         {
@@ -24,7 +24,7 @@ namespace SoftwareTwoProject.Class
 
         }
 
-        int FamilyBilling()
+        public int FamilyBilling()
         {
 
             return LotSize / 5;

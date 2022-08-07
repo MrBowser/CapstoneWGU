@@ -263,8 +263,10 @@ namespace SoftwareTwoProject.Forms
                 {
                     Business customer1 = new Business(custID, CustNameBox.Text, adID);
 
+                    customer1.CompanySize = int.Parse(Size_Box.Text);
+
                     custtable.Open();
-                    string addCusQuery = $"Insert Into customer VALUES('{customer1.customerID}','{customer1.customerName}','{customer1.addressId}','{customer1.cusActive}','2013-09-09 00:00:00','{customer1.createBy}','2013-09-09 00:00:00','{customer1.lastUpBy}') ";
+                    string addCusQuery = $"Insert Into customer VALUES('{customer1.customerID}','{customer1.customerName}','{customer1.addressId}','{customer1.cusActive}','2013-09-09 00:00:00','{customer1.createBy}','2013-09-09 00:00:00','{customer1.lastUpBy}','Business','{customer1.CompanySize}','{customer1.CompanyBilling()}') ";
                     MySqlCommand addCus = new MySqlCommand(addCusQuery, custtable);
 
                     addCus.ExecuteNonQuery();
@@ -278,8 +280,10 @@ namespace SoftwareTwoProject.Forms
                 {
                     Family customer1 = new Family(custID, CustNameBox.Text, adID);
 
+                    customer1.LotSize = int.Parse(Size_Box.Text);
+
                     custtable.Open();
-                    string addCusQuery = $"Insert Into customer VALUES('{customer1.customerID}','{customer1.customerName}','{customer1.addressId}','{customer1.cusActive}','2013-09-09 00:00:00','{customer1.createBy}','2013-09-09 00:00:00','{customer1.lastUpBy}') ";
+                    string addCusQuery = $"Insert Into customer VALUES('{customer1.customerID}','{customer1.customerName}','{customer1.addressId}','{customer1.cusActive}','2013-09-09 00:00:00','{customer1.createBy}','2013-09-09 00:00:00','{customer1.lastUpBy}','Family','{customer1.LotSize}','{customer1.FamilyBilling()}') ";
                     MySqlCommand addCus = new MySqlCommand(addCusQuery, custtable);
 
                     addCus.ExecuteNonQuery();

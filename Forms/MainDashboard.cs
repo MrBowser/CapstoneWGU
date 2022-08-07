@@ -24,7 +24,7 @@ namespace SoftwareTwoProject.Forms
             MySqlConnection custtable = new MySqlConnection(x);
             custtable.Open();
 
-            string CustJoinQuery = "select customerName, customerId, address, phone, city, country" +
+            string CustJoinQuery = "select customerName, customerType, size, billRate, customerId, address, phone, city, country" +
                 " from customer t1 inner join address t2 on t1.addressId = t2.addressId" +
                 " inner join city t3 on t3.cityId = t2.cityId" +
                 " inner join country t4 on t4.countryId = t3.countryId";
@@ -294,7 +294,7 @@ namespace SoftwareTwoProject.Forms
             MySqlConnection custtable = new MySqlConnection(x);
             custtable.Open();
 
-            string CustJoinQuery = "select customerName, customerId, address, phone, city, country" +
+            string CustJoinQuery = "select customerName, customerType, size, billRate, customerId, address, phone, city, country" +
                    " from customer t1 inner join address t2 on t1.addressId = t2.addressId" +
                    " inner join city t3 on t3.cityId = t2.cityId" +
                    " inner join country t4 on t4.countryId = t3.countryId" +

@@ -26,10 +26,10 @@ namespace SoftwareTwoProject.Class
         }
 
 
-        int CompanyBilling()
+        public int CompanyBilling()
         {
 
-            return CompanySize * 2;
+            return 300 + CompanySize * 10;
 
         }
 
