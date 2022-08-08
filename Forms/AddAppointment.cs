@@ -26,8 +26,19 @@ namespace SoftwareTwoProject.Forms
 
             MySqlCommand AppointMaxQuery = new MySqlCommand(getappointmentIDMAX, custtable);
             object getCount = AppointMaxQuery.ExecuteScalar();
-            int a = Convert.ToInt32(getCount.ToString());
-            Appointment.AppointmentIdCounter = a + 1;
+
+            try
+            {
+                int a = Convert.ToInt32(getCount.ToString());
+                Appointment.AppointmentIdCounter = a + 1;
+            }
+            catch (Exception)
+            {
+                Appointment.AppointmentIdCounter = 1;
+
+
+            }
+           
 
             ApIdBox.Text = $"{Appointment.AppointmentIdCounter}";
 

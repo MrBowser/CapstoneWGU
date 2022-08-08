@@ -115,7 +115,7 @@ namespace SoftwareTwoProject.Forms
 
             DataGridViewRow selectedRow = CustomerInfoGrid.Rows[selectedRowIndex];
 
-            string editId = Convert.ToString(selectedRow.Cells[1].Value);
+            string editId = Convert.ToString(selectedRow.Cells[5].Value);
 
 
 
@@ -178,7 +178,7 @@ namespace SoftwareTwoProject.Forms
 
             DataGridViewRow selectedRow = CustomerInfoGrid.Rows[selectedRowIndex];
 
-            string editId = Convert.ToString(selectedRow.Cells[1].Value);
+            string editId = Convert.ToString(selectedRow.Cells[5].Value);
 
             MessageBox.Show(Convert.ToString(editId));
 
@@ -202,7 +202,7 @@ namespace SoftwareTwoProject.Forms
 
             custtable.Close();
 
-            string CustJoinQuery = "select customerName, customerId, address, phone" +
+            string CustJoinQuery = "select customerName, customerType, companysize, lotSize, billRate, customerId, address, phone" +
                " from customer t1 inner join address t2 on t1.addressId = t2.addressId ";
 
             custtable.Open();

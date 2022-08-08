@@ -42,6 +42,10 @@
             this.countryLbael = new System.Windows.Forms.Label();
             this.cityBox = new System.Windows.Forms.TextBox();
             this.countryBox = new System.Windows.Forms.TextBox();
+            this.CusType_Label = new System.Windows.Forms.Label();
+            this.Cus_TypeBox = new System.Windows.Forms.TextBox();
+            this.Size_Label = new System.Windows.Forms.Label();
+            this.Size_Box = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // SubmitBut
@@ -67,7 +71,7 @@
             // CustomerIdLabel
             // 
             this.CustomerIdLabel.AutoSize = true;
-            this.CustomerIdLabel.Location = new System.Drawing.Point(55, 60);
+            this.CustomerIdLabel.Location = new System.Drawing.Point(58, 25);
             this.CustomerIdLabel.Name = "CustomerIdLabel";
             this.CustomerIdLabel.Size = new System.Drawing.Size(60, 13);
             this.CustomerIdLabel.TabIndex = 2;
@@ -103,7 +107,7 @@
             // CustomerBox
             // 
             this.CustomerBox.Enabled = false;
-            this.CustomerBox.Location = new System.Drawing.Point(138, 57);
+            this.CustomerBox.Location = new System.Drawing.Point(138, 25);
             this.CustomerBox.Name = "CustomerBox";
             this.CustomerBox.Size = new System.Drawing.Size(100, 20);
             this.CustomerBox.TabIndex = 6;
@@ -161,11 +165,48 @@
             this.countryBox.Size = new System.Drawing.Size(100, 20);
             this.countryBox.TabIndex = 13;
             // 
+            // CusType_Label
+            // 
+            this.CusType_Label.AutoSize = true;
+            this.CusType_Label.Location = new System.Drawing.Point(40, 59);
+            this.CusType_Label.Name = "CusType_Label";
+            this.CusType_Label.Size = new System.Drawing.Size(78, 13);
+            this.CusType_Label.TabIndex = 14;
+            this.CusType_Label.Text = "Customer Type";
+            // 
+            // Cus_TypeBox
+            // 
+            this.Cus_TypeBox.Enabled = false;
+            this.Cus_TypeBox.Location = new System.Drawing.Point(138, 56);
+            this.Cus_TypeBox.Name = "Cus_TypeBox";
+            this.Cus_TypeBox.Size = new System.Drawing.Size(100, 20);
+            this.Cus_TypeBox.TabIndex = 15;
+            // 
+            // Size_Label
+            // 
+            this.Size_Label.AutoSize = true;
+            this.Size_Label.Location = new System.Drawing.Point(44, 371);
+            this.Size_Label.Name = "Size_Label";
+            this.Size_Label.Size = new System.Drawing.Size(74, 13);
+            this.Size_Label.TabIndex = 16;
+            this.Size_Label.Text = "Company Size";
+            // 
+            // Size_Box
+            // 
+            this.Size_Box.Location = new System.Drawing.Point(138, 371);
+            this.Size_Box.Name = "Size_Box";
+            this.Size_Box.Size = new System.Drawing.Size(100, 20);
+            this.Size_Box.TabIndex = 17;
+            // 
             // EditCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 485);
+            this.Controls.Add(this.Size_Box);
+            this.Controls.Add(this.Size_Label);
+            this.Controls.Add(this.Cus_TypeBox);
+            this.Controls.Add(this.CusType_Label);
             this.Controls.Add(this.countryBox);
             this.Controls.Add(this.cityBox);
             this.Controls.Add(this.countryLbael);
@@ -203,5 +244,9 @@
         private System.Windows.Forms.Label countryLbael;
         private System.Windows.Forms.TextBox cityBox;
         private System.Windows.Forms.TextBox countryBox;
+        private System.Windows.Forms.Label CusType_Label;
+        private System.Windows.Forms.TextBox Cus_TypeBox;
+        private System.Windows.Forms.Label Size_Label;
+        private System.Windows.Forms.TextBox Size_Box;
     }
 }

@@ -21,7 +21,7 @@ namespace SoftwareTwoProject.Forms
             //populates the basic customer record info
             string x = Connection.connectstring;
             MySqlConnection custtable = new MySqlConnection(x);
-            string getCustIDinfo = $"Select customerName, customerId, address, phone, cityId from customer t1 inner join address t2 on t1.addressId = t2.addressId where customerId = {Customer.editcustomerID}";
+            string getCustIDinfo = $"Select customerName, customerType, lotSize, companySize, customerId, address, phone, cityId from customer t1 inner join address t2 on t1.addressId = t2.addressId where customerId = {Customer.editcustomerID}";
             custtable.Open();
 
             MySqlCommand custIdInfo = new MySqlCommand(getCustIDinfo, custtable);
@@ -34,6 +34,15 @@ namespace SoftwareTwoProject.Forms
                 Phone = custinfo.GetString("phone");
                 AddressE = custinfo.GetString("address");
                 cityIdm = custinfo.GetString("cityId");
+                customerType = custinfo.GetString("customerType");
+                if(customerType=="Business")
+                {
+                    companySize = custinfo.GetString("companySize");
+                }
+                if(customerType=="Family")
+                {
+                    lotSize = custinfo.GetString("lotSize");
+                }
                               
             }
 
@@ -43,6 +52,18 @@ namespace SoftwareTwoProject.Forms
             NameBox.Text = custName;
             AddressBox.Text = AddressE;
             PhoneBox.Text = Phone;
+
+            Cus_TypeBox.Text = customerType;
+
+            if(customerType =="Business")
+            {
+                Size_Box.Text = companySize;
+            }
+            if(customerType =="Family")
+            {
+                Size_Box.Text = lotSize;
+                Size_Label.Text = "Lot Size";
+            }
 
             // gets the city and country info
 
@@ -306,6 +327,12 @@ namespace SoftwareTwoProject.Forms
         string cityIdm;
 
         string countryIdm;
+
+        string lotSize;
+
+        string companySize;
+
+        string customerType;
 
         List<string> phonenumbers = new List<string>();
         List<string> addresses = new List<string>();
