@@ -287,6 +287,33 @@ namespace SoftwareTwoProject.Forms
                 }
 
                 //updates customer record
+
+                if (customerType == "Business")
+                {
+                    
+                    string updateCust = $"Update customer SET customerName='{NameBox.Text}',companySize ='{Size_Box.Text}', addressID='{adID}' Where customerId ={CustomerBox.Text}";
+                    custtable.Open();
+
+                    MySqlCommand updateCustName = new MySqlCommand(updateCust, custtable);
+
+                    updateCustName.ExecuteNonQuery();
+
+                    custtable.Close();
+                }
+                if (customerType == "Family")
+                {
+
+                    string updateCust = $"Update customer SET customerName='{NameBox.Text}',lotSize ='{Size_Box.Text}', addressID='{adID}' Where customerId ={CustomerBox.Text}";
+                    custtable.Open();
+
+                    MySqlCommand updateCustName = new MySqlCommand(updateCust, custtable);
+
+                    updateCustName.ExecuteNonQuery();
+
+                    custtable.Close();
+                }
+
+                /*
                 string updateCust = $"Update customer SET customerName='{NameBox.Text}', addressID='{adID}' Where customerId ={CustomerBox.Text}";
                 custtable.Open();
 
@@ -295,6 +322,7 @@ namespace SoftwareTwoProject.Forms
                 updateCustName.ExecuteNonQuery();
 
                 custtable.Close();
+                */
 
 
 
