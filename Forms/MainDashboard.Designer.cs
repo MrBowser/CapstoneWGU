@@ -207,7 +207,7 @@
             this.CustomerInfoGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CustomerInfoGrid.Location = new System.Drawing.Point(70, 81);
             this.CustomerInfoGrid.Name = "CustomerInfoGrid";
-            this.CustomerInfoGrid.Size = new System.Drawing.Size(274, 150);
+            this.CustomerInfoGrid.Size = new System.Drawing.Size(306, 150);
             this.CustomerInfoGrid.TabIndex = 14;
             // 
             // AppointmentInfoGrid
@@ -217,7 +217,7 @@
             this.AppointmentInfoGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AppointmentInfoGrid.Location = new System.Drawing.Point(516, 81);
             this.AppointmentInfoGrid.Name = "AppointmentInfoGrid";
-            this.AppointmentInfoGrid.Size = new System.Drawing.Size(240, 150);
+            this.AppointmentInfoGrid.Size = new System.Drawing.Size(294, 150);
             this.AppointmentInfoGrid.TabIndex = 15;
             // 
             // ReportsLab
