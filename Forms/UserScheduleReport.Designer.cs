@@ -35,6 +35,7 @@ namespace SoftwareTwoProject.Forms
             this.UserSchedRepView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.PLC_Logo = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.UserListGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserSchedRepView)).BeginInit();
             this.SuspendLayout();
@@ -98,12 +99,22 @@ namespace SoftwareTwoProject.Forms
             this.PLC_Logo.TabIndex = 5;
             this.PLC_Logo.Text = "PLC";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(173, 26);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "To use this report select a user and\r\n then click generate schedule";
+            // 
             // UserScheduleReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.PLC_Logo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.UserSchedRepView);
@@ -127,5 +138,6 @@ namespace SoftwareTwoProject.Forms
         private System.Windows.Forms.DataGridView UserSchedRepView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label PLC_Logo;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -35,6 +35,7 @@ namespace SoftwareTwoProject.Forms
             this.ReportBut = new System.Windows.Forms.Button();
             this.AppLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AppTypeReport)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,12 +95,22 @@ namespace SoftwareTwoProject.Forms
             this.label1.TabIndex = 5;
             this.label1.Text = "PLC";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(25, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(281, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "To use this report please select a date and click run report";
+            // 
             // AppCountReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AppLabel);
             this.Controls.Add(this.ReportBut);
@@ -122,5 +133,6 @@ namespace SoftwareTwoProject.Forms
         private System.Windows.Forms.Button ReportBut;
         private System.Windows.Forms.Label AppLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

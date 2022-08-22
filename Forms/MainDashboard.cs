@@ -300,7 +300,7 @@ namespace SoftwareTwoProject.Forms
                    " inner join country t4 on t4.countryId = t3.countryId" +
                    $" where customerName = '{Customer_Search.Text}' or customerId = '{Customer_Search.Text}' or " +
                    $" address = '{Customer_Search.Text}' or phone = '{Customer_Search.Text}' or " +
-                   $" city = '{Customer_Search.Text}' or country = '{Customer_Search.Text}'";
+                   $" city = '{Customer_Search.Text}' or country = '{Customer_Search.Text}' or customerType = '{Customer_Search.Text}'";
 
             MySqlCommand runCusjoin = new MySqlCommand(CustJoinQuery, custtable);
             MySqlDataAdapter Cusprep = new MySqlDataAdapter(runCusjoin);
@@ -318,10 +318,10 @@ namespace SoftwareTwoProject.Forms
 
                 custtable.Open();
 
-                string CustJoinQuery1 = "select customerName, customerId, address, phone, city, country" +
-                    " from customer t1 inner join address t2 on t1.addressId = t2.addressId" +
-                    " inner join city t3 on t3.cityId = t2.cityId" +
-                    " inner join country t4 on t4.countryId = t3.countryId";
+                string CustJoinQuery1 = "select customerName, customerType, companysize, lotSize, billRate, customerId, address, phone, city, country" +
+                " from customer t1 inner join address t2 on t1.addressId = t2.addressId" +
+                " inner join city t3 on t3.cityId = t2.cityId" +
+                " inner join country t4 on t4.countryId = t3.countryId";
 
                 MySqlCommand runCusjoin1 = new MySqlCommand(CustJoinQuery1, custtable);
                 MySqlDataAdapter Cusprep1 = new MySqlDataAdapter(runCusjoin1);

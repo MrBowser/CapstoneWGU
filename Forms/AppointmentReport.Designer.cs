@@ -91,11 +91,12 @@ namespace SoftwareTwoProject.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 56);
+            this.label1.Location = new System.Drawing.Point(10, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(301, 13);
+            this.label1.Size = new System.Drawing.Size(373, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Extra Report: A list of appointments of a specific type by month";
+            this.label1.Text = "To use this report please select a date a type of report and the click run report" +
+    "";
             // 
             // label2
             // 
