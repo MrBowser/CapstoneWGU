@@ -44,6 +44,7 @@
             this.DateBox = new System.Windows.Forms.TextBox();
             this.DateFormatLabel = new System.Windows.Forms.Label();
             this.TimeFormatLabel = new System.Windows.Forms.Label();
+            this.PLC_Logo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SubmitBut
@@ -69,7 +70,7 @@
             // AppIDLabel
             // 
             this.AppIDLabel.AutoSize = true;
-            this.AppIDLabel.Location = new System.Drawing.Point(49, 57);
+            this.AppIDLabel.Location = new System.Drawing.Point(65, 94);
             this.AppIDLabel.Name = "AppIDLabel";
             this.AppIDLabel.Size = new System.Drawing.Size(78, 13);
             this.AppIDLabel.TabIndex = 2;
@@ -78,7 +79,7 @@
             // AppIDBox
             // 
             this.AppIDBox.Enabled = false;
-            this.AppIDBox.Location = new System.Drawing.Point(145, 54);
+            this.AppIDBox.Location = new System.Drawing.Point(161, 91);
             this.AppIDBox.Name = "AppIDBox";
             this.AppIDBox.Size = new System.Drawing.Size(100, 20);
             this.AppIDBox.TabIndex = 3;
@@ -86,7 +87,7 @@
             // CustIdLabel
             // 
             this.CustIdLabel.AutoSize = true;
-            this.CustIdLabel.Location = new System.Drawing.Point(52, 104);
+            this.CustIdLabel.Location = new System.Drawing.Point(68, 141);
             this.CustIdLabel.Name = "CustIdLabel";
             this.CustIdLabel.Size = new System.Drawing.Size(63, 13);
             this.CustIdLabel.TabIndex = 4;
@@ -94,7 +95,7 @@
             // 
             // CustomerIdBox
             // 
-            this.CustomerIdBox.Location = new System.Drawing.Point(145, 101);
+            this.CustomerIdBox.Location = new System.Drawing.Point(161, 138);
             this.CustomerIdBox.Name = "CustomerIdBox";
             this.CustomerIdBox.Size = new System.Drawing.Size(100, 20);
             this.CustomerIdBox.TabIndex = 5;
@@ -102,7 +103,7 @@
             // UsIdLabel
             // 
             this.UsIdLabel.AutoSize = true;
-            this.UsIdLabel.Location = new System.Drawing.Point(55, 153);
+            this.UsIdLabel.Location = new System.Drawing.Point(71, 190);
             this.UsIdLabel.Name = "UsIdLabel";
             this.UsIdLabel.Size = new System.Drawing.Size(41, 13);
             this.UsIdLabel.TabIndex = 6;
@@ -110,7 +111,7 @@
             // 
             // UserIdBox
             // 
-            this.UserIdBox.Location = new System.Drawing.Point(145, 150);
+            this.UserIdBox.Location = new System.Drawing.Point(161, 187);
             this.UserIdBox.Name = "UserIdBox";
             this.UserIdBox.Size = new System.Drawing.Size(100, 20);
             this.UserIdBox.TabIndex = 7;
@@ -118,7 +119,7 @@
             // TypeLabel
             // 
             this.TypeLabel.AutoSize = true;
-            this.TypeLabel.Location = new System.Drawing.Point(58, 194);
+            this.TypeLabel.Location = new System.Drawing.Point(74, 231);
             this.TypeLabel.Name = "TypeLabel";
             this.TypeLabel.Size = new System.Drawing.Size(31, 13);
             this.TypeLabel.TabIndex = 8;
@@ -126,7 +127,7 @@
             // 
             // TypeBox
             // 
-            this.TypeBox.Location = new System.Drawing.Point(145, 194);
+            this.TypeBox.Location = new System.Drawing.Point(161, 231);
             this.TypeBox.Name = "TypeBox";
             this.TypeBox.Size = new System.Drawing.Size(100, 20);
             this.TypeBox.TabIndex = 9;
@@ -134,7 +135,7 @@
             // TimeLabel
             // 
             this.TimeLabel.AutoSize = true;
-            this.TimeLabel.Location = new System.Drawing.Point(66, 311);
+            this.TimeLabel.Location = new System.Drawing.Point(82, 348);
             this.TimeLabel.Name = "TimeLabel";
             this.TimeLabel.Size = new System.Drawing.Size(30, 13);
             this.TimeLabel.TabIndex = 10;
@@ -142,7 +143,7 @@
             // 
             // TimeBox
             // 
-            this.TimeBox.Location = new System.Drawing.Point(145, 308);
+            this.TimeBox.Location = new System.Drawing.Point(161, 345);
             this.TimeBox.Name = "TimeBox";
             this.TimeBox.Size = new System.Drawing.Size(100, 20);
             this.TimeBox.TabIndex = 11;
@@ -150,7 +151,7 @@
             // DateLabel
             // 
             this.DateLabel.AutoSize = true;
-            this.DateLabel.Location = new System.Drawing.Point(61, 253);
+            this.DateLabel.Location = new System.Drawing.Point(77, 290);
             this.DateLabel.Name = "DateLabel";
             this.DateLabel.Size = new System.Drawing.Size(30, 13);
             this.DateLabel.TabIndex = 12;
@@ -158,7 +159,7 @@
             // 
             // DateBox
             // 
-            this.DateBox.Location = new System.Drawing.Point(145, 250);
+            this.DateBox.Location = new System.Drawing.Point(161, 287);
             this.DateBox.Name = "DateBox";
             this.DateBox.Size = new System.Drawing.Size(100, 20);
             this.DateBox.TabIndex = 13;
@@ -166,7 +167,7 @@
             // DateFormatLabel
             // 
             this.DateFormatLabel.AutoSize = true;
-            this.DateFormatLabel.Location = new System.Drawing.Point(128, 282);
+            this.DateFormatLabel.Location = new System.Drawing.Point(144, 319);
             this.DateFormatLabel.Name = "DateFormatLabel";
             this.DateFormatLabel.Size = new System.Drawing.Size(139, 13);
             this.DateFormatLabel.TabIndex = 14;
@@ -175,17 +176,29 @@
             // TimeFormatLabel
             // 
             this.TimeFormatLabel.AutoSize = true;
-            this.TimeFormatLabel.Location = new System.Drawing.Point(128, 346);
+            this.TimeFormatLabel.Location = new System.Drawing.Point(144, 383);
             this.TimeFormatLabel.Name = "TimeFormatLabel";
             this.TimeFormatLabel.Size = new System.Drawing.Size(146, 13);
             this.TimeFormatLabel.TabIndex = 15;
             this.TimeFormatLabel.Text = "Time Format: HH:mm (military)";
             // 
+            // PLC_Logo
+            // 
+            this.PLC_Logo.AutoSize = true;
+            this.PLC_Logo.Font = new System.Drawing.Font("Batang", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PLC_Logo.Location = new System.Drawing.Point(26, 19);
+            this.PLC_Logo.Name = "PLC_Logo";
+            this.PLC_Logo.Size = new System.Drawing.Size(40, 19);
+            this.PLC_Logo.TabIndex = 16;
+            this.PLC_Logo.Text = "PLC";
+            // 
             // EditAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(403, 515);
+            this.Controls.Add(this.PLC_Logo);
             this.Controls.Add(this.TimeFormatLabel);
             this.Controls.Add(this.DateFormatLabel);
             this.Controls.Add(this.DateBox);
@@ -227,5 +240,6 @@
         private System.Windows.Forms.TextBox DateBox;
         private System.Windows.Forms.Label DateFormatLabel;
         private System.Windows.Forms.Label TimeFormatLabel;
+        private System.Windows.Forms.Label PLC_Logo;
     }
 }

@@ -46,6 +46,7 @@
             this.Family_But = new System.Windows.Forms.RadioButton();
             this.CustSize = new System.Windows.Forms.Label();
             this.Size_Box = new System.Windows.Forms.TextBox();
+            this.PLC_Logo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SubmitBut
@@ -205,11 +206,23 @@
             this.Size_Box.Size = new System.Drawing.Size(100, 20);
             this.Size_Box.TabIndex = 19;
             // 
+            // PLC_Logo
+            // 
+            this.PLC_Logo.AutoSize = true;
+            this.PLC_Logo.Font = new System.Drawing.Font("Batang", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PLC_Logo.Location = new System.Drawing.Point(27, 9);
+            this.PLC_Logo.Name = "PLC_Logo";
+            this.PLC_Logo.Size = new System.Drawing.Size(43, 19);
+            this.PLC_Logo.TabIndex = 20;
+            this.PLC_Logo.Text = "PLC";
+            // 
             // AddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(373, 459);
+            this.Controls.Add(this.PLC_Logo);
             this.Controls.Add(this.Size_Box);
             this.Controls.Add(this.CustSize);
             this.Controls.Add(this.Family_But);
@@ -255,5 +268,6 @@
         private System.Windows.Forms.RadioButton Family_But;
         private System.Windows.Forms.Label CustSize;
         private System.Windows.Forms.TextBox Size_Box;
+        private System.Windows.Forms.Label PLC_Logo;
     }
 }

@@ -34,6 +34,7 @@ namespace SoftwareTwoProject.Forms
             this.AppTypeReport = new System.Windows.Forms.DataGridView();
             this.ReportBut = new System.Windows.Forms.Button();
             this.AppLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AppTypeReport)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,17 +78,29 @@ namespace SoftwareTwoProject.Forms
             // AppLabel
             // 
             this.AppLabel.AutoSize = true;
-            this.AppLabel.Location = new System.Drawing.Point(140, 178);
+            this.AppLabel.Location = new System.Drawing.Point(250, 179);
             this.AppLabel.Name = "AppLabel";
             this.AppLabel.Size = new System.Drawing.Size(159, 13);
             this.AppLabel.TabIndex = 4;
             this.AppLabel.Text = "Appointment Type Count Report";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Batang", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 19);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "PLC";
+            // 
             // AppCountReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.AppLabel);
             this.Controls.Add(this.ReportBut);
             this.Controls.Add(this.AppTypeReport);
@@ -108,5 +121,6 @@ namespace SoftwareTwoProject.Forms
         private System.Windows.Forms.DataGridView AppTypeReport;
         private System.Windows.Forms.Button ReportBut;
         private System.Windows.Forms.Label AppLabel;
+        private System.Windows.Forms.Label label1;
     }
 }

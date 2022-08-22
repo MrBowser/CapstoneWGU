@@ -46,6 +46,7 @@
             this.MinutesBox = new System.Windows.Forms.TextBox();
             this.DateLabelDirect = new System.Windows.Forms.Label();
             this.TimeLabelFormat = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SubmitBut
@@ -71,7 +72,7 @@
             // AppointmentIdLabel
             // 
             this.AppointmentIdLabel.AutoSize = true;
-            this.AppointmentIdLabel.Location = new System.Drawing.Point(48, 31);
+            this.AppointmentIdLabel.Location = new System.Drawing.Point(48, 50);
             this.AppointmentIdLabel.Name = "AppointmentIdLabel";
             this.AppointmentIdLabel.Size = new System.Drawing.Size(75, 13);
             this.AppointmentIdLabel.TabIndex = 2;
@@ -80,7 +81,7 @@
             // CustomerIdLabel
             // 
             this.CustomerIdLabel.AutoSize = true;
-            this.CustomerIdLabel.Location = new System.Drawing.Point(48, 81);
+            this.CustomerIdLabel.Location = new System.Drawing.Point(48, 100);
             this.CustomerIdLabel.Name = "CustomerIdLabel";
             this.CustomerIdLabel.Size = new System.Drawing.Size(60, 13);
             this.CustomerIdLabel.TabIndex = 3;
@@ -107,14 +108,14 @@
             // ApIdBox
             // 
             this.ApIdBox.Enabled = false;
-            this.ApIdBox.Location = new System.Drawing.Point(144, 31);
+            this.ApIdBox.Location = new System.Drawing.Point(144, 50);
             this.ApIdBox.Name = "ApIdBox";
             this.ApIdBox.Size = new System.Drawing.Size(100, 20);
             this.ApIdBox.TabIndex = 6;
             // 
             // CusIdBox
             // 
-            this.CusIdBox.Location = new System.Drawing.Point(144, 81);
+            this.CusIdBox.Location = new System.Drawing.Point(144, 100);
             this.CusIdBox.Name = "CusIdBox";
             this.CusIdBox.Size = new System.Drawing.Size(100, 20);
             this.CusIdBox.TabIndex = 7;
@@ -136,7 +137,7 @@
             // UserIdLabel
             // 
             this.UserIdLabel.AutoSize = true;
-            this.UserIdLabel.Location = new System.Drawing.Point(58, 137);
+            this.UserIdLabel.Location = new System.Drawing.Point(58, 156);
             this.UserIdLabel.Name = "UserIdLabel";
             this.UserIdLabel.Size = new System.Drawing.Size(38, 13);
             this.UserIdLabel.TabIndex = 10;
@@ -144,7 +145,7 @@
             // 
             // UsIdBox
             // 
-            this.UsIdBox.Location = new System.Drawing.Point(144, 134);
+            this.UsIdBox.Location = new System.Drawing.Point(144, 153);
             this.UsIdBox.Name = "UsIdBox";
             this.UsIdBox.Size = new System.Drawing.Size(100, 20);
             this.UsIdBox.TabIndex = 11;
@@ -201,11 +202,23 @@
             this.TimeLabelFormat.TabIndex = 17;
             this.TimeLabelFormat.Text = "Time Format: HH : MM (military)";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Batang", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(25, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 19);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "PLC";
+            // 
             // AddAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(370, 426);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.TimeLabelFormat);
             this.Controls.Add(this.DateLabelDirect);
             this.Controls.Add(this.MinutesBox);
@@ -251,5 +264,6 @@
         private System.Windows.Forms.TextBox MinutesBox;
         private System.Windows.Forms.Label DateLabelDirect;
         private System.Windows.Forms.Label TimeLabelFormat;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -117,144 +117,184 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;NameBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="UsernameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="UsernameLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;UsernameLabel.Name" xml:space="preserve">
-    <value>UsernameLabel</value>
+  <data name="UsernameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 82</value>
   </data>
-  <data name="Passwordlabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 180</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Passwordlabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Passwordlabel.Name" xml:space="preserve">
-    <value>Passwordlabel</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>316, 343</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form1</value>
-  </data>
-  <data name="&gt;&gt;NameBox.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="UsernameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 16</value>
   </data>
   <data name="UsernameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Passwordlabel.Text" xml:space="preserve">
-    <value>Password</value>
+  <data name="UsernameLabel.Text" xml:space="preserve">
+    <value>Username</value>
   </data>
-  <data name="&gt;&gt;PWBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UsernameLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="UsernameLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="PWBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;PWBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;UsernameLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="LoginBut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 240</value>
-  </data>
-  <data name="&gt;&gt;Passwordlabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="LoginBut.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;UsernameLabel.Name" xml:space="preserve">
+    <value>UsernameLabel</value>
   </data>
   <data name="&gt;&gt;UsernameLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="PWBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>109, 196</value>
-  </data>
-  <data name="&gt;&gt;LoginBut.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="LoginBut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;Passwordlabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Passwordlabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;LoginBut.Name" xml:space="preserve">
-    <value>LoginBut</value>
-  </data>
-  <data name="Passwordlabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 13</value>
-  </data>
-  <data name="&gt;&gt;NameBox.Name" xml:space="preserve">
-    <value>NameBox</value>
-  </data>
-  <data name="&gt;&gt;PWBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;UsernameLabel.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;UsernameLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="Passwordlabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;LoginBut.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="Passwordlabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
-  <data name="PWBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+  <data name="Passwordlabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 177</value>
   </data>
-  <data name="&gt;&gt;PWBox.Name" xml:space="preserve">
-    <value>PWBox</value>
+  <data name="Passwordlabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 16</value>
+  </data>
+  <data name="Passwordlabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="Passwordlabel.Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="&gt;&gt;Passwordlabel.Name" xml:space="preserve">
+    <value>Passwordlabel</value>
+  </data>
+  <data name="&gt;&gt;Passwordlabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Passwordlabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Passwordlabel.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="NameBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 101</value>
   </data>
-  <data name="UsernameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
+  <data name="NameBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
   </data>
   <data name="NameBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="UsernameLabel.Text" xml:space="preserve">
-    <value>Username</value>
-  </data>
-  <data name="UsernameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 85</value>
+  <data name="&gt;&gt;NameBox.Name" xml:space="preserve">
+    <value>NameBox</value>
   </data>
   <data name="&gt;&gt;NameBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;NameBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;NameBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PWBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 196</value>
+  </data>
+  <data name="PWBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="PWBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PWBox.Name" xml:space="preserve">
+    <value>PWBox</value>
+  </data>
+  <data name="&gt;&gt;PWBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PWBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PWBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LoginBut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 240</value>
+  </data>
+  <data name="LoginBut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="LoginBut.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <data name="LoginBut.Text" xml:space="preserve">
     <value>Login</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;LoginBut.Name" xml:space="preserve">
+    <value>LoginBut</value>
+  </data>
+  <data name="&gt;&gt;LoginBut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LoginBut.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="NameBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+  <data name="&gt;&gt;LoginBut.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Login</value>
+  <data name="PLC_logo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PLC_logo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Batang, 14.25pt, style=Bold, Underline</value>
+  </data>
+  <data name="PLC_logo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 21</value>
+  </data>
+  <data name="PLC_logo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 19</value>
+  </data>
+  <data name="PLC_logo.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="PLC_logo.Text" xml:space="preserve">
+    <value>PLC</value>
+  </data>
+  <data name="&gt;&gt;PLC_logo.Name" xml:space="preserve">
+    <value>PLC_logo</value>
+  </data>
+  <data name="&gt;&gt;PLC_logo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PLC_logo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PLC_logo.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>316, 343</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

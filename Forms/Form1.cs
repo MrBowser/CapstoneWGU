@@ -154,7 +154,10 @@ namespace SoftwareTwoProject
         List<string> PWlist = new List<string>();
 
         string filename = "LoginTimeStamp.txt";
-        
-        
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

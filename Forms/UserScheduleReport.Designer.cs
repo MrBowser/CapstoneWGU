@@ -34,6 +34,7 @@ namespace SoftwareTwoProject.Forms
             this.GenBut = new System.Windows.Forms.Button();
             this.UserSchedRepView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.PLC_Logo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.UserListGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserSchedRepView)).BeginInit();
             this.SuspendLayout();
@@ -87,11 +88,23 @@ namespace SoftwareTwoProject.Forms
             this.label1.TabIndex = 4;
             this.label1.Text = "(note: times are displayed in UTC)";
             // 
+            // PLC_Logo
+            // 
+            this.PLC_Logo.AutoSize = true;
+            this.PLC_Logo.Font = new System.Drawing.Font("Batang", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PLC_Logo.Location = new System.Drawing.Point(26, 13);
+            this.PLC_Logo.Name = "PLC_Logo";
+            this.PLC_Logo.Size = new System.Drawing.Size(40, 19);
+            this.PLC_Logo.TabIndex = 5;
+            this.PLC_Logo.Text = "PLC";
+            // 
             // UserScheduleReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PLC_Logo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.UserSchedRepView);
             this.Controls.Add(this.GenBut);
@@ -113,5 +126,6 @@ namespace SoftwareTwoProject.Forms
         private System.Windows.Forms.Button GenBut;
         private System.Windows.Forms.DataGridView UserSchedRepView;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label PLC_Logo;
     }
 }
