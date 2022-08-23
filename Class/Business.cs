@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SoftwareTwoProject.Class
 {
-    internal class Business : Customer
+    public class Business : Customer
     {
 
         public int CompanySize { get; set; }
@@ -29,7 +29,17 @@ namespace SoftwareTwoProject.Class
         public int CompanyBilling()
         {
 
-            return 300 + CompanySize * 10;
+            if(CompanySize>0)
+            {
+                return 300 + CompanySize * 10;
+
+            }
+            else
+            {
+                return 1000;
+            }
+
+            
 
         }
 
