@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SoftwareTwoProject.Class
 {
-    internal class Family : Customer
+    public class Family : Customer
     {
         public int LotSize { get; set; }
 
@@ -27,7 +27,22 @@ namespace SoftwareTwoProject.Class
         public int FamilyBilling()
         {
 
-            return LotSize / 5;
+            if(LotSize > 2500)
+            {
+                
+                return LotSize / 5 + 500;
+            }
+            else if (LotSize < 100)
+            {
+                return 300;
+            }
+            else
+            {
+                return LotSize / 5;
+
+            }
+
+            
         }
 
     }
